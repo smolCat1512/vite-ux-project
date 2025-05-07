@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import CaseStudies from "../components/CaseStudies";
 import About from "../components/About";
 import WhatAndHow from "../components/WhatAndHow";
+import Connect from "../components/Connect";
 
 const HomePage = () => {
   return (
@@ -29,10 +30,9 @@ const HomePage = () => {
       <section id="what-how" className="h-screen flex items-start justify-center">
         <WhatAndHow />
       </section>
-
-      {/*     
       <footer id="connect" className="h-screen flex items-start justify-center">
-        <Connect /> */}
+        <Connect />
+      </footer>
     </motion.main>
   );
 };
