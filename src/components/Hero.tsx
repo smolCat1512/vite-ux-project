@@ -8,6 +8,7 @@ const Hero = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
       className="h-screen flex-1 p-4 flex justify-center"
+      id="me"
     >
       <div className="flex flex-col sm:flex-col md:flex-row items-start md:justify-evenly w-full">
         {/* Image - Hidden on mobile, visible on tablets and larger */}

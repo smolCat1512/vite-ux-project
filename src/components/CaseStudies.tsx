@@ -1,22 +1,22 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import CaseStudyCard from "../pages/CaseStudies/CaseStudyCard";
 
 const caseStudies = [
   {
     title: "Project Shelter",
     description:
-      "A redesign of a major e-commerce platform to improve UX and conversion rates.",
-    year: "2024",
+      "Digital Advice Webchat development and migration.",
+    year: "2024/25",
     image: "/images/project-alpha.jpg",
-    slug: "../casestudies/shelter",
+    slug: "shelter",
   },
   {
     title: "Project NFCC",
     description:
-      "Optimizing a SaaS dashboard for better usability and efficiency.",
-    year: "2023",
+      "Digital service development for the National Foundation for Credit Counseling.",
+    year: "2023/24",
     image: "/images/project-beta.jpg",
-    slug: "../casestudies/nfcc",
+    slug: "nfcc",
   },
 ];
 
@@ -31,33 +31,7 @@ const CaseStudies = () => {
       id="case-studies"
     >
       {caseStudies.map((study) => (
-        <div
-          key={study.slug}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
-        >
-          {/* Left Side - Text */}
-          <div>
-            <h2 className="text-3xl font-bold">{study.title}</h2>
-            <p className="text-gray-300">{study.description}</p>
-            <p className="text-gray-400 mt-2">{study.year}</p>
-            <Link
-              to={`/case-studies/${study.slug}`}
-              className="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-            >
-              View Case Study
-            </Link>
-          </div>
-          {/* Right Side - Image */}
-          <div>
-            <img
-              src={study.image}
-              alt={study.title}
-              width={300}
-              height={200}
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
+        <CaseStudyCard key={study.slug} {...study} />
       ))}
     </motion.section>
   );

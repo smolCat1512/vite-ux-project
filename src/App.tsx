@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import HomePage from "./pages/HomePage";
-// import About from "./pages/About";
+import CaseStudyShelter from "./pages/CaseStudies/Shelter";
+import CaseStudyNFCC from "./pages/CaseStudies/NFCC";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        {/* <Route path="about" element={<About />} /> */}
-        {/* Add other nested routes here */}
+        <Route path="/case-studies/shelter" element={<CaseStudyShelter />} />
+        <Route path="/case-studies/nfcc" element={<CaseStudyNFCC />} />
       </Route>
     </Routes>
   );

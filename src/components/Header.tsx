@@ -2,6 +2,7 @@ import { useState } from "react";
 import Logo from "./Logo";
 import { Menu, X } from "lucide-react"; // Icons for the menu toggle on mobile
 import { motion } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
   { title: "Case Studies", href: "#case-studies" },
@@ -13,6 +14,23 @@ const navItems = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/" && location.hash) {
+      // If on home but there's a hash (e.g. #case-studies), remove it
+      window.history.replaceState(null, "", "/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (location.pathname === "/") {
+      // On home and no hash, just scroll
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to home (will clear path and hash)
+      navigate("/");
+    }
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0 }}
@@ -20,9 +38,9 @@ const Header = () => {
       transition={{ duration: 1 }}
       className="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-lg p-4 flex items-center justify-between z-50"
     >
-      <a href="/">
+      <button onClick={handleLogoClick} aria-label="Go to top of home page">
         <Logo />
-      </a>
+      </button>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:block primary-navigation">
