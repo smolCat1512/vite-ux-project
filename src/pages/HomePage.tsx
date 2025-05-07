@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import CaseStudies from "../components/CaseStudies";
+import About from "../components/About";
 
 const HomePage = () => {
   return (
@@ -21,11 +22,11 @@ const HomePage = () => {
       >
         <CaseStudies />
       </section>
-
-      {/*     
       <section id="about" className="h-screen flex items-start justify-center">
         <About />
       </section>
+
+      {/*     
       <section id="what-how" className="h-screen flex items-start justify-center">
         <WhatAndHow />
       </section>

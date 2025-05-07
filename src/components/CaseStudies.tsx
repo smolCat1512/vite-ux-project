@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import CaseStudyCard from "../pages/CaseStudies/CaseStudyCard";
+import CaseStudyCard from "./CaseStudyCard";
 
 const caseStudies = [
   {

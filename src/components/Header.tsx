@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import { Menu, X } from "lucide-react"; // Icons for the menu toggle on mobile
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
+import { scrollToSection } from "../utils/scrollToSection";
 
 const navItems = [
   { title: "Case Studies", href: "#case-studies" },
@@ -47,12 +48,14 @@ const Header = () => {
         <ul className="flex space-x-6">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
+              <button
+                onClick={() =>
+                  scrollToSection(item.href, location.pathname, navigate)
+                }
                 className="text-white text-lg hover:underline"
               >
                 {item.title}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -73,9 +76,11 @@ const Header = () => {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
               className="text-white text-lg hover:underline"
-              onClick={() => setIsOpen(false)} // Close menu on click
+              onClick={() => {
+                setIsOpen(false);
+                scrollToSection(item.href, location.pathname, navigate);
+              }}
             >
               {item.title}
             </a>
