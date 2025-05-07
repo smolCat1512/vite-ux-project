@@ -5,20 +5,23 @@
 // import Me from "../components/Me";
 // import Header from "../components/header";
 import { motion } from "framer-motion";
+import Hero from "../components/Hero";
 
-
-export default function HomePage() {
+const HomePage = () => {
   return (
     <motion.main
-    initial={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
     >
-        <p>Shaun Test</p>
-    {/* <Header />
-    <section id="me" className="h-screen flex items-start justify-center pt-36">
-        <Me />
+      <section
+        id="me"
+        className="h-screen flex items-start justify-center pt-36"
+      >
+        <Hero />
       </section>
+
+      {/*     
       <section id="about" className="h-screen flex items-start justify-center">
         <About />
       </section>
@@ -29,8 +32,9 @@ export default function HomePage() {
         <WhatAndHow />
       </section>
       <footer id="connect" className="h-screen flex items-start justify-center">
-        <Connect />
-      </footer> */}
+        <Connect /> */}
     </motion.main>
   );
-}
+};
+
+export default HomePage;
