@@ -4,8 +4,8 @@ import { Menu, X } from "lucide-react"; // Icons for the menu toggle on mobile
 import { motion } from "framer-motion";
 
 const navItems = [
-  { title: "About + CV", href: "#about" },
   { title: "Case Studies", href: "#case-studies" },
+  { title: "About + CV", href: "#about" },
   { title: "What and How", href: "#what-how" },
   { title: "Connect", href: "#connect" },
 ];
