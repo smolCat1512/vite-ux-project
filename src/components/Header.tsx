@@ -14,7 +14,6 @@ const navItems = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -52,9 +51,10 @@ const Header = () => {
                 onClick={() =>
                   scrollToSection(item.href, location.pathname, navigate)
                 }
-                className="text-white text-lg hover:underline"
+                className="text-white text-lg cursor-pointer hover:text-cyan-400 transition-colors duration-300 relative group"
               >
                 {item.title}
+                <span className="absolute top-8 left-0 w-full h-0.5 bg-cyan-400 transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
               </button>
             </li>
           ))}
