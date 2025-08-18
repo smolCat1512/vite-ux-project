@@ -18,8 +18,17 @@ const Hero = () => {
 
         {/* Text Section */}
         <div className="text-center md:text-left sm:w-full md:w-1/2 p-4">
-          <h2 className="text-3xl font-bold">Shaun Halliday</h2>
-          <p className="text-purple-500">Hi this is text about me</p>
+          <div className="flex flex-row">
+            <h2 className="text-3xl font-bold">
+              Hi, I'm
+              <span className="text-3xl font-bold text-cyan-400"> Shaun</span>,
+              I design and build for users
+            </h2>
+          </div>
+          <p className="text-2xl pt-2 text-gray-500">
+            Specialised in research, design and build - for mobile apps, desktop
+            software, websites - any kind of smooth interface really
+          </p>
         </div>
       </div>
     </motion.section>
