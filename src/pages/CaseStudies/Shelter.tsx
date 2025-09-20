@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+import shelterHero from "../../assets//shelter-wireframes/shelterHero.png";
+import wireFrameStart from "../../assets/shelter-wireframes/start.png";
+import wireFrameTriage from "../../assets/shelter-wireframes/triage.png";
+import wireFramePostChat from "../../assets/shelter-wireframes/postChat.png";
+
 
 const CaseStudyShelter = () => {
   return (
@@ -22,8 +27,8 @@ const CaseStudyShelter = () => {
         <p className="text-gray-400">2024</p>
 
         <img
-          src="/images/project-alpha.jpg"
-          alt="Project Shelter image area"
+          src={shelterHero}
+          alt="Project Shelter hero area image"
           width={800}
           height={500}
           className="rounded-lg shadow-lg my-6"
@@ -220,13 +225,29 @@ const CaseStudyShelter = () => {
                 in the background - the service remains uninterrupted.
               </li>
             </ul>
+            <section className="flex flex-row items-center gap-2">
             <img
-              src="/images/project-alpha.jpg"
-              alt="Project Shelter - sketches, wireframes, etc. here"
-              width={800}
-              height={500}
+              src="../../assets/shelter-wireframes/Digital Wireframes - Start A.png"
+              alt="Webchat wireframe start screen"
+              width={200}
+              height={300}
               className="rounded-lg shadow-lg my-6"
             />
+            <img
+              src="../../assets/shelter-wireframes/Digital Wireframes - Triage A.png"
+              alt="Webchat wireframe triage screen"
+              width={200}
+              height={300}
+              className="rounded-lg shadow-lg my-6"
+            />
+            <img
+              src="../../assets/shelter-wireframes/Digital Wireframes - Post Chat.png"
+              alt="Webchat wireframe post-chat screen"
+              width={200}
+              height={300}
+              className="rounded-lg shadow-lg my-6"
+            />
+            </section>
           </article>
           <article className="mt-6">
             <h3>Ideation and Wireframing</h3>

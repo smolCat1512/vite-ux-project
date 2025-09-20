@@ -1,6 +1,7 @@
 import catImg from "../assets/cat1.png"; // Adjust the path as necessary
 import { motion } from "framer-motion";
 
+
 const Hero = () => {
   return (
     <motion.section
