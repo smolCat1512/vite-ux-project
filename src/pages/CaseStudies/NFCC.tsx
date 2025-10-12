@@ -1,12 +1,6 @@
-import { motion } from "framer-motion";
-
 const CaseStudyNFCC = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
+    <main>
       <div className="p-8 max-w-3xl mx-auto mt-32 md:mt-24">
         <h1 className="text-4xl font-bold">NFCC</h1>
         <p className="text-gray-300">
@@ -45,8 +39,8 @@ const CaseStudyNFCC = () => {
         <h2 className="text-2xl font-bold mt-6">Final Designs</h2>
         <p className="text-lg">Here is a showcase of the final UI designs.</p>
       </div>
-    </motion.div>
+    </main>
   );
-}
+};
 
 export default CaseStudyNFCC;

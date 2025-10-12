@@ -1,17 +1,8 @@
-import { motion } from "framer-motion";
 import shelterHero from "../../assets//shelter-wireframes/shelterHero.png";
-import wireFrameStart from "../../assets/shelter-wireframes/start.png";
-import wireFrameTriage from "../../assets/shelter-wireframes/triage.png";
-import wireFramePostChat from "../../assets/shelter-wireframes/postChat.png";
-
 
 const CaseStudyShelter = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
-    >
+    <main>
       <main className="p-8 max-w-3xl mx-auto mt-24">
         <div className="flex flex-row gap-4">
           <h1 className="text-4xl font-bold py-8 text-red-500">Shelter</h1>
@@ -226,27 +217,27 @@ const CaseStudyShelter = () => {
               </li>
             </ul>
             <section className="flex flex-row items-center gap-2">
-            <img
-              src="../../assets/shelter-wireframes/Digital Wireframes - Start A.png"
-              alt="Webchat wireframe start screen"
-              width={200}
-              height={300}
-              className="rounded-lg shadow-lg my-6"
-            />
-            <img
-              src="../../assets/shelter-wireframes/Digital Wireframes - Triage A.png"
-              alt="Webchat wireframe triage screen"
-              width={200}
-              height={300}
-              className="rounded-lg shadow-lg my-6"
-            />
-            <img
-              src="../../assets/shelter-wireframes/Digital Wireframes - Post Chat.png"
-              alt="Webchat wireframe post-chat screen"
-              width={200}
-              height={300}
-              className="rounded-lg shadow-lg my-6"
-            />
+              <img
+                src="../../assets/shelter-wireframes/Digital Wireframes - Start A.png"
+                alt="Webchat wireframe start screen"
+                width={200}
+                height={300}
+                className="rounded-lg shadow-lg my-6"
+              />
+              <img
+                src="../../assets/shelter-wireframes/Digital Wireframes - Triage A.png"
+                alt="Webchat wireframe triage screen"
+                width={200}
+                height={300}
+                className="rounded-lg shadow-lg my-6"
+              />
+              <img
+                src="../../assets/shelter-wireframes/Digital Wireframes - Post Chat.png"
+                alt="Webchat wireframe post-chat screen"
+                width={200}
+                height={300}
+                className="rounded-lg shadow-lg my-6"
+              />
             </section>
           </article>
           <article className="mt-6">
@@ -509,7 +500,7 @@ const CaseStudyShelter = () => {
           </p>
         </section>
       </main>
-    </motion.div>
+    </main>
   );
 };
 

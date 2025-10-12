@@ -1,39 +1,36 @@
 // src/components/CaseStudyCard.tsx
+import { Box } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 type CaseStudyCardProps = {
   title: string;
   description: string;
-  year: string;
+  languages: string;
   image: string;
   slug: string;
 };
 
-const CaseStudyCard = ({ title, description, year, image, slug }: CaseStudyCardProps) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-      {/* Left - Text */}
-      <div>
-        <h2 className="text-3xl font-bold">{title}</h2>
-        <p className="text-gray-300">{description}</p>
-        <p className="text-gray-400 mt-2">{year}</p>
-        <Link
-          to={`/case-studies/${slug}`}
-          className="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-        >
-          View Case Study
-        </Link>
-      </div>
+// ! - Need images for case studies
 
-      {/* Right - Image */}
+const CaseStudyCard = ({
+  title,
+  description,
+  languages,
+  image,
+  slug,
+}: CaseStudyCardProps) => {
+  return (
+    <div className="flex flex-col">
       <div>
-        <img
-          src={image}
-          alt={title}
-          width={300}
-          height={200}
-          className="rounded-lg shadow-lg"
-        />
+        <Link to={`/case-studies/${slug}`}>
+          {/* !TODO -  Need Shelter website with webchat open image */}
+          <img src={image} alt={title} height={300} className="w-10/12 px-2" />
+        </Link>
+        <Box>
+          <h2 className="text-1xl">{title}</h2>
+          <p className="text-gray-250">{description}</p>
+          <p className="text-gray-400 mt-2">{languages}</p>
+        </Box>
       </div>
     </div>
   );
