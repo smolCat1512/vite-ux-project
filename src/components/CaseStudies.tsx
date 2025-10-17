@@ -4,7 +4,7 @@ const caseStudies = [
   {
     title: "Project Shelter",
     description: "Digital Advice Webchat development and migration.",
-    languages: "React, Typescript, Mantine, Vite",
+    role: "Resarch, Design, Frontend Development, Design System",
     image: "/images/project-alpha.jpg",
     slug: "shelter",
   },
@@ -12,7 +12,7 @@ const caseStudies = [
     title: "Project NFCC",
     description:
       "Digital service development for the National Foundation for Credit Counseling.",
-    languages: "React, Typescript, Twilio Paste",
+    role: "Research, Design, Frontend Development",
     image: "/images/project-beta.jpg",
     slug: "nfcc",
   },

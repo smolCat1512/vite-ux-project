@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
 import { Menu, X } from "lucide-react"; // Icons for the menu toggle on mobile
 import { motion } from "framer-motion";
@@ -14,21 +14,42 @@ const navItems = [
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleLogoClick = () => {
     if (location.pathname === "/" && location.hash) {
-      // If on home but there's a hash (e.g. #case-studies), remove it
       window.history.replaceState(null, "", "/");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (location.pathname === "/") {
-      // On home and no hash, just scroll
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // Navigate to home (will clear path and hash)
       navigate("/");
     }
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Close menu when a nav item is clicked
+  const handleNavClick = (item: typeof navItems[0]) => {
+    setIsOpen(false);
+    scrollToSection(item.href, location.pathname, navigate);
   };
 
   return (
@@ -36,7 +57,7 @@ const Header = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-lg p-4 flex items-center justify-between z-50"
+      className="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-lg p-4 flex items-center justify-between z-50"
     >
       <button onClick={handleLogoClick} aria-label="Go to top of home page">
         <Logo />
@@ -51,7 +72,7 @@ const Header = () => {
                 onClick={() =>
                   scrollToSection(item.href, location.pathname, navigate)
                 }
-                className="text-white text-lg cursor-pointer hover:text-cyan-400 transition-colors duration-300 relative group"
+                className="text-lg cursor-pointer hover:text-fuchsia-900 transition-colors duration-300 relative group"
               >
                 {item.title}
                 <span className="absolute top-8 left-0 w-full h-0.5 bg-cyan-400 transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
@@ -63,7 +84,7 @@ const Header = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden text-white primary-navigation"
+        className="md:hidden text-fuchsia-900 primary-navigation"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Navigation Menu"
       >
@@ -72,20 +93,44 @@ const Header = () => {
 
       {/* Mobile Navigation Panel */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black bg-opacity-90 p-6 flex flex-col items-center space-y-4 md:hidden">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              className="text-white text-lg hover:underline"
-              onClick={() => {
-                setIsOpen(false);
-                scrollToSection(item.href, location.pathname, navigate);
-              }}
+        <>
+          {/* Overlay backdrop */}
+          <div
+            className="fixed inset-0 bg-opacity-50 md:hidden z-40"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+          
+          {/* Menu */}
+          <motion.div
+            ref={menuRef}
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.4 }}
+            className="fixed top-0 right-0 h-fit w-full bg-fuchsia-900 bg-opacity-95 p-6 flex flex-col space-y-4 md:hidden z-50 overflow-y-auto"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="self-end text-white hover:text-cyan-400 transition-colors mb-4"
+              aria-label="Close Navigation Menu"
             >
-              {item.title}
-            </a>
-          ))}
-        </div>
+              <X size={32} />
+            </button>
+
+            {/* Navigation Items */}
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                className="text-white text-lg hover:text-cyan-400 transition-colors text-left"
+                onClick={() => handleNavClick(item)}
+              >
+                {item.title}
+              </button>
+            ))}
+          </motion.div>
+        </>
       )}
     </motion.header>
   );

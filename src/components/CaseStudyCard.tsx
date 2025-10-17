@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 type CaseStudyCardProps = {
   title: string;
   description: string;
-  languages: string;
+  role: string;
   image: string;
   slug: string;
 };
@@ -15,7 +15,7 @@ type CaseStudyCardProps = {
 const CaseStudyCard = ({
   title,
   description,
-  languages,
+  role,
   image,
   slug,
 }: CaseStudyCardProps) => {
@@ -29,7 +29,7 @@ const CaseStudyCard = ({
         <Box>
           <h2 className="text-1xl">{title}</h2>
           <p className="text-gray-250">{description}</p>
-          <p className="text-gray-400 mt-2">{languages}</p>
+          <p className="text-gray-400 mt-2">{role}</p>
         </Box>
       </div>
     </div>
