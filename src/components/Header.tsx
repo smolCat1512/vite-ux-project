@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
-import { Menu, X } from "lucide-react"; // Icons for the menu toggle on mobile
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import { scrollToSection } from "../utils/scrollToSection";
+import { FaBars, FaXmark } from "react-icons/fa6";
 
 const navItems = [
   { title: "Case Studies", href: "#case-studies" },
@@ -88,7 +88,7 @@ const Header = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Navigation Menu"
       >
-        {isOpen ? <X size={28} /> : <Menu size={28} />}
+        {isOpen ? <FaXmark size={28} /> : <FaBars size={28} />}
       </button>
 
       {/* Mobile Navigation Panel */}
@@ -116,7 +116,7 @@ const Header = () => {
               className="self-end text-white hover:text-cyan-400 transition-colors mb-4"
               aria-label="Close Navigation Menu"
             >
-              <X size={32} />
+              <FaXmark size={32} />
             </button>
 
             {/* Navigation Items */}

@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
 import { ThemeIcon } from "@mantine/core";
-import { Mail, LucideFileText, Linkedin, Github } from "lucide-react";
 import CV from "../assets/Shaun Halliday CV.pdf";
+import { FaLinkedinIn, FaEnvelope, FaFileLines, FaGithub } from "react-icons/fa6";
 
 const socialLinks = [
   {
-    icon: Linkedin,
+    icon: FaLinkedinIn,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/shaun-halliday-5001a6b2/",
   },
   {
-    icon: Mail,
+    icon: FaEnvelope,
     label: "Email",
     href: "mailto:shaunhalliday1512@gmail.com",
   },
   {
-    icon: LucideFileText,
+    icon: FaFileLines,
     label: "CV",
     href: CV,
   },
   {
-    icon: Github,
+    icon: FaGithub,
     label: "GitHub",
     href: "https://github.com/yourprofile",
   },
@@ -33,7 +33,7 @@ const Socials = () => {
         className="p-4 flex justify-center"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 2, delay: 1 }}
+        transition={{ duration: 1.5, delay: 1 }}
       >
         <div className="flex flex-row justify-center gap-4">
           {socialLinks.map((link) => {
