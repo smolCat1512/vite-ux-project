@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import Socials from "./Socials";
+import { Anchor, ThemeIcon } from "@mantine/core";
+import { FaChevronDown } from "react-icons/fa6";
 
 const Hero = () => {
   return (
@@ -30,6 +32,35 @@ const Hero = () => {
             </p>
           </motion.div>
           <Socials />
+        </div>
+        <div className="mt-32 flex justify-center">
+          <motion.div
+            initial={{ y: 0, opacity: 0.3 }}
+            animate={{
+              y: [0, -10, 0],
+              opacity: [0.3, 1, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <div
+              className="cursor-pointer border-3 border-black rounded-full p-2 hover:bg-gray-100 size-8 flex items-center justify-center"
+            >
+              <Anchor
+                onClick={() => {
+                  const aboutSection = document.getElementById("about");
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                <FaChevronDown size={16} color="black" />
+              </Anchor>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
