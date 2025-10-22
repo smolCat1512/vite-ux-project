@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Socials from "./Socials";
-import { Anchor, ThemeIcon } from "@mantine/core";
+import { Anchor } from "@mantine/core";
 import { FaChevronDown } from "react-icons/fa6";
 
 const Hero = () => {
@@ -45,18 +45,15 @@ const Hero = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
+            onClick={() => {
+              const techSection = document.getElementById("technologies");
+              if (techSection) {
+                techSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
-            <div
-              className="cursor-pointer border-3 border-black rounded-full p-2 hover:bg-gray-100 size-8 flex items-center justify-center"
-            >
-              <Anchor
-                onClick={() => {
-                  const aboutSection = document.getElementById("about");
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-              >
+            <div className="cursor-pointer border-3 border-black rounded-full p-2 hover:bg-gray-100 size-8 flex items-center justify-center">
+              <Anchor>
                 <FaChevronDown size={16} color="black" />
               </Anchor>
             </div>

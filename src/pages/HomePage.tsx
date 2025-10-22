@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import CaseStudies from "../components/CaseStudies";
-import About from "../components/About";
 import WhatAndHow from "../components/WhatAndHow";
 import Connect from "../components/Connect";
+import Technologies from "../components/Technologies";
 
 const HomePage = () => {
   return (
@@ -18,14 +18,14 @@ const HomePage = () => {
       >
         <Hero />
       </section>
+      <section id="technologies" className="flex items-start justify-center">
+        <Technologies />
+      </section>
       <section
         id="case-studies"
         className="h-screen flex items-start justify-center"
       >
         <CaseStudies />
-      </section>
-      <section id="about" className="h-screen flex items-start justify-center">
-        <About />
       </section>
       <section id="what-how" className="h-screen flex items-start justify-center">
         <WhatAndHow />
