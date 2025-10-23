@@ -4,6 +4,7 @@ import { FaReact, FaPython, FaAws, FaGitAlt } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaFigma } from "react-icons/fa";
+import { RiJavascriptFill } from "react-icons/ri";
 
 const technologies = [
   {
@@ -21,6 +22,10 @@ const technologies = [
   {
     name: "Typescript",
     icon: BiLogoTypescript,
+  },
+  {
+    name: "JavaScript",
+    icon: RiJavascriptFill,
   },
   {
     name: "AWS",

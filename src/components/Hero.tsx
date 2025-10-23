@@ -1,35 +1,44 @@
 import { motion } from "framer-motion";
 import Socials from "./Socials";
-import { Anchor } from "@mantine/core";
+import { Anchor, Typography } from "@mantine/core";
 import { FaChevronDown } from "react-icons/fa6";
 
 const Hero = () => {
   return (
     <section>
       <div className="flex flex-col">
-        {/* Text Section */}
-        <div className="text-center justify-center w-10/12 mx-auto md:w-2/3">
+        <div className="text-center justify-center mx-auto w-10/12 md:w-auto lg:w-auto">
           <motion.div
             className="flex flex-row items-center justify-center pb-4"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold">
+            <h1 className="text-3xl font-bold">
               Hi, I'm
-              <span className="text-3xl font-bold text-cyan-400"> Shaun</span>,
-              I design and build for users
-            </h2>
+              <span className="text-3xl font-bold text-orange-700"> Shaun</span>
+              , I design and build for
+              <span className="text-3xl font-bold text-orange-700"> users</span>
+            </h1>
+          </motion.div>
+          <motion.div 
+          className="pb-4"
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          >
+          <Typography className="text-gray-500 text-center text-2xl">
+            Software Engineer and UX/UI Engineer
+          </Typography>
           </motion.div>
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <p className="text-2xl text-gray-500 text-center w-10/12 mx-auto md:w-2/3 pb-4">
-              I love to research, design and build - for mobile apps, desktop
-              software, websites - any kind of smooth interface really
-            </p>
+            <Typography className="text-2xl text-gray-500 text-center w-10/12 mx-auto md:w-2/3 pb-4">
+              I create user-centered digital experiences
+            </Typography>
           </motion.div>
           <Socials />
         </div>
