@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
-import CaseStudies from "../components/CaseStudies";
+import CaseStudies from "../components/Portoflio";
 import WhatAndHow from "../components/WhatAndHow";
 import Connect from "../components/Connect";
 import Technologies from "../components/Technologies";
@@ -23,14 +23,14 @@ const HomePage = () => {
       </section>
       <section
         id="case-studies"
-        className="h-screen flex items-start justify-center"
+        className="flex items-start justify-center"
       >
         <CaseStudies />
       </section>
-      <section id="what-how" className="h-screen flex items-start justify-center">
+      <section id="what-how" className="flex items-start justify-center">
         <WhatAndHow />
       </section>
-      <footer id="connect" className="h-screen flex items-start justify-center">
+      <footer id="connect" className="flex items-start justify-center">
         <Connect />
       </footer>
     </motion.main>

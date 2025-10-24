@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import HomePage from "./pages/HomePage";
-import CaseStudyShelter from "./pages/CaseStudies/Shelter";
-import CaseStudyNFCC from "./pages/CaseStudies/NFCC";
+import CaseStudyShelter from "./pages/CaseStudies/shelter_detailed";
+import CaseStudyNFCC from "./pages/CaseStudies/nfcc_detailed";
 
 function App() {
   return (

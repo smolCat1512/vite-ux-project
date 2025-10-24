@@ -1,11 +1,13 @@
-import CaseStudyCard from "./CaseStudyCard";
+import PortfolioCard from "./PortfolioCard";
+import Shelter from "../assets/portfolio_card_images/shelter_portfolio_card.jpg";
+import NFCC from "../assets/portfolio_card_images/nfcc_portfolio_card.png";
 
 const caseStudies = [
   {
-    title: "Project Shelter",
+    title: "Shelter",
     description: "Digital Advice Webchat development and migration.",
     role: "Resarch, Design, Frontend Development, Design System",
-    image: "/images/project-alpha.jpg",
+    image: Shelter,
     slug: "shelter",
   },
   {
@@ -13,14 +15,14 @@ const caseStudies = [
     description:
       "Digital service development for the National Foundation for Credit Counseling.",
     role: "Research, Design, Frontend Development",
-    image: "/images/project-beta.jpg",
+    image: NFCC,
     slug: "nfcc",
   },
 ];
 
 const CaseStudies = () => {
   return (
-    <section>
+    <section className="my-32 md:w-10/12" id="portfolio">
       <div className="flex justify-center">
         <span className="text-3xl mb-2">Portfolio</span>
       </div>
@@ -29,7 +31,7 @@ const CaseStudies = () => {
         id="case-studies"
       >
         {caseStudies.map((study) => (
-          <CaseStudyCard key={study.slug} {...study} />
+          <PortfolioCard key={study.slug} {...study} />
         ))}
       </div>
     </section>
