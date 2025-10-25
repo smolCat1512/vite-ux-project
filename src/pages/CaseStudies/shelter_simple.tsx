@@ -1,6 +1,6 @@
 import shelterHero from "../../assets//shelter-wireframes/shelterHero.png";
 
-const CaseStudyShelter = () => {
+const CaseStudyShelterSimple = () => {
   return (
     <main>
       <main className="p-8 max-w-3xl mx-auto mt-24">
@@ -504,4 +504,4 @@ const CaseStudyShelter = () => {
   );
 };
 
-export default CaseStudyShelter;
+export default CaseStudyShelterSimple;

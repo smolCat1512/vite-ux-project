@@ -6,8 +6,8 @@ import { scrollToSection } from "../utils/scrollToSection";
 import { FaBars, FaXmark } from "react-icons/fa6";
 
 const navItems = [
-  { title: "Case Studies", href: "#case-studies" },
-  { title: "About + CV", href: "#about" },
+  { title: "Technologies", href: "#technologies" },
+  { title: "Portfolio", href: "#portfolio" },
   { title: "What and How", href: "#what-how" },
   { title: "Connect", href: "#connect" },
 ];

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
-import CaseStudies from "../components/Portoflio";
-import WhatAndHow from "../components/WhatAndHow";
+import Portfolio from "../components/Portoflio";
 import Connect from "../components/Connect";
 import Technologies from "../components/Technologies";
 
@@ -13,7 +12,7 @@ const HomePage = () => {
       transition={{ duration: 2 }}
     >
       <section
-        id="me"
+        id="hero"
         className="h-screen flex items-start justify-center pt-36"
       >
         <Hero />
@@ -21,14 +20,8 @@ const HomePage = () => {
       <section id="technologies" className="flex items-start justify-center">
         <Technologies />
       </section>
-      <section
-        id="case-studies"
-        className="flex items-start justify-center"
-      >
-        <CaseStudies />
-      </section>
-      <section id="what-how" className="flex items-start justify-center">
-        <WhatAndHow />
+      <section id="portfolio" className="flex items-start justify-center">
+        <Portfolio />
       </section>
       <footer id="connect" className="flex items-start justify-center">
         <Connect />

@@ -1,4 +1,5 @@
 import React from "react";
+import { TbPencilCode } from "react-icons/tb";
 
 const Logo: React.FC = () => {
   return (
@@ -8,9 +9,8 @@ const Logo: React.FC = () => {
         <span className="relative -top-2 mr-1.5">S</span>
         <span className="relative top-1">H</span>
       </span>
-      {/* HOME Text (Appears on Hover, Slides Up) */}
-      <span className="absolute transition-transform duration-500 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-sky-400">
-        Home
+      <span className="absolute transition-transform duration-500 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-orange-700">
+        <TbPencilCode size="42" className="inline-block mr-1 text-orange-500" />
       </span>
     </div>
   );

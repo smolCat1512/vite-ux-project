@@ -20,14 +20,14 @@ const caseStudies = [
   },
 ];
 
-const CaseStudies = () => {
+const Portfolio = () => {
   return (
-    <section className="my-32 md:w-10/12" id="portfolio">
+    <section className="my-8 md:w-10/12 flex flex-col" id="portfolio">
       <div className="flex justify-center">
         <span className="text-3xl mb-2">Portfolio</span>
       </div>
       <div
-        className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8"
+        className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 items-start"
         id="case-studies"
       >
         {caseStudies.map((study) => (
@@ -38,4 +38,4 @@ const CaseStudies = () => {
   );
 };
 
-export default CaseStudies;
+export default Portfolio;
