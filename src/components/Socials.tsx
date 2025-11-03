@@ -46,7 +46,7 @@ const Socials = () => {
               >
                 <ThemeIcon
                   size="xl"
-                  variant="light"
+                  color="gray"
                   radius="xl"
                   className="cursor-pointer"
                 >
@@ -55,7 +55,7 @@ const Socials = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.label}
-                    className="flex items-center justify-center w-full h-full text-gray-600"
+                    className="flex items-center justify-center w-full h-full text-neutral-100"
                   >
                     <IconComponent size={24} />
                   </a>
