@@ -9,15 +9,25 @@ const caseStudies = [
     role: "Resarch, Design, Frontend Development, Design System",
     image: Shelter,
     slug: "shelter",
+    site: "https://england.shelter.org.uk/get_help/webchat"
   },
   {
-    title: "Project NFCC",
+    title: "NFCC",
     description:
       "Digital service development for the National Foundation for Credit Counseling.",
     role: "Research, Design, Frontend Development",
     image: NFCC,
     slug: "nfcc",
+    site: "https://www.nfcc.org/"
   },
+  {
+    title: "Project Shane",
+    description: "LGBTQIA+ safety and inclusivity app",
+    role: "Research, Design, Frontend Development",
+    image: "https://via.placeholder.com/300",
+    slug: "shane",
+    site: "https://getshane.io/"
+  }
 ];
 
 const Portfolio = () => {
