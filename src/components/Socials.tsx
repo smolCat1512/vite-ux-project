@@ -48,7 +48,7 @@ const Socials = () => {
                   size="xl"
                   color="gray"
                   radius="xl"
-                  className="cursor-pointer"
+                  className="cursor-pointer backdrop-blur-lg bg-gradient-to-r from-blue-100[.50] to-blue-200 border border-gray-200"
                 >
                   <a
                     href={link.href}

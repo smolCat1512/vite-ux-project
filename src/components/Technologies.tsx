@@ -112,7 +112,7 @@ const Technologies = () => {
         {technologies.map((tech) => (
           <motion.div
             key={tech.name}
-            className="flex flex-row p-4 border rounded-4xl border-gray-200 align-middle justify-center gap-4 w-42"
+            className="flex flex-row p-4 border rounded-4xl border-gray-200 align-middle justify-center gap-4 w-42 backdrop-blur-lg bg-gradient-to-r from-blue-100[.50] to-blue-200"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
