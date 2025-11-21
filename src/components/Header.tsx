@@ -47,92 +47,118 @@ const Header = () => {
   }, [isOpen]);
 
   // Close menu when a nav item is clicked
-  const handleNavClick = (item: typeof navItems[0]) => {
+  const handleNavClick = (item: (typeof navItems)[0]) => {
     setIsOpen(false);
     scrollToSection(item.href, location.pathname, navigate);
   };
 
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (isOpen && closeButtonRef.current) {
+      closeButtonRef.current.focus();
+    }
+  }, [isOpen]);
+
   return (
-    <motion.header
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-lg p-4 flex items-center justify-between z-50"
-    >
-      <button onClick={handleLogoClick} aria-label="Go to top of home page">
-        <Logo />
-      </button>
-
-      {/* Desktop Navigation */}
-      <nav className="hidden md:block primary-navigation">
-        <ul className="flex space-x-6">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <button
-                onClick={() =>
-                  scrollToSection(item.href, location.pathname, navigate)
-                }
-                className="text-lg cursor-pointer hover:text-fuchsia-900 transition-colors duration-300 relative group"
-              >
-                {item.title}
-                <span className="absolute top-8 left-0 w-full h-0.5 bg-cyan-400 transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden text-fuchsia-900 primary-navigation"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle Navigation Menu"
+    <>
+      {/* Skip-to-content link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-white focus:text-black p-2 rounded"
       >
-        {isOpen ? <FaXmark size={28} /> : <FaBars size={28} />}
-      </button>
+        Skip to main content
+      </a>
+      <motion.header
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-lg p-4 flex items-center justify-between z-50"
+      >
+        <button onClick={handleLogoClick} aria-label="Go to top of home page">
+          <Logo />
+        </button>
 
-      {/* Mobile Navigation Panel */}
-      {isOpen && (
-        <>
-          {/* Overlay backdrop */}
-          <div
-            className="fixed inset-0 bg-opacity-50 md:hidden z-40"
-            onClick={() => setIsOpen(false)}
-            aria-hidden="true"
-          />
-          
-          {/* Menu */}
-          <motion.div
-            ref={menuRef}
-            initial={{ y: "-100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 h-fit w-full bg-fuchsia-900 bg-opacity-95 p-6 flex flex-col space-y-4 md:hidden z-50 overflow-y-auto"
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="self-end text-white hover:text-cyan-400 transition-colors mb-4"
-              aria-label="Close Navigation Menu"
-            >
-              <FaXmark size={32} />
-            </button>
-
-            {/* Navigation Items */}
+        {/* Desktop Navigation */}
+        <nav
+          className="hidden md:block primary-navigation"
+          aria-label="Primary"
+        >
+          <ul className="flex space-x-6">
             {navItems.map((item) => (
-              <button
-                key={item.href}
-                className="text-white text-lg hover:text-cyan-400 transition-colors text-left"
-                onClick={() => handleNavClick(item)}
-              >
-                {item.title}
-              </button>
+              <li key={item.href}>
+                <a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href, location.pathname, navigate);
+                  }}
+                  className="text-lg cursor-pointer hover:text-fuchsia-900 transition-colors duration-300 relative group"
+                >
+                  {item.title}
+                  <span className="absolute top-8 left-0 w-full h-0.5 bg-cyan-400 transform scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                </a>
+              </li>
             ))}
-          </motion.div>
-        </>
-      )}
-    </motion.header>
+          </ul>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-fuchsia-900 primary-navigation"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Navigation Menu"
+        >
+          {isOpen ? <FaXmark size={28} /> : <FaBars size={28} />}
+        </button>
+
+        {/* Mobile Navigation Panel */}
+        {isOpen && (
+          <>
+            {/* Overlay backdrop */}
+            <div
+              className="fixed inset-0 bg-opacity-50 md:hidden z-40"
+              onClick={() => setIsOpen(false)}
+              aria-hidden="true"
+              tabIndex={-1}
+            />
+
+            {/* Menu */}
+            <motion.div
+              ref={menuRef}
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ duration: 0.4 }}
+              className="fixed top-0 right-0 h-fit w-full bg-fuchsia-900 bg-opacity-95 p-6 flex flex-col space-y-4 md:hidden z-50 overflow-y-auto"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile Navigation"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="self-end text-white hover:text-cyan-400 transition-colors mb-4"
+                aria-label="Close Navigation Menu"
+                ref={closeButtonRef}
+              >
+                <FaXmark size={32} />
+              </button>
+
+              {/* Navigation Items */}
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  className="text-white text-lg hover:text-cyan-400 transition-colors text-left"
+                  onClick={() => handleNavClick(item)}
+                >
+                  {item.title}
+                </a>
+              ))}
+            </motion.div>
+          </>
+        )}
+      </motion.header>
+    </>
   );
 };
 

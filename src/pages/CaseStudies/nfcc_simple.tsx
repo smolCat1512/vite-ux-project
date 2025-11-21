@@ -1,7 +1,8 @@
+import Main from "../../utils/Main";
+
 const CaseStudyNFCC = () => {
   return (
-    <main>
-      <div className="p-8 max-w-3xl mx-auto mt-32 md:mt-24">
+      <Main className="p-8 max-w-3xl mx-auto mt-32 md:mt-24">
         <h1 className="text-4xl font-bold">NFCC</h1>
         <p className="text-gray-300">
           A redesign of a major e-commerce platform to improve UX and conversion
@@ -38,8 +39,7 @@ const CaseStudyNFCC = () => {
 
         <h2 className="text-2xl font-bold mt-6">Final Designs</h2>
         <p className="text-lg">Here is a showcase of the final UI designs.</p>
-      </div>
-    </main>
+      </Main>
   );
 };
 

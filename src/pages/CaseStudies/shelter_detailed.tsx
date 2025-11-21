@@ -1,9 +1,9 @@
 import shelterHero from "../../assets//shelter-wireframes/shelterHero.png";
+import Main from "../../utils/Main";
 
 const CaseStudyShelterDetailed = () => {
   return (
-    <main>
-      <main className="p-8 md:w-8/12 mx-auto mt-24">
+      <Main className="p-8 md:w-8/12 mx-auto mt-24">
         <div className="flex flex-row gap-4">
           <h1 className="text-4xl font-bold py-8 text-red-500">Shelter</h1>
           <span className="text-4xl font-bold py-8">
@@ -499,8 +499,7 @@ const CaseStudyShelterDetailed = () => {
             project lifecycle.
           </p>
         </section>
-      </main>
-    </main>
+      </Main>
   );
 };
 
