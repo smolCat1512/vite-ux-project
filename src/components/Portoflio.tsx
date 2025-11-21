@@ -6,10 +6,10 @@ const caseStudies = [
   {
     title: "Shelter",
     description: "Digital Advice Webchat development and migration.",
-    role: "Resarch, Design, Frontend Development, Design System",
+    role: "Research, Design, Frontend Development, Design System",
     image: Shelter,
     slug: "shelter",
-    site: "https://england.shelter.org.uk/get_help/webchat"
+    site: "https://england.shelter.org.uk/get_help/webchat",
   },
   {
     title: "NFCC",
@@ -18,7 +18,7 @@ const caseStudies = [
     role: "Research, Design, Frontend Development",
     image: NFCC,
     slug: "nfcc",
-    site: "https://www.nfcc.org/"
+    site: "https://www.nfcc.org/",
   },
   {
     title: "Project Shane",
@@ -26,22 +26,29 @@ const caseStudies = [
     role: "Research, Design, Frontend Development",
     image: "https://via.placeholder.com/300",
     slug: "shane",
-    site: "https://getshane.io/"
-  }
+    site: "https://getshane.io/",
+  },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="my-8 md:w-10/12 flex flex-col" id="portfolio">
+    <section
+      className="my-8 md:w-10/12 flex flex-col"
+      id="portfolio"
+      aria-label="Portfolio Case Studies"
+    >
       <div className="flex justify-center">
-        <span className="text-3xl mb-2">Portfolio</span>
+        <h2 className="text-3xl mb-2">Portfolio</h2>
       </div>
       <div
         className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 items-start"
         id="case-studies"
+        role="list"
       >
         {caseStudies.map((study) => (
-          <PortfolioCard key={study.slug} {...study} />
+          <div role="listitem" key={study.slug}>
+            <PortfolioCard {...study} />
+          </div>
         ))}
       </div>
     </section>

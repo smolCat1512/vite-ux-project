@@ -17,6 +17,7 @@ const Header = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleLogoClick = () => {
     if (location.pathname === "/" && location.hash) {
@@ -27,6 +28,12 @@ const Header = () => {
     } else {
       navigate("/");
     }
+  };
+
+  // Handles clicking a nav item (desktop or mobile)
+  const handleNavClick = (item: (typeof navItems)[0]) => {
+    setIsOpen(false);
+    scrollToSection(item.href, location.pathname, navigate);
   };
 
   // Close menu when clicking outside
@@ -40,24 +47,50 @@ const Header = () => {
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
 
-  // Close menu when a nav item is clicked
-  const handleNavClick = (item: (typeof navItems)[0]) => {
-    setIsOpen(false);
-    scrollToSection(item.href, location.pathname, navigate);
-  };
-
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-
+  // Focus the close button when menu opens
   useEffect(() => {
     if (isOpen && closeButtonRef.current) {
       closeButtonRef.current.focus();
     }
+  }, [isOpen]);
+
+  // Focus trap for mobile menu
+  useEffect(() => {
+    const handleTab = (e: KeyboardEvent) => {
+      if (!isOpen || !menuRef.current) return;
+
+      const focusable = menuRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const firstEl = focusable[0];
+      const lastEl = focusable[focusable.length - 1];
+
+      if (e.key === "Tab") {
+        if (e.shiftKey) {
+          // Shift + Tab
+          if (document.activeElement === firstEl) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else {
+          // Tab
+          if (document.activeElement === lastEl) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleTab);
+    return () => document.removeEventListener("keydown", handleTab);
   }, [isOpen]);
 
   return (
@@ -69,13 +102,19 @@ const Header = () => {
       >
         Skip to main content
       </a>
+
       <motion.header
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-lg p-4 flex items-center justify-between z-50"
       >
-        <button onClick={handleLogoClick} aria-label="Go to top of home page">
+        {/* Logo */}
+        <button
+          onClick={handleLogoClick}
+          aria-label="Go to top of home page"
+          className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+        >
           <Logo />
         </button>
 
@@ -88,9 +127,12 @@ const Header = () => {
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
+                  href={item.href}
                   onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href, location.pathname, navigate);
+                    if (location.pathname === "/") {
+                      e.preventDefault();
+                      handleNavClick(item);
+                    }
                   }}
                   className="text-lg cursor-pointer hover:text-fuchsia-900 transition-colors duration-300 relative group"
                 >
@@ -106,7 +148,7 @@ const Header = () => {
         <button
           className="md:hidden text-fuchsia-900 primary-navigation"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Navigation Menu"
+          aria-label={isOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
         >
           {isOpen ? <FaXmark size={28} /> : <FaBars size={28} />}
         </button>
@@ -122,7 +164,7 @@ const Header = () => {
               tabIndex={-1}
             />
 
-            {/* Menu */}
+            {/* Mobile Menu */}
             <motion.div
               ref={menuRef}
               initial={{ y: "-100%" }}
@@ -137,7 +179,7 @@ const Header = () => {
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="self-end text-white hover:text-cyan-400 transition-colors mb-4"
+                className="self-end text-white hover:text-cyan-400 transition-colors mb-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
                 aria-label="Close Navigation Menu"
                 ref={closeButtonRef}
               >
@@ -148,8 +190,9 @@ const Header = () => {
               {navItems.map((item) => (
                 <a
                   key={item.href}
-                  className="text-white text-lg hover:text-cyan-400 transition-colors text-left"
+                  href={item.href}
                   onClick={() => handleNavClick(item)}
+                  className="text-white text-lg hover:text-cyan-400 transition-colors text-left"
                 >
                   {item.title}
                 </a>

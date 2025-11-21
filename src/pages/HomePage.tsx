@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Hero from "../components/Hero";
 import Portfolio from "../components/Portoflio";
 import Connect from "../components/Connect";
@@ -6,32 +6,51 @@ import Technologies from "../components/Technologies";
 import Main from "../utils/Main";
 
 const HomePage = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <>
       <Main>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={shouldReduceMotion ? {} : { opacity: 0 }}
+          animate={shouldReduceMotion ? {} : { opacity: 1 }}
           transition={{ duration: 2 }}
         >
+          {/* Hero Section */}
           <section
             id="hero"
             className="h-screen flex items-start justify-center pt-36"
+            aria-label="Introduction"
           >
             <Hero />
           </section>
+
+          {/* Technologies Section */}
           <section
             id="technologies"
             className="flex items-start justify-center"
+            aria-label="Technologies I use"
           >
             <Technologies />
           </section>
-          <section id="portfolio" className="flex items-start justify-center">
+
+          {/* Portfolio Section */}
+          <section
+            id="portfolio"
+            className="flex items-start justify-center"
+            aria-label="Portfolio"
+          >
             <Portfolio />
           </section>
         </motion.div>
       </Main>
-      <footer id="connect" className="flex items-start justify-center">
+
+      {/* Footer / Connect Section */}
+      <footer
+        id="connect"
+        className="flex items-start justify-center"
+        aria-label="Connect"
+      >
         <Connect />
       </footer>
     </>
