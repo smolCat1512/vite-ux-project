@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Box } from "@mantine/core";
 import { motion, useReducedMotion } from "framer-motion";
 import { FaReact, FaPython, FaAws, FaGitAlt } from "react-icons/fa";
@@ -103,6 +104,17 @@ const technologies = [
 
 const Technologies = () => {
   const shouldReduceMotion = useReducedMotion();
+  const [jiggleIndex, setJiggleIndex] = useState<number | null>(null);
+
+  // Pick a random item every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const random = Math.floor(Math.random() * technologies.length);
+      setJiggleIndex(random);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -115,7 +127,7 @@ const Technologies = () => {
         className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center align-middle mt-18 mb-18"
         role="list"
       >
-        {technologies.map((tech) => (
+        {technologies.map((tech, index) => (
           <motion.div
             key={tech.name}
             className="flex flex-row p-4 border rounded-4xl border-gray-200 align-middle justify-center gap-4 w-42 backdrop-blur-lg bg-gradient-to-r from-blue-100[.50] to-blue-200"
@@ -124,9 +136,21 @@ const Technologies = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             role="listitem"
+            animate={
+              jiggleIndex === index
+                ? {
+                    rotate: [0, -10, 10, -10, 10, 0],
+                    transition: { duration: 0.6 },
+                  }
+                : {}
+            }
           >
             <p className="font-semibold">{tech.name}</p>
-            <tech.icon size={24} className="text-neutral-700" aria-hidden="true" />
+            <tech.icon
+              size={24}
+              className="text-neutral-700"
+              aria-hidden="true"
+            />
           </motion.div>
         ))}
       </Box>
