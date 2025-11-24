@@ -12,21 +12,27 @@ type CaseStudyCardProps = {
   site: string;
 };
 
-const PortfolioCard = ({ title, role, image, slug, site }: CaseStudyCardProps) => {
+const PortfolioCard = ({
+  title,
+  role,
+  image,
+  slug,
+  site,
+}: CaseStudyCardProps) => {
   const [, setIsHovered] = useState(false);
 
   const isMobile = () => window.innerWidth <= 768;
 
   return (
     <article className="flex flex-col items-center justify-center">
-      <div
-        className="md:relative md:overflow-hidden"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+      <Link
+        to={`/case-studies/${slug}`}
+        className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
       >
-        <Link
-          to={`/case-studies/${slug}`}
-          className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+        <div
+          className="md:relative md:overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <img
             src={image}
@@ -37,8 +43,8 @@ const PortfolioCard = ({ title, role, image, slug, site }: CaseStudyCardProps) =
                 : "w-full px-2"
             }`}
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       <Box className="px-4 py-2 mt-6 text-start w-full md:w-80">
         <h3 className="text-start font-semibold">{title}</h3>

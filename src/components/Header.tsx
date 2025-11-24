@@ -8,7 +8,6 @@ import { FaBars, FaXmark } from "react-icons/fa6";
 const navItems = [
   { title: "Technologies", href: "#technologies" },
   { title: "Portfolio", href: "#portfolio" },
-  { title: "What and How", href: "#what-how" },
   { title: "Connect", href: "#connect" },
 ];
 
