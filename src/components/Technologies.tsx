@@ -142,7 +142,7 @@ const Technologies = () => {
                     rotate: [0, -10, 10, -10, 10, 0],
                     transition: { duration: 0.6 },
                   }
-                : {}
+                : { rotate: 0, transition: { duration: 0.2 } }
             }
           >
             <p className="font-semibold">{tech.name}</p>
