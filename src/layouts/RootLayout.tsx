@@ -14,6 +14,9 @@ const RootLayout = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <a href="#main-content" className="sr-only focus:not-sr-only">
+        Skip to main content
+      </a>
       <Header />
       <Main>
         <Outlet />

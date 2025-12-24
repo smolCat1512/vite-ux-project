@@ -1,27 +1,32 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ThemeIcon } from "@mantine/core";
 import CV from "../assets/Shaun Halliday CV.pdf";
-import { FaLinkedinIn, FaEnvelope, FaFileLines, FaGithub } from "react-icons/fa6";
+import {
+  FaLinkedinIn,
+  FaEnvelope,
+  FaFileLines,
+  FaGithub,
+} from "react-icons/fa6";
 
 const socialLinks = [
   {
     icon: FaLinkedinIn,
-    label: "LinkedIn",
+    label: "LinkedIn profile",
     href: "https://www.linkedin.com/in/shaun-halliday-5001a6b2/",
   },
   {
     icon: FaEnvelope,
-    label: "Email",
+    label: "Email me",
     href: "mailto:shaunhalliday1512@gmail.com",
   },
   {
     icon: FaFileLines,
-    label: "CV",
+    label: "View CV",
     href: CV,
   },
   {
     icon: FaGithub,
-    label: "GitHub",
+    label: "GitHub profile",
     href: "https://github.com/yourprofile",
   },
 ];
@@ -32,9 +37,16 @@ const Socials = () => {
   return (
     <motion.nav
       className="p-4 flex justify-center"
-      initial={{ scale: 0.8, opacity: 0 }}
+      initial={
+        shouldReduceMotion
+          ? { scale: 1, opacity: 1 }
+          : { scale: 0.8, opacity: 0 }
+      }
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1.5, delay: 1 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 1.5,
+        delay: shouldReduceMotion ? 0 : 1,
+      }}
       aria-label="Social links"
     >
       <ul className="flex flex-row justify-center gap-4">
@@ -59,7 +71,7 @@ const Socials = () => {
                     aria-label={link.label}
                     className="flex items-center justify-center w-full h-full text-neutral-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
                   >
-                    <IconComponent size={24} />
+                    <IconComponent size={24} aria-hidden="true" />
                   </a>
                 </ThemeIcon>
               </motion.div>

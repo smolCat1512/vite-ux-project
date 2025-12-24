@@ -108,25 +108,19 @@ const Technologies = () => {
 
   // Pick a random item every 3 seconds
   useEffect(() => {
+    if (shouldReduceMotion) return; // Don't animate if user prefers reduced motion
+
     const interval = setInterval(() => {
       const random = Math.floor(Math.random() * technologies.length);
       setJiggleIndex(random);
     }, 3000);
-
     return () => clearInterval(interval);
-  }, []);
+  }, [shouldReduceMotion]);
 
   return (
-    <section
-      className="p-4 justify-center md:w-8/12 text-center mb-8"
-      id="technologies"
-      aria-label="Technologies I use"
-    >
+    <div className="p-4 justify-center md:w-8/12 text-center mb-8">
       <h2 className="text-3xl">Technologies</h2>
-      <Box
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center align-middle mt-18 mb-18"
-        role="list"
-      >
+      <Box className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center align-middle mt-18 mb-18">
         {technologies.map((tech, index) => (
           <motion.div
             key={tech.name}
@@ -135,7 +129,6 @@ const Technologies = () => {
             whileInView={shouldReduceMotion ? {} : { y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            role="listitem"
             animate={
               jiggleIndex === index
                 ? {
@@ -154,7 +147,7 @@ const Technologies = () => {
           </motion.div>
         ))}
       </Box>
-    </section>
+    </div>
   );
 };
 

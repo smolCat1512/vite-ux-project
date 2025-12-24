@@ -1,4 +1,5 @@
-import { type ReactNode, useEffect, useRef } from "react";
+// components/Main.tsx
+import type { ReactNode } from "react";
 
 interface MainProps {
   children: ReactNode;
@@ -6,16 +7,8 @@ interface MainProps {
 }
 
 const Main = ({ children, className }: MainProps) => {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.focus();
-    }
-  }, []);
-
   return (
-    <main ref={ref} tabIndex={-1} className={className} id="main-content">
+    <main id="main-content" tabIndex={-1} className={className}>
       {children}
     </main>
   );

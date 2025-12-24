@@ -6,19 +6,32 @@ export function scrollToSection(
   navigate: NavigateFunction,
   delay = 50
 ) {
-  if (locationPathname !== "/") {
-    navigate("/", { replace: true } as NavigateOptions);
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  
+  const scrollBehavior = prefersReducedMotion ? "auto" : "smooth";
 
-    setTimeout(() => {
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    }, delay);
-  } else {
+  const scrollAndFocus = () => {
     const target = document.querySelector(href);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      target.scrollIntoView({ behavior: scrollBehavior });
+      
+      // Move focus for screen reader users
+      if (target instanceof HTMLElement) {
+        target.setAttribute('tabindex', '-1');
+        target.focus();
+      }
+      
+      // Update URL
+      window.history.replaceState(null, '', href);
     }
+  };
+
+  if (locationPathname !== "/") {
+    navigate("/", { replace: true } as NavigateOptions);
+    setTimeout(scrollAndFocus, delay);
+  } else {
+    scrollAndFocus();
   }
 }

@@ -32,26 +32,16 @@ const caseStudies = [
 
 const Portfolio = () => {
   return (
-    <section
-      className="my-8 md:w-10/12 flex flex-col"
-      id="portfolio"
-      aria-label="Portfolio Case Studies"
-    >
+    <div className="my-8 md:w-10/12 flex flex-col">
       <div className="flex justify-center">
         <h2 className="text-3xl mb-2">Portfolio</h2>
       </div>
-      <div
-        className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 items-start"
-        id="case-studies"
-        role="list"
-      >
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 p-8 items-start">
         {caseStudies.map((study) => (
-          <div role="listitem" key={study.slug}>
-            <PortfolioCard {...study} />
-          </div>
+          <PortfolioCard key={study.slug} {...study} />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

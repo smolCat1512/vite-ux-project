@@ -1,7 +1,7 @@
 import { Anchor, Box } from "@mantine/core";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { IoOpenOutline } from "react-icons/io5";
+import { useReducedMotion } from "framer-motion";
 
 type CaseStudyCardProps = {
   title: string;
@@ -19,8 +19,7 @@ const PortfolioCard = ({
   slug,
   site,
 }: CaseStudyCardProps) => {
-  const [, setIsHovered] = useState(false);
-
+  const shouldReduceMotion = useReducedMotion();
   const isMobile = () => window.innerWidth <= 768;
 
   return (
@@ -28,18 +27,17 @@ const PortfolioCard = ({
       <Link
         to={`/case-studies/${slug}`}
         className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
+        aria-label={`View ${title} case study`}
       >
-        <div
-          className="md:relative md:overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+        <div className="md:relative md:overflow-hidden">
           <img
             src={image}
-            alt={title}
+            alt={`Screenshot of ${title} project`}
             className={`transition-transform duration-300 ${
               !isMobile()
-                ? "h-80 w-80 px-2 hover:opacity-70 hover:scale-110"
+                ? `h-80 w-80 px-2 hover:opacity-70 ${
+                    shouldReduceMotion ? "" : "hover:scale-110"
+                  }`
                 : "w-full px-2"
             }`}
           />
@@ -56,7 +54,7 @@ const PortfolioCard = ({
           className="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
           aria-label={`Visit live site for ${title}`}
         >
-          <IoOpenOutline className="inline mb-1 mr-1" />
+          <IoOpenOutline className="inline mb-1 mr-1" aria-hidden="true" />
           Live Site
         </Anchor>
       </Box>

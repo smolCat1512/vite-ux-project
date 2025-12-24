@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="group relative flex items-center justify-center w-16 h-16 border-2 border-purple-700 text-white font-bold text-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      className="group relative flex items-center justify-center w-16 h-16 border-2 border-purple-700 text-white font-bold text-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-700 focus-visible:ring-2 focus-visible:ring-purple-700"
       aria-label="Go to home page"
     >
       {/* Initial letters */}
