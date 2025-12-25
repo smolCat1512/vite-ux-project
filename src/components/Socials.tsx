@@ -17,7 +17,7 @@ const socialLinks = [
   {
     icon: FaEnvelope,
     label: "Email me",
-    href: "mailto:shaunhalliday1512@gmail.com",
+    href: "mailto:shaunuxuidev@gmail.com",
   },
   {
     icon: FaFileLines,
