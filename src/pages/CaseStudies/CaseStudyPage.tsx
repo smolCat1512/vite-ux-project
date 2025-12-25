@@ -1,9 +1,12 @@
+import { useParams } from "react-router-dom";
 import CaseStudyDetail from "./CaseStudyDetail";
 import { caseStudiesData } from "./caseStudiesData";
 
-const CaseStudyShelter = () => {
+const CaseStudyPage = () => {
+  const { slug } = useParams<{ slug: string }>();
+
   const index = caseStudiesData.findIndex(
-    (cs) => cs.id === "shelter"
+    (study: { id: string | undefined; }) => study.id === slug
   );
 
   if (index === -1) {
@@ -31,4 +34,4 @@ const CaseStudyShelter = () => {
   );
 };
 
-export default CaseStudyShelter;
+export default CaseStudyPage;
