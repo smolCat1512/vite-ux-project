@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: "Project Shane",
     summary: "LGBTQIA+ safety and inclusivity mobile concept.",
     role: "Research, Design, Frontend Development",
-    cardImage: "https://via.placeholder.com/600x600",
+    cardImage: "",
     liveUrl: "https://getshane.io/",
     hasCaseStudy: false,
   },
