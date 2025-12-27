@@ -5,7 +5,7 @@ export interface Project {
   id: string;
   title: string;
   summary: string;
-  role: string;
+  technologies: string;
   cardImage: string;
   liveUrl?: string;
 
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     id: "shelter",
     title: "Shelter",
     summary: "Digital advice webchat for people facing housing issues.",
-    role: "Research, Design, Frontend Development, Design System",
+    technologies: "React, TypeScript, Figma",
     cardImage: ShelterCard,
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
     hasCaseStudy: true,
@@ -27,16 +27,16 @@ export const projects: Project[] = [
     id: "nfcc",
     title: "NFCC",
     summary: "Financial counselling platform for the US nonprofit sector.",
-    role: "Research, Design, Frontend Development",
+    technologies: "React, TypeScript, Figma, Twilio Paste",
     cardImage: NFCCCard,
     liveUrl: "https://www.nfcc.org/",
     hasCaseStudy: true,
   },
   {
     id: "shane",
-    title: "Project Shane",
+    title: "Shane",
     summary: "LGBTQIA+ safety and inclusivity mobile concept.",
-    role: "Research, Design, Frontend Development",
+    technologies: "Tamagui, React Native, TypeScript",
     cardImage: "",
     liveUrl: "https://getshane.io/",
     hasCaseStudy: false,

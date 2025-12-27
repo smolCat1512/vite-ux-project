@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { IoOpenOutline } from "react-icons/io5";
 import type { Project } from "../pages/CaseStudies/projectsData";
+import { Box } from "@mantine/core";
 
 const PortfolioCard = ({
   id,
   title,
-  role,
+  technologies,
   cardImage,
   liveUrl,
 }: Project) => {
@@ -19,15 +20,17 @@ const PortfolioCard = ({
         <img
           src={cardImage}
           alt={`Screenshot of ${title}`}
-          className="w-full h-80 object-cover transition-transform duration-300 hover:scale-105"
+          className="w-full h-50 object-cover transition-transform duration-300 hover:opacity-80"
         />
       </Link>
 
-      <div className="mt-4">
-        <h3 className="font-semibold">{title}</h3>
-        <p className="text-sm italic text-gray-500 mb-2">
-          Role: {role}
+      <Box className="mt-4 flex flex-row justify-between items-start">
+        <Box className="flex flex-col gap-1">
+        <h3 className="font-semibold text-xl">{title}</h3>
+        <p className="text-sm italic text-gray-600 mb-2">
+          {technologies}
         </p>
+        </Box>
 
         {liveUrl && (
           <a
@@ -36,11 +39,10 @@ const PortfolioCard = ({
             rel="noopener noreferrer"
             className="inline-flex items-center text-sm"
           >
-            <IoOpenOutline className="mr-1" />
-            Live site
+            <IoOpenOutline size="24" title="Open live site" className="mr-1" />
           </a>
         )}
-      </div>
+      </Box>
     </article>
   );
 };
