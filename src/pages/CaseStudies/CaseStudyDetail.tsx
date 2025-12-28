@@ -1,5 +1,3 @@
-// CaseStudyDetail.tsx
-
 import { useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import type { CaseStudy } from "./caseStudiesData";
