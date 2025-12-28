@@ -23,7 +23,7 @@ export const projects: Project[] = [
     technologies: "React, TypeScript, Figma",
     cardImage: ShelterCard,
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
-    hasCaseStudy: true,
+    hasCaseStudy: false,
   },
   {
     id: "nfcc",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     technologies: "React, TypeScript, Figma, Twilio Paste",
     cardImage: NFCCCard,
     liveUrl: "https://www.nfcc.org/",
-    hasCaseStudy: true,
+    hasCaseStudy: false,
   },
   {
     id: "shane",
