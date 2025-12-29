@@ -1,15 +1,25 @@
-/* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState, type ReactNode } from "react";
-import { MantineProvider, type MantineThemeOverride } from "@mantine/core";
-import { themeDefinitions, type ThemeName } from "./themeDefinitions";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
+import { MantineProvider } from "@mantine/core";
+import { themeDefinitions } from "./themeDefinitions";
+import type { ThemeName } from "./themeDefinitions";
+import type { Dispatch, SetStateAction} from "react";
 
 interface ThemeContextProps {
   themeName: ThemeName;
-  setThemeName: (theme: ThemeName) => void;
+  setThemeName: Dispatch<SetStateAction<ThemeName>>;
   toggleTheme: () => void;
 }
 
-export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+// eslint-disable-next-line react-refresh/only-export-components
+export const ThemeContext = createContext<ThemeContextProps | undefined>(
+  undefined
+);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [themeName, setThemeName] = useState<ThemeName>("light");
@@ -18,7 +28,20 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setThemeName((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  const currentTheme: MantineThemeOverride = themeDefinitions[themeName];
+  const currentTheme = themeDefinitions[themeName];
+  useEffect(() => {
+    document.body.style.backgroundColor = currentTheme.background;
+    document.body.style.color = currentTheme.text;
+
+    document.documentElement.style.setProperty(
+      "--mantine-color-background",
+      currentTheme.background
+    );
+    document.documentElement.style.setProperty(
+      "--mantine-color-text",
+      currentTheme.text
+    );
+  }, [themeName, currentTheme]);
 
   return (
     <ThemeContext.Provider value={{ themeName, setThemeName, toggleTheme }}>
@@ -27,8 +50,10 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useThemeController = () => {
   const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useThemeController must be used within ThemeProvider");
+  if (!ctx)
+    throw new Error("useThemeController must be used within ThemeProvider");
   return ctx;
 };

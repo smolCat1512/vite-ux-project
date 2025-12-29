@@ -9,7 +9,7 @@ const HomePage = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <>
+    <Box>
       <motion.div
         initial={shouldReduceMotion ? {} : { opacity: 0 }}
         animate={shouldReduceMotion ? {} : { opacity: 1 }}
@@ -56,7 +56,7 @@ const HomePage = () => {
       <footer id="connect" className="flex items-start justify-center">
         <Connect />
       </footer>
-    </>
+    </Box>
   );
 };
 

@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Socials from "./Socials";
-import { Typography } from "@mantine/core";
+import { Box, Typography } from "@mantine/core";
 import { FaChevronDown } from "react-icons/fa6";
 
 const Hero = () => {
@@ -19,8 +19,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="text-center justify-center mx-auto w-10/12 md:w-auto lg:w-auto">
+    <Box className="flex flex-col">
+      <Box className="text-center justify-center mx-auto w-10/12 md:w-auto lg:w-auto">
         {/* Main heading */}
         <motion.div
           className="flex flex-row items-center justify-center pb-4"
@@ -31,10 +31,10 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: shouldReduceMotion ? 0 : 1 }}
         >
-          <h1 className="text-3xl font-bold">
+          <Typography className="text-3xl font-bold">
             Hi, I'm <span className="text-orange-700">Shaun</span>, I design
             and build for <span className="text-orange-700">users</span>
-          </h1>
+          </Typography>
         </motion.div>
 
         {/* Subheading */}
@@ -73,7 +73,7 @@ const Hero = () => {
         </motion.div>
 
         <Socials />
-      </div>
+      </Box>
 
       {/* Scroll down arrow */}
       <div className="mt-32 flex justify-center">
@@ -99,7 +99,7 @@ const Hero = () => {
           </button>
         </motion.div>
       </div>
-    </div>
+    </Box>
   );
 };
 

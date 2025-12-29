@@ -16,8 +16,8 @@ html {
 /* Body uses variables, default font */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--mantine-color-background);
+  color: var(--mantine-color-text);
 }
 
 /* Theme-specific classes */
@@ -60,6 +60,15 @@ body.forest {
 }
 
 /* Optional: other global styling (links, headings, etc.) can inherit --foreground */
-a, p, h1, h2, h3, h4, h5, h6, span, button {
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+button {
   color: var(--foreground);
 }
