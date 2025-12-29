@@ -5,10 +5,8 @@ import type { ThemeName } from "../theme/themeDefinitions";
 
 const themeOptions: ThemeName[] = ["light", "dark", "synthwave", "forest"];
 
-const ThemePicker = () => {
+const HeaderThemeSwitch = () => {
   const { themeName, setThemeName } = useThemeController();
-
-  if (!themeName || !setThemeName) return null;
 
   return (
     <Menu shadow="md" width={200}>
@@ -25,6 +23,7 @@ const ThemePicker = () => {
             onClick={() => setThemeName(theme)}
             style={{
               fontWeight: themeName === theme ? 700 : 400,
+              // Optional: reflect theme color in menu item text
               color:
                 themeName === theme
                   ? theme === "synthwave"
@@ -45,4 +44,4 @@ const ThemePicker = () => {
   );
 };
 
-export default ThemePicker;
+export default HeaderThemeSwitch;

@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Portfolio from "../components/Portoflio";
 import Connect from "../components/Connect";
 import Technologies from "../components/Technologies";
+import { Box } from "@mantine/core";
 
 const HomePage = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -15,7 +16,7 @@ const HomePage = () => {
         transition={{ duration: 2 }}
       >
         {/* Hero Section */}
-        <section
+        <Box
           id="hero"
           className="h-screen flex items-start justify-center pt-36"
           aria-labelledby="hero-heading"
@@ -24,7 +25,7 @@ const HomePage = () => {
             Introduction
           </h2>
           <Hero />
-        </section>
+        </Box>
 
         {/* Technologies Section */}
         <section

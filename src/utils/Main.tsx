@@ -1,4 +1,4 @@
-// components/Main.tsx
+import { Box } from "@mantine/core";
 import type { ReactNode } from "react";
 
 interface MainProps {
@@ -8,9 +8,9 @@ interface MainProps {
 
 const Main = ({ children, className }: MainProps) => {
   return (
-    <main id="main-content" tabIndex={-1} className={className}>
+    <Box id="main-content" tabIndex={-1} className={className}>
       {children}
-    </main>
+    </Box>
   );
 };
 

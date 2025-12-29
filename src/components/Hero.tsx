@@ -50,7 +50,7 @@ const Hero = () => {
             delay: shouldReduceMotion ? 0 : 0.2,
           }}
         >
-          <Typography className="text-gray-600 text-center text-2xl">
+          <Typography className="text-center text-2xl">
             Software Engineer and UX/UI Engineer
           </Typography>
         </motion.div>
@@ -67,7 +67,7 @@ const Hero = () => {
             delay: shouldReduceMotion ? 0 : 0.5,
           }}
         >
-          <Typography className="text-2xl text-gray-600 text-center w-10/12 mx-auto md:w-2/3 pb-4">
+          <Typography className="text-2xl text-center w-10/12 mx-auto md:w-2/3 pb-4">
             I create user-centered digital experiences
           </Typography>
         </motion.div>
