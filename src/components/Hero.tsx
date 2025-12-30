@@ -2,6 +2,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import Socials from "./Socials";
 import { Box, Typography } from "@mantine/core";
 import { FaChevronDown } from "react-icons/fa6";
+import HeroHeading from "../design-system/hero/HeroHeading";
+import HeroHighlight from "../design-system/hero/HeroHighlight";
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -31,10 +33,10 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: shouldReduceMotion ? 0 : 1 }}
         >
-          <Typography className="text-3xl font-bold">
-            Hi, I'm <span className="text-orange-700">Shaun</span>, I design
-            and build for <span className="text-orange-700">users</span>
-          </Typography>
+          <HeroHeading>
+            Hi, I'm <HeroHighlight>Shaun</HeroHighlight>, I design and build for{" "}
+            <HeroHighlight>users</HeroHighlight>
+          </HeroHeading>
         </motion.div>
 
         {/* Subheading */}
@@ -80,9 +82,7 @@ const Hero = () => {
         <motion.div
           initial={{ y: 0, opacity: shouldReduceMotion ? 1 : 0.3 }}
           animate={
-            shouldReduceMotion
-              ? {}
-              : { y: [0, -10, 0], opacity: [0.3, 1, 0.3] }
+            shouldReduceMotion ? {} : { y: [0, -10, 0], opacity: [0.3, 1, 0.3] }
           }
           transition={
             shouldReduceMotion

@@ -29,19 +29,15 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const currentTheme = themeDefinitions[themeName];
-  useEffect(() => {
-    document.body.style.backgroundColor = currentTheme.background;
-    document.body.style.color = currentTheme.text;
+  const layout = currentTheme.other?.layout;
 
-    document.documentElement.style.setProperty(
-      "--mantine-color-background",
-      currentTheme.background
-    );
-    document.documentElement.style.setProperty(
-      "--mantine-color-text",
-      currentTheme.text
-    );
-  }, [themeName, currentTheme]);
+useEffect(() => {
+  if (!layout) return;
+
+  document.body.style.backgroundColor = layout.background;
+  document.body.style.color = layout.text;
+}, [currentTheme]);
+
 
   return (
     <ThemeContext.Provider value={{ themeName, setThemeName, toggleTheme }}>
