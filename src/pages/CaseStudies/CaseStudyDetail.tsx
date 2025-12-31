@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
-import type { CaseStudy } from "./caseStudiesData";
+import type { CaseStudy } from "./CaseStudiesData";
 
 type CaseStudyDetailProps = CaseStudy & {
   previousStudy?: { title: string; slug: string };
@@ -28,7 +28,7 @@ const CaseStudyDetail = ({
 
   return (
     <motion.article
-      className="max-w-4xl mx-auto px-4 py-8"
+      className="max-w-4xl mx-auto px-4"
       initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

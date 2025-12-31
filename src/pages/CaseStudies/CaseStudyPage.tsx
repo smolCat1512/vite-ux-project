@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import CaseStudyDetail from "./CaseStudyDetail";
-import { caseStudiesData } from "./caseStudiesData";
+import { caseStudiesData } from "./CaseStudiesData";
 
 const CaseStudyPage = () => {
   const { slug } = useParams<{ slug: string }>();

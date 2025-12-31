@@ -3,6 +3,10 @@ import { projects } from "./projectsData";
 import { Box, Button } from "@mantine/core";
 import { FaArrowLeft, FaArrowRight, FaImage, FaHome } from "react-icons/fa";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { FaPencil, FaMagnifyingGlass, FaCode, FaRocket } from "react-icons/fa6";
+import { RiTestTubeFill } from "react-icons/ri";
+import { BsServer } from "react-icons/bs";
+import { IoAccessibility } from "react-icons/io5";
 
 const ProjectSummary = () => {
   const { projectId } = useParams();
@@ -26,15 +30,15 @@ const ProjectSummary = () => {
   return (
     <AnimatePresence mode="wait">
       <motion.article
-        key={project.id} // important for exit/enter to trigger
+        key={project.id}
         initial={shouldReduceMotion ? undefined : motionVariants.initial}
         animate={shouldReduceMotion ? undefined : motionVariants.animate}
         exit={shouldReduceMotion ? undefined : motionVariants.exit}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="mx-auto py-24 px-4 md:w-10/12 lg:w-8/12"
+        className="mx-auto px-4 md:w-10/12 lg:w-8/12 pt-16"
       >
         {/* Header */}
-        <section className="flex flex-col items-center mb-8">
+        <section className="flex flex-col items-center py-6">
           <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
           <p className="text-lg text-gray-500 mb-2">{project.role}</p>
           <p className="text-md text-center">{project.technologies}</p>
@@ -87,7 +91,36 @@ const ProjectSummary = () => {
                 The Process
               </h2>
 
-              <p>Process placeholder text</p>
+              {project.process && project.process.length > 0 && (
+                <ul className="space-y-3">
+                  {project.process.map((step, index) => {
+                    // Map icon names to components
+                    const iconMap: Record<string, React.ElementType> = {
+                      search: FaMagnifyingGlass,
+                      pencil: FaPencil,
+                      code: FaCode,
+                      vial: RiTestTubeFill,
+                      rocket: FaRocket,
+                      server: BsServer,
+                      accessibility: IoAccessibility
+                    };
+
+                    const Icon =
+                      typeof step === "string" ? null : iconMap[step.icon];
+
+                    const text = typeof step === "string" ? step : step.text;
+
+                    return (
+                      <li key={index} className="flex items-start gap-3">
+                        {Icon && (
+                          <Icon className="mt-1 flex-shrink-0" />
+                        )}
+                        <span>{text}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
             </Box>
 
             {/* Navigation */}
