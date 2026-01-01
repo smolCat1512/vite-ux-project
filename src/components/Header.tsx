@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
-import HeaderThemeSwitch from "./HeaderThemeSwitch";
+import HeaderThemeSwitch from "../design-system/header/HeaderThemeSwitch";
 
 const Header = () => {
   const navigate = useNavigate();

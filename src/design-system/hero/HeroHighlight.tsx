@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { useMantineTheme } from "@mantine/core";
+import { getTextGlow } from "../../design-system/utils/glow";
 
 interface HeroHighlightProps {
   children: ReactNode;
@@ -10,17 +11,17 @@ const HeroHighlight = ({ children }: HeroHighlightProps) => {
 
   const highlight = theme.other?.hero?.highlight;
 
-  const color = highlight?.color ?? "#ffee00"; // default neon yellow
+  const color = highlight?.color ?? "#ffee00";
   const glow = highlight?.glow ?? false;
+
+  const textGlow = getTextGlow(color, glow, 1.5);
 
   return (
     <span
       className={glow ? "animate-hero-glow" : ""}
       style={{
         color,
-        textShadow: glow
-          ? `0 0 6px ${color}, 0 0 12px ${color}, 0 0 20px ${color}`
-          : undefined,
+        textShadow: textGlow,
       }}
     >
       {children}
