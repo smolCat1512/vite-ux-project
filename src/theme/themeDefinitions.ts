@@ -195,14 +195,14 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glowColor: "#ffed1a",
         },
         subheading: {
-          color: "#d8b4fe",
+          color: "#2de2e6",
           glow: true,
-          glowColor: "#c084fc",
+          glowColor: "#2de2e6",
         },
         description: {
-          color: "#d8b4fe",
+          color: "#ff8c00",
           glow: true,
-          glowColor: "#c084fc",
+          glowColor: "#ff8c00",
         },
         scrollButton: {
           iconColor: "#ffed1a",
