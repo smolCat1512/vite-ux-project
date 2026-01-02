@@ -1,7 +1,7 @@
 import { Button, useMantineTheme } from "@mantine/core";
 import React from "react";
 import { FaHome } from "react-icons/fa";
-import { getTextGlow, getIconGlow } from "../design-system/utils/glow";
+import { getTextGlow, getIconGlow } from "../utils/glow";
 
 type LogoProps = {
   onClick?: () => void;

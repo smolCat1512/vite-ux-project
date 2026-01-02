@@ -37,6 +37,21 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           color: "#ff6e00",
           glow: false,
         },
+        subheading: {
+          color: "#495057",
+          glow: false,
+        },
+        description: {
+          color: "#6c757d",
+          glow: false,
+        },
+        scrollButton: {
+          iconColor: "#343a40",
+          borderColor: "#343a40",
+          hoverBackground: "rgba(0, 0, 0, 0.05)",
+          focusRing: "#ff6e00",
+          glow: false,
+        },
       },
 
       header: {
@@ -91,6 +106,21 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         highlight: {
           color: "#f59e0b",
+          glow: false,
+        },
+        subheading: {
+          color: "#d1d5db",
+          glow: false,
+        },
+        description: {
+          color: "#9ca3af",
+          glow: false,
+        },
+        scrollButton: {
+          iconColor: "#d1d5db",
+          borderColor: "#6b7280",
+          hoverBackground: "rgba(255, 255, 255, 0.1)",
+          focusRing: "#f59e0b",
           glow: false,
         },
       },
@@ -156,9 +186,29 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       hero: {
         heading: {
           color: "#ff4dc4",
+          glow: true,
+          glowColor: "#ff4dc4",
         },
         highlight: {
           color: "#ffed1a",
+          glow: true,
+          glowColor: "#ffed1a",
+        },
+        subheading: {
+          color: "#d8b4fe",
+          glow: true,
+          glowColor: "#c084fc",
+        },
+        description: {
+          color: "#d8b4fe",
+          glow: true,
+          glowColor: "#c084fc",
+        },
+        scrollButton: {
+          iconColor: "#ffed1a",
+          borderColor: "#ff4dc4",
+          hoverBackground: "rgba(255, 26, 179, 0.2)",
+          focusRing: "#ffed1a",
           glow: true,
           glowColor: "#ffed1a",
         },
@@ -219,6 +269,21 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         highlight: {
           color: "#34d399",
+          glow: false,
+        },
+        subheading: {
+          color: "#a7f3d0",
+          glow: false,
+        },
+        description: {
+          color: "#6ee7b7",
+          glow: false,
+        },
+        scrollButton: {
+          iconColor: "#34d399",
+          borderColor: "#10b981",
+          hoverBackground: "rgba(52, 211, 153, 0.15)",
+          focusRing: "#34d399",
           glow: false,
         },
       },
