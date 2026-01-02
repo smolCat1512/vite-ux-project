@@ -45,6 +45,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
           hoverBg: "#f0f0f0",
         },
+        logo: {
+          color: "#777b7e",
+          glow: false,
+        },
       },
       menu: {
         background: "#ffffff",
@@ -97,6 +101,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
           hoverBg: "#1c1c1c",
         },
+        logo: {
+          color: "#ededed",
+          glow: false,
+        },
       },
 
       menu: {
@@ -148,8 +156,6 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       hero: {
         heading: {
           color: "#ff4dc4",
-          // glow: true,
-          // glowColor: "#ff4dc4",
         },
         highlight: {
           color: "#ffed1a",
@@ -164,6 +170,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: true,
           glowColor: "#ffed1a",
           hoverBg: "#330026",
+        },
+        logo: {
+          color: "#ffed1a",
+          glow: true,
+          glowColor: "#ffed1a",
         },
       },
 
@@ -217,6 +228,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           color: "#d1fae5",
           glow: false,
           hoverBg: "#144620",
+        },
+        logo: {
+          color: "#d1fae5",
+          glow: false,
         },
       },
 
