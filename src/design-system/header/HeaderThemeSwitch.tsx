@@ -41,7 +41,7 @@ const HeaderThemeSwitch = () => {
       <Menu.Target>
         <Button
           leftSection={<FaPalette />}
-          variant="transparent"
+          variant="outline"
           radius="md"
           styles={{
             label: {

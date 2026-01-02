@@ -148,8 +148,8 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       hero: {
         heading: {
           color: "#ff4dc4",
-          glow: true,
-          glowColor: "#ff4dc4",
+          // glow: true,
+          // glowColor: "#ff4dc4",
         },
         highlight: {
           color: "#ffed1a",

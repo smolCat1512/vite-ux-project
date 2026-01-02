@@ -1,5 +1,6 @@
+import { Button } from "@mantine/core";
 import React from "react";
-import { TbPencilCode } from "react-icons/tb";
+import { FaHome } from "react-icons/fa";
 
 type LogoProps = {
   onClick?: () => void;
@@ -11,18 +12,20 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
   ).matches;
 
   return (
-    <button
+    <Button
       onClick={onClick}
-      className="group relative flex items-center justify-center w-16 h-16 border-2 border-purple-700 text-white font-bold text-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-700 focus-visible:ring-2 focus-visible:ring-purple-700"
+      className="group relative flex w-auto font-bold text-xl"
       aria-label="Go to home page"
+      size="md"
+      variant="transparent"
     >
       {/* Initial letters */}
       <span
-        className={`absolute transition-transform duration-500 transform ${
+        className={`absolute transition-transform duration-500 transform left-2 ${
           prefersReducedMotion
             ? ""
             : "translate-y-0 group-hover:-translate-y-10"
-        } opacity-100 group-hover:opacity-0 text-purple-500`}
+        } opacity-100 group-hover:opacity-0`}
         aria-hidden="true"
       >
         <span className="relative -top-2 mr-1.5">S</span>
@@ -31,19 +34,18 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
 
       {/* Icon that appears on hover */}
       <span
-        className={`absolute transition-transform duration-500 transform ${
+        className={`absolute transition-transform duration-500 transform left-2 ${
           prefersReducedMotion ? "" : "translate-y-10 group-hover:translate-y-0"
-        } opacity-0 group-hover:opacity-100 text-orange-700`}
+        } opacity-0 group-hover:opacity-100`}
         aria-hidden="true"
       >
-        <TbPencilCode
-          size="42"
-          className="inline-block mr-1 text-orange-500"
+        <FaHome
+          size="18"
           focusable={false}
           aria-hidden="true"
         />
       </span>
-    </button>
+    </Button>
   );
 };
 
