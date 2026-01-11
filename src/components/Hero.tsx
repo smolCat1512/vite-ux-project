@@ -3,7 +3,7 @@ import Socials from "./Socials";
 import { Box } from "@mantine/core";
 import HeroHeading from "../design-system/hero/HeroHeading";
 import HeroHighlight from "../design-system/hero/HeroHighlight";
-import HeroSubheading from "../design-system/hero/HeroSubHeading";
+import HeroSubheading from "../design-system/hero/HeroSubheading";
 import HeroDescription from "../design-system/hero/HeroDescription";
 import ScrollDownButton from "../design-system/hero/ScrollDownButton";
 

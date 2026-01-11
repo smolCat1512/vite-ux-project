@@ -52,6 +52,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           focusRing: "#ff6e00",
           glow: false,
         },
+        socials: {
+          circleColor: "#e9ecef",
+          iconColor: "#777b7e",
+          glow: false,
+        }
       },
 
       header: {
@@ -123,6 +128,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           focusRing: "#f59e0b",
           glow: false,
         },
+        socials: {
+          circleColor: "#3d3434",
+          iconColor: "#ededed",
+          glow: false,
+        }
       },
 
       header: {
@@ -212,6 +222,12 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: true,
           glowColor: "#ffed1a",
         },
+        socials: {
+          circleColor: "transparent",
+          iconColor: "#2de2e6",
+          glow: true,
+          glowColor: "#2de2e6",
+        }
       },
 
       header: {
@@ -286,6 +302,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           focusRing: "#34d399",
           glow: false,
         },
+        socials: {
+          circleColor: "#064e3b",
+          iconColor: "#d1fae5",
+          glow: false,
+        }
       },
 
       header: {

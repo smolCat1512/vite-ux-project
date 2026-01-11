@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ThemeIcon } from "@mantine/core";
+import { Anchor, List, ThemeIcon, useMantineTheme } from "@mantine/core";
 import CV from "../assets/Shaun Halliday CV.pdf";
 import {
   FaLinkedinIn,
@@ -34,9 +34,16 @@ const socialLinks = [
 const Socials = () => {
   const shouldReduceMotion = useReducedMotion();
 
+  const theme = useMantineTheme();
+  const iconColor =
+    theme.other?.hero?.socials?.iconColor ?? theme.colors.gray[6];
+  const glow = theme.other?.hero?.socials?.glow ?? false;
+  const circleColor =
+    theme.other?.hero?.socials?.circleColor ?? theme.colors.gray[2];
+
   return (
     <motion.nav
-      className="p-4 flex justify-center"
+      className="p-8 flex justify-center"
       initial={
         shouldReduceMotion
           ? { scale: 1, opacity: 1 }
@@ -49,36 +56,50 @@ const Socials = () => {
       }}
       aria-label="Social links"
     >
-      <ul className="flex flex-row justify-center gap-4">
+      <List className="flex flex-row justify-center gap-8">
         {socialLinks.map((link) => {
           const IconComponent = link.icon;
           return (
-            <li key={link.label}>
+            <List.Item key={link.label}>
               <motion.div
                 whileHover={shouldReduceMotion ? {} : { y: -8 }}
                 transition={{ duration: 0.3 }}
               >
                 <ThemeIcon
                   size="xl"
-                  color="gray"
                   radius="xl"
-                  className="cursor-pointer backdrop-blur-lg bg-gradient-to-r from-blue-100[.50] to-blue-200 border border-gray-200"
+                  className="cursor-pointer"
+                  color={circleColor}
+                  // style={{
+                  //   boxShadow: glow
+                  //     ? `0 0 8px 2px ${theme.other?.hero?.socials?.glowColor ||
+                  //         iconColor}`
+                  //     : "none",
+                  // }}
                 >
-                  <a
+                  <Anchor
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.label}
-                    className="flex items-center justify-center w-full h-full text-neutral-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
                   >
-                    <IconComponent size={24} aria-hidden="true" />
-                  </a>
+                    <IconComponent
+                      size={24}
+                      aria-hidden="true"
+                      color={iconColor}
+                      filter={
+                        glow
+                          ? `drop-shadow(0 0 10px ${iconColor}) drop-shadow(0 0 20px ${iconColor}) drop-shadow(0 0 30px ${iconColor})`
+                          : undefined
+                      }
+                    />
+                  </Anchor>
                 </ThemeIcon>
               </motion.div>
-            </li>
+            </List.Item>
           );
         })}
-      </ul>
+      </List>
     </motion.nav>
   );
 };
