@@ -1,5 +1,5 @@
 import ShelterCard from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
-import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.png";
+import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
 
 export interface Project {
   id: string;
