@@ -1,5 +1,5 @@
-import ShelterCard from "@/assets/portfolio_card_images/shelter_portfolio_card.jpg";
-import NfccCard from "@/assets/portfolio_card_images/nfcc_portfolio_card.png";
+import ShelterCard from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
+import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.png";
 
 export interface Project {
   id: string;
@@ -49,7 +49,7 @@ export const projects: Project[] = [
         text: "Accessibility and performance optimization",
       },
     ],
-    cardImage: NfccCard,
+    cardImage: NFCCCard,
     liveUrl: "https://www.nfcc.org/",
     hasCaseStudy: false,
   },
