@@ -1,9 +1,9 @@
 import CaseStudyDetail from "./CaseStudyDetail";
-import { caseStudiesData } from "./caseStudiesData";
+import { caseStudiesData } from "./CaseStudiesData";
 
 const CaseStudyShelter = () => {
   const index = caseStudiesData.findIndex(
-    (cs) => cs.id === "shelter"
+    (cs) => cs?.id === "shelter"
   );
 
   if (index === -1) {
