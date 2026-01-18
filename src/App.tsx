@@ -16,8 +16,8 @@ function App() {
         <Route path="/case-studies/nfcc" element={<CaseStudyNFCC />} />
         <Route path="/projects/:projectId" element={<ProjectSummary />} />
         <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
-        <Route path="/cv" element={<CV />} />
       </Route>
+      <Route path="/cv" element={<CV />} />
     </Routes>
   );
 }
