@@ -5,6 +5,7 @@ import CaseStudyShelter from "./pages/CaseStudies/shelter_detailed";
 import CaseStudyNFCC from "./pages/CaseStudies/nfcc_detailed";
 import ProjectSummary from "./pages/CaseStudies/ProjectSummary";
 import CaseStudyPage from "./pages/CaseStudies/CaseStudyPage";
+import CV from "./assets/cv";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/case-studies/nfcc" element={<CaseStudyNFCC />} />
         <Route path="/projects/:projectId" element={<ProjectSummary />} />
         <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
+        <Route path="/cv" element={<CV />} />
       </Route>
     </Routes>
   );

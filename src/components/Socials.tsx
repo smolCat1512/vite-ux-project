@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom'; // Add this import
 import { motion, useReducedMotion } from "framer-motion";
 import { Anchor, List, ThemeIcon, useMantineTheme } from "@mantine/core";
-import CV from "../assets/Shaun Halliday CV.pdf";
 import {
   FaLinkedinIn,
   FaEnvelope,
@@ -13,21 +13,25 @@ const socialLinks = [
     icon: FaLinkedinIn,
     label: "LinkedIn profile",
     href: "https://www.linkedin.com/in/shaun-halliday-5001a6b2/",
+    external: true,
   },
   {
     icon: FaEnvelope,
     label: "Email me",
     href: "mailto:shaunuxuidev@gmail.com",
+    external: true,
   },
   {
     icon: FaFileLines,
     label: "View CV",
-    href: CV,
+    href: "/cv",
+    external: false,
   },
   {
     icon: FaGithub,
     label: "GitHub profile",
     href: "https://github.com/yourprofile",
+    external: true,
   },
 ];
 
@@ -77,23 +81,42 @@ const Socials = () => {
                   //     : "none",
                   // }}
                 >
-                  <Anchor
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={link.label}
-                  >
-                    <IconComponent
-                      size={24}
-                      aria-hidden="true"
-                      color={iconColor}
-                      filter={
-                        glow
-                          ? `drop-shadow(0 0 10px ${iconColor}) drop-shadow(0 0 20px ${iconColor}) drop-shadow(0 0 30px ${iconColor})`
-                          : undefined
-                      }
-                    />
-                  </Anchor>
+                  {link.external ? (
+                    <Anchor
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                    >
+                      <IconComponent
+                        size={24}
+                        aria-hidden="true"
+                        color={iconColor}
+                        filter={
+                          glow
+                            ? `drop-shadow(0 0 10px ${iconColor}) drop-shadow(0 0 20px ${iconColor}) drop-shadow(0 0 30px ${iconColor})`
+                            : undefined
+                        }
+                      />
+                    </Anchor>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      target="_blank"
+                      aria-label={link.label}
+                    >
+                      <IconComponent
+                        size={24}
+                        aria-hidden="true"
+                        color={iconColor}
+                        filter={
+                          glow
+                            ? `drop-shadow(0 0 10px ${iconColor}) drop-shadow(0 0 20px ${iconColor}) drop-shadow(0 0 30px ${iconColor})`
+                            : undefined
+                        }
+                      />
+                    </Link>
+                  )}
                 </ThemeIcon>
               </motion.div>
             </List.Item>
