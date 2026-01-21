@@ -6,6 +6,7 @@ import HeroHighlight from "../design-system/hero/HeroHighlight";
 import HeroSubheading from "../design-system/hero/HeroSubheading";
 import HeroDescription from "../design-system/hero/HeroDescription";
 import ScrollDownButton from "../design-system/hero/ScrollDownButton";
+import UserType from "../design-system/hero/userType";
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -29,7 +30,7 @@ const Hero = () => {
         <div className="flex flex-row items-center justify-center pb-4">
           <HeroHeading animate={!shouldReduceMotion}>
             Hi, I'm <HeroHighlight>Shaun</HeroHighlight>, I design and build for{" "}
-            <HeroHighlight>users</HeroHighlight>
+            <UserType />
           </HeroHeading>
         </div>
 
