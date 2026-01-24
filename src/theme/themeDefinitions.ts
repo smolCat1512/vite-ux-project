@@ -74,11 +74,25 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
         },
       },
+
       menu: {
         background: "#ffffff",
         text: "#000000",
         hoverBackground: "#f0f0f0",
         activeBackground: "#e0e0e0",
+      },
+
+      technologies: {
+        card: {
+          background: "linear-gradient(to right, rgba(219, 234, 254, 0.5), rgba(191, 219, 254, 0.5))",
+          border: "#dee2e6",
+        },
+        text: {
+          color: "#343a40",
+        },
+        icon: {
+          color: "#495057",
+        },
       },
     },
   },
@@ -160,6 +174,19 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         text: "#ededed",
         hoverBackground: "#1c1c1c",
         activeBackground: "#2a2a2a",
+      },
+
+      technologies: {
+        card: {
+          background: "rgba(30, 30, 30, 0.6)",
+          border: "#3a3a3a",
+        },
+        text: {
+          color: "#ededed",
+        },
+        icon: {
+          color: "#9ca3af",
+        },
       },
     },
   },
@@ -263,6 +290,19 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         hoverBackground: "#330026",
         activeBackground: "#4d001a",
       },
+
+      technologies: {
+        card: {
+          background: "linear-gradient(135deg, rgba(255, 26, 179, 0.2), rgba(45, 226, 230, 0.2))",
+          border: "#ff4dc4",
+        },
+        text: {
+          color: "#ffed1a",
+        },
+        icon: {
+          color: "#2de2e6",
+        },
+      },
     },
   },
 
@@ -343,6 +383,19 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         text: "#a8d5a2",
         hoverBackground: "#145a32",
         activeBackground: "#1e8449",
+      },
+
+      technologies: {
+        card: {
+          background: "rgba(6, 78, 59, 0.4)",
+          border: "#10b981",
+        },
+        text: {
+          color: "#d1fae5",
+        },
+        icon: {
+          color: "#6ee7b7",
+        },
       },
     },
   },

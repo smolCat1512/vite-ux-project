@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box } from "@mantine/core";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import { FaReact, FaPython, FaAws, FaGitAlt } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
@@ -18,6 +18,10 @@ import { SiShadcnui } from "react-icons/si";
 import { FaCloudflare } from "react-icons/fa";
 import { BiLogoNetlify } from "react-icons/bi";
 import { TbBrandStorybook } from "react-icons/tb";
+import TechnologiesHeader from "../design-system/technologies/TechnologiesHeader";
+import TechnologiesCard from "../design-system/technologies/TechnologiesCard";
+import TechnologiesText from "../design-system/technologies/TechnologiesText";
+import TechnologiesIcon from "../design-system/technologies/TechnologiesIcon";
 
 const technologies = [
   {
@@ -106,45 +110,30 @@ const Technologies = () => {
   const shouldReduceMotion = useReducedMotion();
   const [jiggleIndex, setJiggleIndex] = useState<number | null>(null);
 
-  // Pick a random item every 3 seconds
   useEffect(() => {
-    if (shouldReduceMotion) return; // Don't animate if user prefers reduced motion
+    if (shouldReduceMotion) return;
 
     const interval = setInterval(() => {
       const random = Math.floor(Math.random() * technologies.length);
       setJiggleIndex(random);
     }, 3000);
+
     return () => clearInterval(interval);
   }, [shouldReduceMotion]);
 
   return (
     <div className="p-4 justify-center md:w-8/12 text-center mb-8">
-      <h2 className="text-3xl">Technologies</h2>
+      <TechnologiesHeader>Technologies</TechnologiesHeader>
       <Box className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center align-middle mt-18 mb-18">
         {technologies.map((tech, index) => (
-          <motion.div
+          <TechnologiesCard
             key={tech.name}
-            className="flex flex-row p-4 border rounded-4xl border-gray-200 align-middle justify-center gap-4 w-42 backdrop-blur-lg bg-gradient-to-r from-blue-100[.50] to-blue-200"
-            initial={shouldReduceMotion ? {} : { y: 50, opacity: 0 }}
-            whileInView={shouldReduceMotion ? {} : { y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            animate={
-              jiggleIndex === index
-                ? {
-                    rotate: [0, -10, 10, -10, 10, 0],
-                    transition: { duration: 0.6 },
-                  }
-                : { rotate: 0, transition: { duration: 0.2 } }
-            }
+            shouldReduceMotion={!!shouldReduceMotion}
+            jiggle={jiggleIndex === index}
           >
-            <p className="font-semibold">{tech.name}</p>
-            <tech.icon
-              size={24}
-              className="text-neutral-700"
-              aria-hidden="true"
-            />
-          </motion.div>
+            <TechnologiesText>{tech.name}</TechnologiesText>
+            <TechnologiesIcon icon={tech.icon} />
+          </TechnologiesCard>
         ))}
       </Box>
     </div>
