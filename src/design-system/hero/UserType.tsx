@@ -10,7 +10,7 @@ interface UserTypeProps {
 }
 
 const UserType = ({ 
-  words = ["users", "developers", "designers", "teams", "people"],
+  words = ["users", "people", "customers", "clients", "audiences"],
   typingSpeed = 100,
   deletingSpeed = 50,
   pauseDuration = 2000

@@ -10,7 +10,7 @@ interface RoleTypeProps {
 }
 
 const RoleType = ({
-  words = ["design", "research", "develop", "test", "deploy", "improve"],
+  words = ["design", "research", "develop", "build", "test", "deploy", "optimize"],
   flipDuration = 0.6,
   pauseDuration = 2000,
 }: RoleTypeProps) => {

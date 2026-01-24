@@ -4,7 +4,7 @@ import { Box } from "@mantine/core";
 import HeroHeading from "../design-system/hero/HeroHeading";
 import HeroHighlight from "../design-system/hero/HeroHighlight";
 import HeroSubheading from "../design-system/hero/HeroSubheading";
-import HeroDescription from "../design-system/hero/HeroDescription";
+// import HeroDescription from "../design-system/hero/HeroDescription";
 import ScrollDownButton from "../design-system/hero/ScrollDownButton";
 import UserType from "../design-system/hero/UserType";
 import RoleType from "../design-system/hero/RoleType";
@@ -30,7 +30,7 @@ const Hero = () => {
         {/* Main heading */}
         <div className="flex flex-row items-center justify-center pb-4">
           <HeroHeading animate={!shouldReduceMotion}>
-            Hi, I'm <HeroHighlight>Shaun</HeroHighlight>, I <RoleType /> {" "}and build for{" "}
+            Hi, I'm <HeroHighlight>Shaun</HeroHighlight>, I <RoleType /> {" "} for{" "}
             <UserType />
           </HeroHeading>
         </div>
@@ -38,14 +38,14 @@ const Hero = () => {
         {/* Subheading */}
         <div className="pb-4">
           <HeroSubheading animate={!shouldReduceMotion}>
-            Software Engineer and UX/UI Engineer
+            Front-end Software Engineer and UX/UI Engineer
           </HeroSubheading>
         </div>
 
-        {/* Description */}
+        {/* Description
         <HeroDescription animate={!shouldReduceMotion}>
           I create user-centered digital experiences
-        </HeroDescription>
+        </HeroDescription> */}
 
         <Socials />
       </Box>
