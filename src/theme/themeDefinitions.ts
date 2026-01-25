@@ -60,7 +60,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           circleColor: "#e9ecef",
           iconColor: "#777b7e",
           glow: false,
-        }
+        },
       },
 
       header: {
@@ -84,7 +84,8 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
 
       technologies: {
         card: {
-          background: "linear-gradient(to right, rgba(219, 234, 254, 0.5), rgba(191, 219, 254, 0.5))",
+          background:
+            "linear-gradient(to right, rgba(219, 234, 254, 0.5), rgba(191, 219, 254, 0.5))",
           border: "#dee2e6",
         },
         text: {
@@ -92,6 +93,29 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         icon: {
           color: "#495057",
+        },
+      },
+
+      portfolio: {
+        header: {
+          color: "#343a40",
+        },
+        card: {
+          title: {
+            color: "#343a40",
+          },
+          technologies: {
+            color: "#6c757d",
+          },
+          link: {
+            color: "#ff6e00",
+            hoverColor: "#e66300",
+          },
+          placeholder: {
+            backgroundColor: "#e5e7eb",
+            iconColor: "#9ca3af",
+            textColor: "#6b7280",
+          },
         },
       },
     },
@@ -154,7 +178,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           circleColor: "#3d3434",
           iconColor: "#ededed",
           glow: false,
-        }
+        },
       },
 
       header: {
@@ -186,6 +210,29 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         icon: {
           color: "#9ca3af",
+        },
+      },
+
+      portfolio: {
+        header: {
+          color: "#ededed",
+        },
+        card: {
+          title: {
+            color: "#ededed",
+          },
+          technologies: {
+            color: "#9ca3af",
+          },
+          link: {
+            color: "#f59e0b",
+            hoverColor: "#d97706",
+          },
+          placeholder: {
+            backgroundColor: "#374151",
+            iconColor: "#6b7280",
+            textColor: "#9ca3af",
+          },
         },
       },
     },
@@ -267,7 +314,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           iconColor: "#2de2e6",
           glow: true,
           glowColor: "#2de2e6",
-        }
+        },
       },
 
       header: {
@@ -293,7 +340,8 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
 
       technologies: {
         card: {
-          background: "linear-gradient(135deg, rgba(255, 26, 179, 0.2), rgba(45, 226, 230, 0.2))",
+          background:
+            "linear-gradient(135deg, rgba(255, 26, 179, 0.2), rgba(45, 226, 230, 0.2))",
           border: "#ff4dc4",
         },
         text: {
@@ -301,6 +349,29 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         icon: {
           color: "#2de2e6",
+        },
+      },
+
+      portfolio: {
+        header: {
+          color: "#ff4dc4",
+        },
+        card: {
+          title: {
+            color: "#ffed1a",
+          },
+          technologies: {
+            color: "#2de2e6",
+          },
+          link: {
+            color: "#ff4dc4",
+            hoverColor: "#ff1ab3",
+          },
+          placeholder: {
+            backgroundColor: "rgba(77, 0, 51, 0.5)",
+            iconColor: "#ff80d5",
+            textColor: "#2de2e6",
+          },
         },
       },
     },
@@ -363,7 +434,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           circleColor: "#064e3b",
           iconColor: "#d1fae5",
           glow: false,
-        }
+        },
       },
 
       header: {
@@ -395,6 +466,29 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         icon: {
           color: "#6ee7b7",
+        },
+      },
+
+      portfolio: {
+        header: {
+          color: "#d1fae5",
+        },
+        card: {
+          title: {
+            color: "#d1fae5",
+          },
+          technologies: {
+            color: "#6ee7b7",
+          },
+          link: {
+            color: "#34d399",
+            hoverColor: "#10b981",
+          },
+          placeholder: {
+            backgroundColor: "#064e3b",
+            iconColor: "#6ee7b7",
+            textColor: "#a7f3d0",
+          },
         },
       },
     },

@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
-import { IoOpenOutline } from "react-icons/io5";
+import { useState } from "react";
 import type { Project } from "../pages/CaseStudies/projectsData";
 import { Box } from "@mantine/core";
+import PortfolioCardTitle from "../design-system/portfolio/PortfolioCardTitle";
+import PortfolioCardTechnologies from "../design-system/portfolio/PortfolioCardTechnologies";
+import PortfolioCardLink from "../design-system/portfolio/PortfolioCardLink";
+import PortfolioCardImagePlaceholder from "../design-system/portfolio/PortfolioCardImagePlaceholder";
 
 const PortfolioCard = ({
   id,
@@ -10,37 +14,38 @@ const PortfolioCard = ({
   cardImage,
   liveUrl,
 }: Project) => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <article className="flex flex-col">
       <Link
         to={`/projects/${id}`}
-        aria-label={`View ${title} project`}
-        className="overflow-hidden"
+        aria-label={`View ${title} project details`}
+        className="overflow-hidden block"
       >
-        <img
-          src={cardImage}
-          alt={`Screenshot of ${title}`}
-          className="w-full h-50 object-cover transition-transform duration-300 hover:opacity-80"
-        />
+        {imageError || !cardImage ? (
+          <PortfolioCardImagePlaceholder showText={true} />
+        ) : (
+          <img
+            src={cardImage}
+            alt={`${title} project screenshot`}
+            className="w-full h-50 object-cover transition-transform duration-300 hover:opacity-80"
+            onError={() => setImageError(true)}
+          />
+        )}
       </Link>
-
       <Box className="mt-4 flex flex-row justify-between items-start">
         <Box className="flex flex-col gap-1">
-        <h3 className="font-semibold text-xl">{title}</h3>
-        <p className="text-sm italic text-gray-600 mb-2">
-          {technologies}
-        </p>
+          <PortfolioCardTitle>{title}</PortfolioCardTitle>
+          <PortfolioCardTechnologies>
+            {technologies}
+          </PortfolioCardTechnologies>
         </Box>
-
         {liveUrl && (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-sm"
-          >
-            <IoOpenOutline size="24" title="Open live site" className="mr-1" />
-          </a>
+          <PortfolioCardLink 
+            href={liveUrl} 
+            title={`Open ${title} live site`}
+          />
         )}
       </Box>
     </article>
