@@ -118,6 +118,104 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           },
         },
       },
+      caseStudy: {
+        header: {
+          title: {
+            color: "#343a40",
+          },
+          tagline: {
+            color: "#6c757d",
+          },
+        },
+        detailsGrid: {
+          background: "#f3f4f6",
+          heading: {
+            color: "#343a40",
+          },
+          text: {
+            color: "#6c757d",
+          },
+        },
+        section: {
+          heading: {
+            color: "#343a40",
+          },
+          text: {
+            color: "#495057",
+          },
+        },
+        technologies: {
+          background: "#e9d5ff",
+          text: "#7e22ce",
+        },
+        liveButton: {
+          background: "#c2410c",
+          text: "#ffffff",
+          hoverBackground: "#9a3412",
+        },
+        navigation: {
+          text: "#6c757d",
+          hoverText: "#343a40",
+          border: "#e5e7eb",
+        },
+        imagePlaceholder: {
+          backgroundColor: "#e5e7eb",
+          iconColor: "#9ca3af",
+          textColor: "#6b7280",
+        },
+      },
+      projectSummary: {
+        header: {
+          title: {
+            color: "#343a40",
+          },
+          role: {
+            color: "#6c757d",
+          },
+          technologies: {
+            color: "#495057",
+          },
+        },
+        content: {
+          summary: {
+            color: "#495057",
+          },
+          processHeading: {
+            color: "#495057",
+          },
+          processText: {
+            color: "#495057",
+          },
+          processIcon: {
+            color: "#6c757d",
+          },
+        },
+        caseStudyLink: {
+          color: "#ff6e00",
+          hoverColor: "#e66300",
+        },
+        caseStudyComingSoon: {
+          color: "#6c757d",
+        },
+        imagePlaceholder: {
+          backgroundColor: "#f3f4f6",
+          iconColor: "#60a5fa",
+          textColor: "#343a40",
+        },
+        navigation: {
+          previous: {
+            background: "transparent",
+            text: "#434a50",
+            border: "#dee2e6",
+            hoverBackground: "#f3f4f6",
+          },
+          next: {
+            background: "#ff6e00",
+            text: "#000000",
+            hoverBackground: "#e66300",
+          },
+        },
+      },
     },
   },
 
@@ -232,6 +330,103 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
             backgroundColor: "#374151",
             iconColor: "#6b7280",
             textColor: "#9ca3af",
+          },
+        },
+      },
+      caseStudy: {
+        header: {
+          title: {
+            color: "#ededed",
+          },
+          tagline: {
+            color: "#9ca3af",
+          },
+        },
+        detailsGrid: {
+          background: "#1f2937",
+          heading: {
+            color: "#ededed",
+          },
+          text: {
+            color: "#9ca3af",
+          },
+        },
+        section: {
+          heading: {
+            color: "#ededed",
+          },
+          text: {
+            color: "#d1d5db",
+          },
+        },
+        technologies: {
+          background: "#581c87",
+          text: "#e9d5ff",
+        },
+        liveButton: {
+          background: "#ea580c",
+          text: "#ffffff",
+          hoverBackground: "#c2410c",
+        },
+        navigation: {
+          text: "#9ca3af",
+          hoverText: "#ededed",
+          border: "#374151",
+        },
+        imagePlaceholder: {
+          backgroundColor: "#374151",
+          iconColor: "#6b7280",
+          textColor: "#9ca3af",
+        },
+      },
+      projectSummary: {
+        header: {
+          title: {
+            color: "#ededed",
+          },
+          role: {
+            color: "#9ca3af",
+          },
+          technologies: {
+            color: "#d1d5db",
+          },
+        },
+        content: {
+          summary: {
+            color: "#d1d5db",
+          },
+          processHeading: {
+            color: "#d1d5db",
+          },
+          processText: {
+            color: "#d1d5db",
+          },
+          processIcon: {
+            color: "#9ca3af",
+          },
+        },
+        caseStudyLink: {
+          color: "#f59e0b",
+          hoverColor: "#d97706",
+        },
+        caseStudyComingSoon: {
+          color: "#9ca3af",
+        },
+        imagePlaceholder: {
+          backgroundColor: "#1f2937",
+          iconColor: "#60a5fa",
+          textColor: "#ededed",
+        },
+        navigation: {
+          previous: {
+            background: "transparent",
+            text: "#ffffff",
+            border: "#ffffff",
+          },
+          next: {
+            background: "#ededed",
+            text: "#121212",
+            hoverBackground: "#d1d5db",
           },
         },
       },
@@ -374,6 +569,104 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           },
         },
       },
+      caseStudy: {
+        header: {
+          title: {
+            color: "#ff4dc4",
+          },
+          tagline: {
+            color: "#2de2e6",
+          },
+        },
+        detailsGrid: {
+          background: "rgba(77, 0, 51, 0.5)",
+          heading: {
+            color: "#ffed1a",
+          },
+          text: {
+            color: "#2de2e6",
+          },
+        },
+        section: {
+          heading: {
+            color: "#ffed1a",
+          },
+          text: {
+            color: "#ff80d5",
+          },
+        },
+        technologies: {
+          background: "rgba(255, 26, 179, 0.3)",
+          text: "#ffed1a",
+        },
+        liveButton: {
+          background: "#ff1ab3",
+          text: "#1a0033",
+          hoverBackground: "#e60099",
+        },
+        navigation: {
+          text: "#2de2e6",
+          hoverText: "#ffed1a",
+          border: "#ff4dc4",
+        },
+        imagePlaceholder: {
+          backgroundColor: "rgba(77, 0, 51, 0.5)",
+          iconColor: "#ff80d5",
+          textColor: "#2de2e6",
+        },
+      },
+      projectSummary: {
+        header: {
+          title: {
+            color: "#ff4dc4",
+          },
+          role: {
+            color: "#2de2e6",
+          },
+          technologies: {
+            color: "#ff80d5",
+          },
+        },
+        content: {
+          summary: {
+            color: "#ff80d5",
+          },
+          processHeading: {
+            color: "#ffed1a",
+          },
+          processText: {
+            color: "#ff80d5",
+          },
+          processIcon: {
+            color: "#2de2e6",
+          },
+        },
+        caseStudyLink: {
+          color: "#ffed1a",
+          hoverColor: "#e6d500",
+        },
+        caseStudyComingSoon: {
+          color: "#2de2e6",
+        },
+        imagePlaceholder: {
+          backgroundColor: "rgba(77, 0, 51, 0.5)",
+          iconColor: "#2de2e6",
+          textColor: "#ffed1a",
+        },
+        navigation: {
+          previous: {
+            background: "transparent",
+            text: "#2de2e6",
+            border: "#ff4dc4",
+            hoverBackground: "rgba(255, 26, 179, 0.2)",
+          },
+          next: {
+            background: "#ff1ab3",
+            text: "#ffffff",
+            hoverBackground: "#e60099",
+          },
+        },
+      },
     },
   },
 
@@ -488,6 +781,104 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
             backgroundColor: "#064e3b",
             iconColor: "#6ee7b7",
             textColor: "#a7f3d0",
+          },
+        },
+      },
+      caseStudy: {
+        header: {
+          title: {
+            color: "#d1fae5",
+          },
+          tagline: {
+            color: "#6ee7b7",
+          },
+        },
+        detailsGrid: {
+          background: "#064e3b",
+          heading: {
+            color: "#d1fae5",
+          },
+          text: {
+            color: "#6ee7b7",
+          },
+        },
+        section: {
+          heading: {
+            color: "#d1fae5",
+          },
+          text: {
+            color: "#a7f3d0",
+          },
+        },
+        technologies: {
+          background: "#065f46",
+          text: "#a7f3d0",
+        },
+        liveButton: {
+          background: "#10b981",
+          text: "#ffffff",
+          hoverBackground: "#059669",
+        },
+        navigation: {
+          text: "#6ee7b7",
+          hoverText: "#d1fae5",
+          border: "#10b981",
+        },
+        imagePlaceholder: {
+          backgroundColor: "#064e3b",
+          iconColor: "#6ee7b7",
+          textColor: "#a7f3d0",
+        },
+      },
+      projectSummary: {
+        header: {
+          title: {
+            color: "#d1fae5",
+          },
+          role: {
+            color: "#6ee7b7",
+          },
+          technologies: {
+            color: "#a7f3d0",
+          },
+        },
+        content: {
+          summary: {
+            color: "#a7f3d0",
+          },
+          processHeading: {
+            color: "#d1fae5",
+          },
+          processText: {
+            color: "#a7f3d0",
+          },
+          processIcon: {
+            color: "#6ee7b7",
+          },
+        },
+        caseStudyLink: {
+          color: "#34d399",
+          hoverColor: "#10b981",
+        },
+        caseStudyComingSoon: {
+          color: "#6ee7b7",
+        },
+        imagePlaceholder: {
+          backgroundColor: "#064e3b",
+          iconColor: "#34d399",
+          textColor: "#d1fae5",
+        },
+        navigation: {
+          previous: {
+            background: "transparent",
+            text: "#6ee7b7",
+            border: "#10b981",
+            hoverBackground: "rgba(52, 211, 153, 0.15)",
+          },
+          next: {
+            background: "#10b981",
+            text: "#000000",
+            hoverBackground: "#059669",
           },
         },
       },

@@ -1,12 +1,22 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { projects } from "./projectsData";
-import { Box, Button } from "@mantine/core";
-import { FaArrowLeft, FaArrowRight, FaImage, FaHome } from "react-icons/fa";
+import { Box } from "@mantine/core";
+import { FaArrowLeft, FaArrowRight, FaHome } from "react-icons/fa";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { FaPencil, FaMagnifyingGlass, FaCode, FaRocket } from "react-icons/fa6";
 import { RiTestTubeFill } from "react-icons/ri";
 import { BsServer } from "react-icons/bs";
 import { IoAccessibility } from "react-icons/io5";
+import ProjectSummaryTitle from "../../design-system/projectSummary/ProjectSummaryTitle";
+import ProjectSummaryRole from "../../design-system/projectSummary/ProjectSummaryRole";
+import ProjectSummaryTechnologies from "../../design-system/projectSummary/ProjectSummaryTechnologies";
+import ProjectSummarySummaryText from "../../design-system/projectSummary/ProjectSummarySummaryText";
+import ProjectSummaryProcessHeading from "../../design-system/projectSummary/ProjectSummaryProcessHeading";
+import ProjectSummaryProcessItem from "../../design-system/projectSummary/ProjectSummaryProcessItem";
+import ProjectSummaryImagePlaceholder from "../../design-system/projectSummary/ProjectSummaryImagePlaceholder";
+import ProjectSummaryCaseStudyLink from "../../design-system/projectSummary/ProjectSummaryCaseStudyLink";
+import ProjectSummaryCaseStudyComingSoon from "../../design-system/projectSummary/ProjectSummaryCaseStudyComingSoon";
+import ProjectSummaryNavButton from "../../design-system/projectSummary/ProjectSummaryNavButton";
 
 const ProjectSummary = () => {
   const { projectId } = useParams();
@@ -39,9 +49,11 @@ const ProjectSummary = () => {
       >
         {/* Header */}
         <section className="flex flex-col items-center py-6">
-          <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <p className="text-lg text-gray-500 mb-2">{project.role}</p>
-          <p className="text-md text-center">{project.technologies}</p>
+          <ProjectSummaryTitle>{project.title}</ProjectSummaryTitle>
+          <ProjectSummaryRole>{project.role}</ProjectSummaryRole>
+          <ProjectSummaryTechnologies>
+            {project.technologies}
+          </ProjectSummaryTechnologies>
         </section>
 
         {/* Content */}
@@ -54,47 +66,33 @@ const ProjectSummary = () => {
                 className="w-4/5 object-cover h-auto md:mb-0 rounded-lg"
               />
             ) : (
-              <div
-                role="img"
-                aria-label={`${project.title} project image placeholder`}
-                className="w-4/5 h-[40vh] flex flex-row gap-4 items-center justify-center
-                   bg-gray-100 rounded-2xl text-black mb-8 md:mb-0 p-8"
-              >
-                <FaImage
-                  size={24}
-                  className="text-4xl mb-2 text-blue-400"
-                  aria-hidden="true"
-                />
-                <span className="text-sm">{project.title} image</span>
-              </div>
+              <ProjectSummaryImagePlaceholder title={project.title} />
             )}
 
             {project.hasCaseStudy ? (
-              <Link
-                to={`/case-studies/${project.id}`}
-                className="inline-block mb-12 underline text-center mt-6"
-              >
+              <ProjectSummaryCaseStudyLink to={`/case-studies/${project.id}`}>
                 View full case study →
-              </Link>
+              </ProjectSummaryCaseStudyLink>
             ) : (
-              <p className="italic mb-12 text-center mt-6">
+              <ProjectSummaryCaseStudyComingSoon>
                 Full case study coming soon
-              </p>
+              </ProjectSummaryCaseStudyComingSoon>
             )}
           </Box>
 
           <Box className="flex flex-col justify-between">
             <Box className="flex flex-col gap-4">
-              <p className="text-md">{project.summary}</p>
+              <ProjectSummarySummaryText>
+                {project.summary}
+              </ProjectSummarySummaryText>
 
-              <h2 className="text-xl font-bold mb-4 text-gray-700">
+              <ProjectSummaryProcessHeading>
                 The Process
-              </h2>
+              </ProjectSummaryProcessHeading>
 
               {project.process && project.process.length > 0 && (
                 <ul className="space-y-3">
                   {project.process.map((step, index) => {
-                    // Map icon names to components
                     const iconMap: Record<string, React.ElementType> = {
                       search: FaMagnifyingGlass,
                       pencil: FaPencil,
@@ -111,12 +109,9 @@ const ProjectSummary = () => {
                     const text = typeof step === "string" ? step : step.text;
 
                     return (
-                      <li key={index} className="flex items-start gap-3">
-                        {Icon && (
-                          <Icon className="mt-1 flex-shrink-0" />
-                        )}
-                        <span>{text}</span>
-                      </li>
+                      <ProjectSummaryProcessItem key={index} icon={Icon || undefined}>
+                        {text}
+                      </ProjectSummaryProcessItem>
                     );
                   })}
                 </ul>
@@ -138,16 +133,13 @@ const ProjectSummary = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   style={{ display: "inline-block" }}
                 >
-                  <Button
-                    component={Link}
+                  <ProjectSummaryNavButton
                     to={`/projects/${prev.id}`}
-                    variant="outline"
-                    color="gray"
-                    radius="lg"
+                    variant="previous"
                     leftSection={<FaArrowLeft />}
                   >
                     Previous
-                  </Button>
+                  </ProjectSummaryNavButton>
                 </motion.div>
               )}
 
@@ -161,24 +153,13 @@ const ProjectSummary = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   style={{ display: "inline-block" }}
                 >
-                  <Button
-                    component={Link}
+                  <ProjectSummaryNavButton
                     to={`/projects/${next.id}`}
-                    variant="filled"
-                    color="gray"
-                    radius="lg"
+                    variant="next"
                     rightSection={<FaArrowRight />}
-                    styles={{
-                      root: {
-                        backgroundColor: "var(--mantine-color-gray-8)",
-                        "&:hover": {
-                          backgroundColor: "var(--mantine-color-gray-8)",
-                        },
-                      },
-                    }}
                   >
                     Next
-                  </Button>
+                  </ProjectSummaryNavButton>
                 </motion.div>
               ) : (
                 <motion.div
@@ -190,24 +171,13 @@ const ProjectSummary = () => {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   style={{ display: "inline-block" }}
                 >
-                  <Button
-                    component={Link}
+                  <ProjectSummaryNavButton
                     to="/"
-                    variant="filled"
-                    color="gray"
-                    radius="lg"
+                    variant="next"
                     leftSection={<FaHome />}
-                    styles={{
-                      root: {
-                        backgroundColor: "var(--mantine-color-gray-8)",
-                        "&:hover": {
-                          backgroundColor: "var(--mantine-color-gray-8)",
-                        },
-                      },
-                    }}
                   >
                     Home
-                  </Button>
+                  </ProjectSummaryNavButton>
                 </motion.div>
               )}
             </nav>
