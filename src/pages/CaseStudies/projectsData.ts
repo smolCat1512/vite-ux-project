@@ -43,7 +43,7 @@ export const projects: Project[] = [
     process: [
       { icon: "pencil", text: "UI design and prototyping" },
       { icon: "code", text: "Frontend development with React TypeScript" },
-      { icon: "server", text: "Integration with backend services" },
+      { icon: "server", text: "Integration with backend services and APIs" },
       {
         icon: "accessibility",
         text: "Accessibility and performance optimization",
@@ -51,6 +51,25 @@ export const projects: Project[] = [
     ],
     cardImage: NFCCCard,
     liveUrl: "https://www.nfcc.org/",
+    hasCaseStudy: false,
+  },
+  {
+    id: "unhcr",
+    title: "UNHCR",
+    role: "Frontend / UX Research / UI Design",
+    summary: "Flow builder for humanitarian and emergency disaster responses.",
+    technologies: "React, TypeScript, Figma, Twilio Paste, Miro",
+    process: [
+      { icon: "vial", text: "Multiple level user research" },
+      { icon: "pencil", text: "UI design and prototyping" },
+      { icon: "code", text: "Frontend development with React TypeScript" },
+      {
+        icon: "server",
+        text: "Integration with backend services and APIs",
+      },
+    ],
+    cardImage: "",
+    liveUrl: "https://www.unhcr.org/uk/media/unhcraaptoolctengaging-communities-whatsapp",
     hasCaseStudy: false,
   },
   {
