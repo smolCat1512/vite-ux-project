@@ -11,7 +11,7 @@ const ThemePicker = () => {
   if (!themeName || !setThemeName) return null;
 
   return (
-    <Menu shadow="md" width={200}>
+    <Menu shadow="md" width={200} trigger="click-hover">
       <Menu.Target>
         <Button leftSection={<FaPalette />} variant="subtle" radius="md">
           Theme

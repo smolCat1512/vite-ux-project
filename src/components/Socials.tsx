@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // Add this import
+import { Link } from "react-router-dom"; // Add this import
 import { motion, useReducedMotion } from "framer-motion";
 import { Anchor, List, ThemeIcon, useMantineTheme } from "@mantine/core";
 import {
@@ -60,7 +60,7 @@ const Socials = () => {
       }}
       aria-label="Social links"
     >
-      <List className="flex flex-row justify-center gap-8">
+      <List className="flex flex-row justify-center gap-8" style={{ paddingInlineStart: 0 }}>
         {socialLinks.map((link) => {
           const IconComponent = link.icon;
           return (
@@ -76,7 +76,7 @@ const Socials = () => {
                   color={circleColor}
                   // style={{
                   //   boxShadow: glow
-                  //     ? `0 0 8px 2px ${theme.other?.hero?.socials?.glowColor ||
+                  // ? `0 0 8px 2px ${theme.other?.hero?.socials?.glowColor ||
                   //         iconColor}`
                   //     : "none",
                   // }}

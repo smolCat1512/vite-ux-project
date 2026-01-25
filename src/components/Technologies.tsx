@@ -122,7 +122,7 @@ const Technologies = () => {
   }, [shouldReduceMotion]);
 
   return (
-    <div className="p-4 justify-center md:w-8/12 text-center mb-8">
+    <div className="p-4 md:w-8/12 text-center">
       <TechnologiesHeader>Technologies</TechnologiesHeader>
       <Box className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center align-middle mt-18 mb-18">
         {technologies.map((tech, index) => (
