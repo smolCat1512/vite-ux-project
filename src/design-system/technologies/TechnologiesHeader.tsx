@@ -11,14 +11,14 @@ const TechnologiesHeader = ({ children }: TechnologiesHeaderProps) => {
 
   const highlight = theme.other?.hero?.highlight;
 
-  const color = highlight?.color ?? "#ffee00";
+  const color = theme.other?.technologies?.header?.color ?? "#343a40";
   const glow = highlight?.glow ?? false;
 
   const textGlow = getTextGlow(color, glow, 1.5);
 
   return (
     <span
-      className={`${glow ? "animate-hero-glow" : ""} text-3xl font-bold`}
+      className={`${glow ? "animate-hero-glow" : ""} text-3xl font-inherit`}
       style={{
         color,
         textShadow: textGlow,

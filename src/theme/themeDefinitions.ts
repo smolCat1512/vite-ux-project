@@ -83,6 +83,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       },
 
       technologies: {
+        header: {
+          color: "#343a40",
+        },
         card: {
           background:
             "linear-gradient(to right, rgba(219, 234, 254, 0.5), rgba(191, 219, 254, 0.5))",
@@ -299,6 +302,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       },
 
       technologies: {
+        header: {
+          color: "#ededed",
+        },
         card: {
           background: "rgba(30, 30, 30, 0.6)",
           border: "#3a3a3a",
@@ -534,6 +540,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       },
 
       technologies: {
+        header: {
+          color: "#ff4dc4",
+        },
         card: {
           background:
             "linear-gradient(135deg, rgba(255, 26, 179, 0.2), rgba(45, 226, 230, 0.2))",
@@ -705,7 +714,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
         },
         cursor: {
-          color: "#a7f3d0",
+          color: "#34d399",
           glow: false,
         },
         subheading: {
@@ -750,6 +759,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       },
 
       technologies: {
+        header: {
+          color: "#d1fae5",
+        },
         card: {
           background: "rgba(6, 78, 59, 0.4)",
           border: "#10b981",

@@ -45,9 +45,6 @@ const HomePage = () => {
           className="flex items-start justify-center"
           aria-labelledby="portfolio-heading"
         >
-          <h2 id="portfolio-heading" className="sr-only">
-            Portfolio
-          </h2>
           <Portfolio />
         </section>
       </motion.div>
