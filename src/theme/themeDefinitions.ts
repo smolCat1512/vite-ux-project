@@ -1,4 +1,5 @@
 import type { MantineThemeOverride } from "@mantine/core";
+import "../index.css"
 
 export type ThemeName = "light" | "dark" | "synthwave" | "forest";
 
@@ -223,7 +224,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
   },
 
   dark: {
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Lexend, sans-serif",
     primaryColor: "gray",
 
     colors: {

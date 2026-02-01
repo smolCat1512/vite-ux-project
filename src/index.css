@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 @import "tailwindcss";
 
 /* Root CSS variables for background/text */
@@ -24,21 +25,25 @@ body {
 body.light {
   --background: #ffffff;
   --foreground: #000000;
+  font-family: "Poppins", sans-serif;
 }
 
 body.dark {
   --background: #121212;
   --foreground: #ededed;
+  font-family: "Lexend", sans-serif;
 }
 
 body.synthwave {
   --background: #1a0033;
   --foreground: #ff80d5;
+  font-family: "Orbitron", sans-serif;
 }
 
 body.forest {
   --background: #0b2e13;
   --foreground: #a8d5a2;
+  font-family: "Inter", serif;
 }
 
 /* Animated underline for navigation buttons */
