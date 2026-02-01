@@ -36,7 +36,7 @@ useEffect(() => {
 
   document.body.style.backgroundColor = layout.background;
   document.body.style.color = layout.text;
-}, [currentTheme]);
+}, [currentTheme, layout]);
 
 
   return (
