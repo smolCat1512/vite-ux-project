@@ -74,8 +74,8 @@ export const projects: Project[] = [
   },
   {
     id: "shane",
-    title: "Shane - Desktop Application",
-    role: "Design, Frontend",
+    title: "Shane",
+    role: "Design, Design System, Frontend",
     summary: "LGBTQIA+ safety and inclusivity mobile concept.",
     technologies: "Tamagui, React Native, TypeScript",
     process: [
