@@ -5,6 +5,7 @@ import type { Project } from "../pages/CaseStudies/projectsData";
 import PortfolioHeader from "../design-system/portfolio/PortfolioHeader";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Box } from "@mantine/core";
 
 const Portfolio = () => {
   const ref = useRef(null);
@@ -21,7 +22,9 @@ const Portfolio = () => {
       <h2 id="portfolio-heading" className="sr-only">
         Portfolio
       </h2>
+      <Box mb={24} className="text-center">
       <PortfolioHeader>Portfolio</PortfolioHeader>
+      </Box>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
         {projects.map((project: JSX.IntrinsicAttributes & Project) => (
           <PortfolioCard key={project.id} {...project} />

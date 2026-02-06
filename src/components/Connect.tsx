@@ -1,7 +1,6 @@
 import {
   Container,
   Grid,
-  Title,
   Text,
   TextInput,
   Textarea,
@@ -20,6 +19,8 @@ import {
 } from "react-icons/fa6";
 import { sendEmail } from "../services/emailService";
 import { notifications } from "@mantine/notifications";
+import ConnectHeading from "../design-system/connect/ConnectHeading";
+import ConnectSubheading from "../design-system/connect/ConnectSubheading";
 
 const Connect = () => {
   const form = useForm({
@@ -66,14 +67,14 @@ const Connect = () => {
         <Grid.Col span={{ base: 12, md: 5 }}>
           <Stack gap="xl">
             <div>
-              <Title order={2} size="h1" mb="md">
+              <ConnectHeading>
                 Get in Touch
-              </Title>
-              <Text size="lg" c="dimmed">
+              </ConnectHeading>
+              <ConnectSubheading>
                 Have a project in mind or just want to chat? I'd love to hear
                 from you. Drop me a message and I'll get back to you as soon as
                 possible.
-              </Text>
+              </ConnectSubheading>
             </div>
 
             <Stack gap="md">

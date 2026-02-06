@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { useMantineTheme } from "@mantine/core";
+import { getTextGlow } from "../../design-system/utils/glow";
 
 interface PortfolioHeaderProps {
   children: ReactNode;
@@ -7,12 +8,24 @@ interface PortfolioHeaderProps {
 
 const PortfolioHeader = ({ children }: PortfolioHeaderProps) => {
   const theme = useMantineTheme();
-  const headerColor = theme.other?.portfolio?.header?.color ?? "#343a40";
+
+  const highlight = theme.other?.hero?.highlight;
+
+  const color = theme.other?.portfolio?.header?.color ?? "#343a40";
+  const glow = highlight?.glow ?? false;
+
+  const textGlow = getTextGlow(color, glow, 1.5);
 
   return (
-    <h2 className="text-3xl text-center mb-6" style={{ color: headerColor }}>
+    <span
+      className={`${glow ? "animate-hero-glow" : ""} text-3xl font-inherit`}
+      style={{
+        color,
+        textShadow: textGlow,
+      }}
+    >
       {children}
-    </h2>
+    </span>
   );
 };
 
