@@ -1,65 +1,15 @@
-import {
-  Container,
-  Grid,
-  Text,
-  TextInput,
-  Textarea,
-  Button,
-  Paper,
-  Stack,
-} from "@mantine/core";
-import { useForm } from "@mantine/form";
+import { Container, Grid, Text, Stack } from "@mantine/core";
 import {
   FaEnvelope,
   FaLocationPin,
   FaLinkedin,
   FaGithub,
-  FaCheck,
-  FaXmark,
 } from "react-icons/fa6";
-import { sendEmail } from "../services/emailService";
-import { notifications } from "@mantine/notifications";
 import ConnectHeading from "../design-system/connect/ConnectHeading";
 import ConnectSubheading from "../design-system/connect/ConnectSubheading";
+import ContactFormContainer from "../design-system/connect/ContactFormContainer";
 
 const Connect = () => {
-  const form = useForm({
-    initialValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-    validate: {
-      name: (value) =>
-        value.length < 2 ? "Name must have at least 2 characters" : null,
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
-      message: (value) =>
-        value.length < 10 ? "Message must be at least 10 characters" : null,
-    },
-  });
-
-  const handleSubmit = async (values: typeof form.values) => {
-    try {
-      await sendEmail(values);
-      notifications.show({
-        title: "Success!",
-        message: "Your message has been sent successfully - have a great day!",
-        color: "teal",
-        icon: <FaCheck />,
-      });
-      form.reset();
-    } catch (error) {
-      notifications.show({
-        title: "Ah no :(",
-        message: "Failed to send message. Please try again later.",
-        color: "red",
-        icon: <FaXmark />,
-      });
-      console.error("Email sending error:", error);
-    }
-  };
-
   return (
     <Container size="lg" py={80} id="connect">
       <Grid gutter={50}>
@@ -67,9 +17,7 @@ const Connect = () => {
         <Grid.Col span={{ base: 12, md: 5 }}>
           <Stack gap="xl">
             <div>
-              <ConnectHeading>
-                Get in Touch
-              </ConnectHeading>
+              <ConnectHeading>Get in Touch</ConnectHeading>
               <ConnectSubheading>
                 Have a project in mind or just want to chat? I'd love to hear
                 from you. Drop me a message and I'll get back to you as soon as
@@ -109,52 +57,7 @@ const Connect = () => {
 
         {/* Right Side - Contact Form */}
         <Grid.Col span={{ base: 12, md: 7 }}>
-          <Paper
-            shadow="md"
-            p="xl"
-            radius="md"
-            style={{
-              backgroundColor: "var(--mantine-color-body)",
-              border: "1px solid var(--mantine-color-default-border)",
-            }}
-          >
-            <form onSubmit={form.onSubmit(handleSubmit)}>
-              <Stack gap="md">
-                <TextInput
-                  label="Name"
-                  placeholder="Your name"
-                  required
-                  {...form.getInputProps("name")}
-                />
-
-                <TextInput
-                  label="Email"
-                  placeholder="your.email@example.com"
-                  required
-                  type="email"
-                  {...form.getInputProps("email")}
-                />
-
-                <TextInput
-                  label="Phone Number"
-                  placeholder="+44 123 456 7890"
-                  {...form.getInputProps("phone")}
-                />
-
-                <Textarea
-                  label="Message"
-                  placeholder="Tell me about your project or just say hello..."
-                  required
-                  minRows={5}
-                  {...form.getInputProps("message")}
-                />
-
-                <Button type="submit" size="lg" fullWidth mt="md">
-                  Send Message
-                </Button>
-              </Stack>
-            </form>
-          </Paper>
+          <ContactFormContainer />
         </Grid.Col>
       </Grid>
     </Container>

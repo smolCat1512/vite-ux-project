@@ -1,5 +1,5 @@
 import type { MantineThemeOverride } from "@mantine/core";
-import "../index.css"
+import "../index.css";
 
 export type ThemeName = "light" | "dark" | "synthwave" | "forest";
 
@@ -27,6 +27,23 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       layout: {
         background: "#ffffff",
         text: "#000000",
+      },
+
+      connect: {
+        formContainer: {
+          background: "#ffffff",
+          border: "#dee2e6",
+        },
+        input: {
+          background: "#f8f9fa",
+          border: "#ced4da",
+          text: "#495057",
+        },
+        button: {
+          background: "#ff6e00",
+          text: "#ffffff",
+          hoverBackground: "#e66300",
+        },
       },
 
       hero: {
@@ -246,6 +263,23 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       layout: {
         background: "#121212",
         text: "#ededed",
+      },
+
+      connect: {
+        formContainer: {
+          background: "#1f2937",
+          border: "#374151",
+        },
+        input: {
+          background: "#111827",
+          border: "#4b5563",
+          text: "#ededed",
+        },
+        button: {
+          background: "#f59e0b",
+          text: "#000000",
+          hoverBackground: "#d97706",
+        },
       },
 
       hero: {
@@ -477,6 +511,23 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         text: "#ff80d5",
       },
 
+      connect: {
+        formContainer: {
+          background: "rgba(77, 0, 51, 0.5)",
+          border: "#ff4dc4",
+        },
+        input: {
+          background: "rgba(26, 0, 51, 0.8)",
+          border: "#ff4dc4",
+          text: "#ffed1a",
+        },
+        button: {
+          background: "#ff1ab3",
+          text: "#1a0033",
+          hoverBackground: "#e60099",
+        },
+      },
+
       hero: {
         heading: {
           color: "#ff4dc4",
@@ -703,6 +754,23 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       layout: {
         background: "#0b2e13",
         text: "#a8d5a2",
+      },
+
+      connect: {
+        formContainer: {
+          background: "#064e3b",
+          border: "#10b981",
+        },
+        input: {
+          background: "#022c22",
+          border: "#047857",
+          text: "#d1fae5",
+        },
+        button: {
+          background: "#10b981",
+          text: "#000000",
+          hoverBackground: "#059669",
+        },
       },
 
       hero: {
