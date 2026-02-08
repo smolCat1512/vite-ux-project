@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-**Description**
+## Description ##
 A description of the issue, feature, etc. that the ticket exists to resolve.
 
-**Additional context**
+## Additional context ##
 Add any other context or screenshots about the feature request here.
