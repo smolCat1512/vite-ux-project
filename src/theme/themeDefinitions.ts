@@ -38,6 +38,8 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           background: "#f8f9fa",
           border: "#ced4da",
           text: "#495057",
+          placeholder: "#6c757d",
+          glow: false,
         },
         button: {
           background: "#ff6e00",
@@ -274,6 +276,8 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           background: "#111827",
           border: "#4b5563",
           text: "#ededed",
+          placeholder: "#c1c8d3",
+          glow: false,
         },
         button: {
           background: "#f59e0b",
@@ -520,6 +524,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           background: "rgba(26, 0, 51, 0.8)",
           border: "#ff4dc4",
           text: "#ffed1a",
+          placeholder: "#2de2e6",
+          glow: true,
+          glowColor: "#ffed1a",
         },
         button: {
           background: "#ff1ab3",
@@ -765,6 +772,8 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           background: "#022c22",
           border: "#047857",
           text: "#d1fae5",
+          placeholder: "#a7f3d0",
+          glow: false,
         },
         button: {
           background: "#10b981",

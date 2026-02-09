@@ -1,8 +1,16 @@
-import { Paper, Stack, TextInput, Textarea, Button, useMantineTheme } from "@mantine/core";
+import {
+  Paper,
+  Stack,
+  TextInput,
+  Textarea,
+  Button,
+  useMantineTheme,
+} from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { FaCheck, FaXmark } from "react-icons/fa6";
 import { sendEmail } from "../../services/emailService";
 import { notifications } from "@mantine/notifications";
+import { getTextGlow } from "../utils/glow";
 
 const ContactFormContainer = () => {
   const theme = useMantineTheme();
@@ -45,6 +53,10 @@ const ContactFormContainer = () => {
     }
   };
 
+  const color = connectTheme.formContainer.text;
+  const glow = connectTheme.formContainer.glow ?? false;
+  const textGlow = getTextGlow(color, glow, 1.5);
+
   return (
     <Paper
       shadow="md"
@@ -66,10 +78,12 @@ const ContactFormContainer = () => {
                 backgroundColor: connectTheme.input.background,
                 borderColor: connectTheme.input.border,
                 color: connectTheme.input.text,
-                '&::placeholder': {
-                  color: connectTheme.input.text,
-                  opacity: 0.5,
-                },
+                textShadow: getTextGlow(
+                  connectTheme.input.text,
+                  connectTheme.input.glow ?? false,
+                  1.5,
+                ),
+                "--input-placeholder-color": connectTheme.input.placeholder
               },
             }}
             {...form.getInputProps("name")}
@@ -85,10 +99,12 @@ const ContactFormContainer = () => {
                 backgroundColor: connectTheme.input.background,
                 borderColor: connectTheme.input.border,
                 color: connectTheme.input.text,
-                '&::placeholder': {
-                  color: connectTheme.input.text,
-                  opacity: 0.5,
-                },
+                textShadow: getTextGlow(
+                  connectTheme.input.text,
+                  connectTheme.input.glow ?? false,
+                  1.5,
+                ),
+                "--input-placeholder-color": connectTheme.input.placeholder
               },
             }}
             {...form.getInputProps("email")}
@@ -102,10 +118,12 @@ const ContactFormContainer = () => {
                 backgroundColor: connectTheme.input.background,
                 borderColor: connectTheme.input.border,
                 color: connectTheme.input.text,
-                '&::placeholder': {
-                  color: connectTheme.input.text,
-                  opacity: 0.5,
-                },
+                textShadow: getTextGlow(
+                  connectTheme.input.text,
+                  connectTheme.input.glow ?? false,
+                  1.5,
+                ),
+                "--input-placeholder-color": connectTheme.input.placeholder,
               },
             }}
             {...form.getInputProps("phone")}
@@ -121,10 +139,12 @@ const ContactFormContainer = () => {
                 backgroundColor: connectTheme.input.background,
                 borderColor: connectTheme.input.border,
                 color: connectTheme.input.text,
-                '&::placeholder': {
-                  color: connectTheme.input.text,
-                  opacity: 0.5,
-                },
+                textShadow: getTextGlow(
+                  connectTheme.input.text,
+                  connectTheme.input.glow ?? false,
+                  1.5,
+                ),
+                "--input-placeholder-color": connectTheme.input.placeholder,
               },
             }}
             {...form.getInputProps("message")}
@@ -141,7 +161,7 @@ const ContactFormContainer = () => {
             }}
             styles={{
               root: {
-                '&:hover': {
+                "&:hover": {
                   backgroundColor: connectTheme.button.hoverBackground,
                 },
               },
