@@ -11,10 +11,13 @@ import { FaCheck, FaXmark } from "react-icons/fa6";
 import { sendEmail } from "../../services/emailService";
 import { notifications } from "@mantine/notifications";
 import { getTextGlow } from "../utils/glow";
+import { Turnstile } from "@marsidev/react-turnstile";
+import { useState } from "react";
 
 const ContactFormContainer = () => {
   const theme = useMantineTheme();
   const connectTheme = theme.other.connect;
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   const form = useForm({
     initialValues: {
@@ -33,6 +36,15 @@ const ContactFormContainer = () => {
   });
 
   const handleSubmit = async (values: typeof form.values) => {
+    if (!turnstileToken) {
+      notifications.show({
+        title: "Verification Required",
+        message: "Please complete the verification challenge.",
+        color: "yellow",
+        icon: <FaXmark />,
+      });
+      return;
+    }
     try {
       await sendEmail(values);
       notifications.show({
@@ -42,6 +54,7 @@ const ContactFormContainer = () => {
         icon: <FaCheck />,
       });
       form.reset();
+      setTurnstileToken(null);
     } catch (error) {
       notifications.show({
         title: "Ah no :(",
@@ -79,7 +92,7 @@ const ContactFormContainer = () => {
                   connectTheme.input.glow ?? false,
                   1.5,
                 ),
-                "--input-placeholder-color": connectTheme.input.placeholder
+                "--input-placeholder-color": connectTheme.input.placeholder,
               },
             }}
             {...form.getInputProps("name")}
@@ -100,7 +113,7 @@ const ContactFormContainer = () => {
                   connectTheme.input.glow ?? false,
                   1.5,
                 ),
-                "--input-placeholder-color": connectTheme.input.placeholder
+                "--input-placeholder-color": connectTheme.input.placeholder,
               },
             }}
             {...form.getInputProps("email")}
@@ -144,6 +157,14 @@ const ContactFormContainer = () => {
               },
             }}
             {...form.getInputProps("message")}
+          />
+
+          {/* Turnstile Widget */}
+          <Turnstile
+            siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+            onSuccess={(token: string) => setTurnstileToken(token)}
+            onError={() => setTurnstileToken(null)}
+            onExpire={() => setTurnstileToken(null)}
           />
 
           <Button
