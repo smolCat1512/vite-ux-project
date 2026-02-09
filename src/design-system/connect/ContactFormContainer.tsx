@@ -53,10 +53,6 @@ const ContactFormContainer = () => {
     }
   };
 
-  const color = connectTheme.formContainer.text;
-  const glow = connectTheme.formContainer.glow ?? false;
-  const textGlow = getTextGlow(color, glow, 1.5);
-
   return (
     <Paper
       shadow="md"
