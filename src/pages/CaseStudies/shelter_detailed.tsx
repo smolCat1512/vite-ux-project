@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Main from "../../utils/Main";
 
@@ -22,12 +21,6 @@ const ContentList = ({ title, items }: { title: string; items: string[] }) => (
 
 const CaseStudyShelterDetailed = () => {
   const shouldReduceMotion = useReducedMotion();
-
-  // Focus main content on mount
-  useEffect(() => {
-    const main = document.getElementById("main-content");
-    if (main) main.focus();
-  }, []);
 
   return (
     <Main className="p-8 md:w-8/12 mx-auto mt-24">

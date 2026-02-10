@@ -32,7 +32,7 @@ export const projects: Project[] = [
     ],
     cardImage: ShelterCard,
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     id: "nfcc",

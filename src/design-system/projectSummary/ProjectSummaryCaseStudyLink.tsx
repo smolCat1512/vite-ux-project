@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMantineTheme } from "@mantine/core";
 
 interface ProjectSummaryCaseStudyLinkProps {
@@ -15,15 +14,17 @@ const ProjectSummaryCaseStudyLink = ({ to, children }: ProjectSummaryCaseStudyLi
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link
-      to={to}
+    <a
+      href={to}
       className="inline-block mb-12 underline text-center mt-6"
       style={{ color: isHovered ? hoverColor : linkColor }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {children}
-    </Link>
+    </a>
   );
 };
 

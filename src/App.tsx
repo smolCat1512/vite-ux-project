@@ -12,11 +12,13 @@ function App() {
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/case-studies/shelter" element={<CaseStudyShelter />} />
-        <Route path="/case-studies/nfcc" element={<CaseStudyNFCC />} />
         <Route path="/projects/:projectId" element={<ProjectSummary />} />
-        <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
       </Route>
+
+      {/* Case study and CV outside RootLayout - so do not inherit theming */}
+      <Route path="/case-studies/shelter" element={<CaseStudyShelter />} />
+      <Route path="/case-studies/nfcc" element={<CaseStudyNFCC />} />
+      <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
       <Route path="/cv" element={<CV />} />
     </Routes>
   );
