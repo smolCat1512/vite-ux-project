@@ -4,9 +4,7 @@ import { Box } from "@mantine/core";
 import HeroHeading from "../design-system/hero/HeroHeading";
 import HeroHighlight from "../design-system/hero/HeroHighlight";
 import HeroSubheading from "../design-system/hero/HeroSubheading";
-// import HeroDescription from "../design-system/hero/HeroDescription";
 import ScrollDownButton from "../design-system/hero/ScrollDownButton";
-import UserType from "../design-system/hero/UserType";
 import RoleType from "../design-system/hero/RoleType";
 
 const Hero = () => {
@@ -14,7 +12,7 @@ const Hero = () => {
 
   const handleScrollToTechnologies = () => {
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
     const techSection = document.getElementById("technologies");
     if (techSection) {
@@ -28,10 +26,9 @@ const Hero = () => {
     <Box className="flex flex-col">
       <Box className="text-center justify-center mx-auto w-10/12 md:w-auto lg:w-auto">
         {/* Main heading */}
-        <div className="flex flex-row items-center justify-center pb-4">
+        <div className="flex flex-row items-center justify-center pb-12">
           <HeroHeading animate={!shouldReduceMotion}>
-            Hi, I'm <HeroHighlight>Shaun</HeroHighlight>, I <RoleType /> {" "} for{" "}
-            <UserType />
+            Hi, I'm <HeroHighlight>Shaun</HeroHighlight> I <RoleType />
           </HeroHeading>
         </div>
 

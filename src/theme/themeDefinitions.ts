@@ -81,6 +81,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           iconColor: "#777b7e",
           glow: false,
         },
+        drumText: {
+          color: "#9000ff",
+          glow: false,
+        },
       },
 
       header: {
