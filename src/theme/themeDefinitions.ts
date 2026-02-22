@@ -82,7 +82,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
         },
         drumText: {
-          color: "#9000ff",
+          color: "#ff6e00",
+          glow: false,
+        },
+        drumIcon: {
+          color: "#ff6e00",
           glow: false,
         },
       },
@@ -321,6 +325,14 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         socials: {
           circleColor: "#3d3434",
           iconColor: "#ededed",
+          glow: false,
+        },
+        drumText: {
+          color: "#f59e0b",
+          glow: false,
+        },
+        drumIcon: {
+          color: "#f59e0b",
           glow: false,
         },
       },
@@ -579,6 +591,16 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: true,
           glowColor: "#2de2e6",
         },
+        drumText: {
+          color: "#ffed1a",
+          glow: true,
+          glowColor: "#ffed1a",
+        },
+        drumIcon: {
+          color: "#ffed1a",
+          glow: true,
+          glowColor: "#ffed1a",
+        },
       },
 
       header: {
@@ -817,6 +839,14 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         socials: {
           circleColor: "#064e3b",
           iconColor: "#d1fae5",
+          glow: false,
+        },
+        drumText: {
+          color: "#34d399",
+          glow: false,
+        },
+        drumIcon: {
+          color: "#34d399",
           glow: false,
         },
       },

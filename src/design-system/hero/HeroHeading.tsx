@@ -1,6 +1,7 @@
 import { Typography, useMantineTheme } from "@mantine/core";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { getTextGlow } from "../utils/glow";
 
 interface HeroHeadingProps {
   children: ReactNode;
@@ -13,7 +14,9 @@ const HeroHeading = ({ children, animate = true }: HeroHeadingProps) => {
   const heading = theme.other?.hero?.heading;
 
   const color = heading?.color ?? theme.colors.gray[9];
-  const glow = heading?.glow;
+  const glow = heading?.glow ?? false;
+  
+  const textGlow = getTextGlow(color, glow, 1.5);
 
   return (
     <motion.div
@@ -27,9 +30,7 @@ const HeroHeading = ({ children, animate = true }: HeroHeadingProps) => {
         fz="2rem"
         style={{
           color,
-          textShadow: glow
-            ? `0 0 8px ${color}, 0 0 16px ${color}`
-            : undefined,
+          textShadow: textGlow,
         }}
       >
         {children}

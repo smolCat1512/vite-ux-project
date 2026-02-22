@@ -1,28 +1,38 @@
 import { useState, useEffect, useRef } from "react";
-import { useMantineTheme } from "@mantine/core";
+import { Typography, useMantineTheme } from "@mantine/core";
 import { getTextGlow } from "../utils/glow";
+import {
+  FaPencil,
+  FaMagnifyingGlass,
+  FaCode,
+  FaWrench,
+  FaVial,
+  FaRocket,
+} from "react-icons/fa6";
+import { FaCog } from "react-icons/fa";
 
 interface WordEntry {
   label: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 interface RoleTypeProps {
   words?: WordEntry[];
   slideDuration?: number;
   pauseDuration?: number;
-  /** Breakpoint (px) below which mobile layout is used. Default: 768 */
   mobileBreakpoint?: number;
 }
 
-const DEFAULT_WORDS: WordEntry[] = [
-  { label: "design", icon: "✏️" },
-  { label: "research", icon: "🔍" },
-  { label: "develop", icon: "💻" },
-  { label: "build", icon: "🔧" },
-  { label: "test", icon: "🧪" },
-  { label: "deploy", icon: "🚀" },
-  { label: "optimize", icon: "⚡" },
+// Default words are set here, and then overridden inside the component, so
+// that theme colors are in scope for the icons and text and text glow effects.
+const DEFAULT_WORD_DEFS: WordEntry[] = [
+  { label: "design", icon: <FaPencil /> },
+  { label: "research", icon: <FaMagnifyingGlass /> },
+  { label: "develop", icon: <FaCode /> },
+  { label: "build", icon: <FaWrench /> },
+  { label: "test", icon: <FaVial /> },
+  { label: "deploy", icon: <FaRocket /> },
+  { label: "optimise", icon: <FaCog /> },
 ];
 
 /**
@@ -36,26 +46,32 @@ const DEFAULT_WORDS: WordEntry[] = [
  * correctly sized at every viewport / font-size combination.
  */
 const RoleType = ({
-  words = DEFAULT_WORDS,
+  words,
   slideDuration = 420,
   pauseDuration = 2200,
   mobileBreakpoint = 768,
 }: RoleTypeProps) => {
   const theme = useMantineTheme();
-  const highlight = theme.other?.hero?.highlight;
-  const color = highlight?.color ?? "#ffee00";
-  const glow = highlight?.glow ?? false;
+  const color = theme?.other?.hero?.drumText?.color ?? "#ff6e00";
+  const glow = theme?.other?.hero?.drumText?.glow ?? false;
+  const iconColor = theme?.other?.hero?.drumIcon;
   const textGlow = getTextGlow(color, glow, 1.5);
+
+  // Build default words inside the component so iconColor is in scope
+  const defaultWords: WordEntry[] = DEFAULT_WORD_DEFS.map((w) =>
+    w.label === "design" ? { ...w, icon: <FaPencil color={iconColor} /> } : w,
+  );
+
+  const activeWords = words ?? defaultWords;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSliding, setIsSliding] = useState(false);
   const [measuredWidth, setMeasuredWidth] = useState<number | null>(null);
   const [lineHeight, setLineHeight] = useState(52);
   const [isMobile, setIsMobile] = useState(false);
-
   const rulerRef = useRef<HTMLDivElement>(null);
 
-  // ── Measure + track mobile breakpoint ────────────────────────────────────
+  // useEffect to measure word widths and line height, and track mobile breakpoint
   useEffect(() => {
     const measure = () => {
       setIsMobile(window.innerWidth < mobileBreakpoint);
@@ -67,42 +83,46 @@ const RoleType = ({
       const maxW = Math.max(...children.map((el) => el.offsetWidth));
       const lh = children[0].offsetHeight;
 
-      setMeasuredWidth(maxW + 4); // +4px breathing room
+      setMeasuredWidth(maxW + 4);
       if (lh > 0) setLineHeight(lh);
     };
 
     measure();
     document.fonts?.ready?.then(measure);
-
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, [mobileBreakpoint]);
 
-  // ── Advance index ─────────────────────────────────────────────────────────
+  // useEffect to handle the sliding interval
   useEffect(() => {
     const interval = setInterval(() => {
       setIsSliding(true);
       setTimeout(() => {
-        setCurrentIndex((prev) => (prev + 1) % words.length);
+        setCurrentIndex((prev) => (prev + 1) % activeWords.length);
         setIsSliding(false);
       }, slideDuration);
     }, pauseDuration + slideDuration);
-
     return () => clearInterval(interval);
-  }, [words.length, pauseDuration, slideDuration]);
+  }, [activeWords.length, pauseDuration, slideDuration]);
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
+  // Helper to get the word entry for a given slot offset
   const getEntry = (offset: number): WordEntry =>
-    words[(currentIndex + offset + words.length) % words.length];
+    activeWords[
+      (currentIndex + offset + activeWords.length) % activeWords.length
+    ];
 
+  // Function to render 5 slots: the current word in the center, one above and one below
+  // it, and two more (fading out) above and below those, to create a smooth drum effect.
   const SLOTS = [-2, -1, 0, 1, 2];
 
+  // Style function for each slot, based on its offset from the current
+  // word and whether we're currently sliding. Returns absolute positioning to stack the
+  // words, with transforms to shift them up/down and scale them, and opacity to fade
+  // out the words further from the center.
   const slotStyle = (offset: number): React.CSSProperties => {
     const shift = isSliding ? offset - 1 : offset;
     const absShift = Math.abs(shift);
-
     const opacity = absShift === 0 ? 1 : absShift === 1 ? 0.22 : 0;
-
     const scale = absShift === 0 ? 1 : absShift === 1 ? 0.8 : 0.65;
 
     return {
@@ -116,7 +136,9 @@ const RoleType = ({
       opacity,
       transition: isSliding
         ? `transform ${slideDuration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-           opacity   ${slideDuration}ms ease`
+           opacity   ${slideDuration}ms ease,
+           color     ${slideDuration}ms ease,
+           text-shadow ${slideDuration}ms ease`
         : "none",
       whiteSpace: "nowrap",
       display: "flex",
@@ -124,12 +146,17 @@ const RoleType = ({
       gap: "0.3em",
       color: offset === 0 ? color : "inherit",
       textShadow: offset === 0 ? textGlow : undefined,
+      paddingLeft: "0.15em",
     };
   };
 
+  // The "window" for the "drum" is set to 3 lines tall
   const windowHeight = lineHeight * 3;
 
-  // ── Desktop: inline, shifted up to align with headline ───────────────────
+  // The window is an inline-block on desktop, with a translateY to sit flush with the headline text.
+  // On mobile it's a block, centred, with no translateY so it sits on its own line - as we have less
+  // width to work with, the translateY can cause awkward cropping of the top and bottom of the words,
+  // so better to just let it sit in the flow of the text.
   const windowStyle: React.CSSProperties = isMobile
     ? {
         display: "block",
@@ -159,7 +186,7 @@ const RoleType = ({
 
   return (
     <>
-      {/* ── Hidden ruler ─────────────────────────────────────────────────── */}
+      {/* Hidden ruler to measure text width, so we can set the window width to match */}
       <div
         ref={rulerRef}
         aria-hidden="true"
@@ -173,7 +200,7 @@ const RoleType = ({
           flexDirection: "column",
         }}
       >
-        {words.map((w) => (
+        {activeWords.map((w) => (
           <div
             key={w.label}
             style={{
@@ -183,18 +210,18 @@ const RoleType = ({
               whiteSpace: "nowrap",
             }}
           >
-            <span>{w.label}</span>
-            <span style={{ fontSize: "0.82em" }}>{w.icon}</span>
+            <Typography>{w.label}</Typography>
+            <div style={{ fontSize: "0.82em" }}>{w.icon}</div>
           </div>
         ))}
       </div>
 
-      {/* ── Drum window ──────────────────────────────────────────────────── */}
-      <span style={windowStyle}>
+      {/* Drum window, so we can show only a subset of the words */}
+      <div style={windowStyle}>
         {SLOTS.map((offset) => (
-          <span key={offset} style={slotStyle(offset)}>
-            <span>{getEntry(offset).label}</span>
-            <span
+          <div key={offset} style={slotStyle(offset)}>
+            <Typography>{getEntry(offset).label}</Typography>
+            <div
               style={{
                 fontSize: "0.82em",
                 lineHeight: 1,
@@ -202,10 +229,10 @@ const RoleType = ({
               }}
             >
               {getEntry(offset).icon}
-            </span>
-          </span>
+            </div>
+          </div>
         ))}
-      </span>
+      </div>
     </>
   );
 };
