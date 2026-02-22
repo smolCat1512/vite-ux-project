@@ -74,12 +74,6 @@ const Socials = () => {
                   radius="xl"
                   className="cursor-pointer"
                   color={circleColor}
-                  // style={{
-                  //   boxShadow: glow
-                  // ? `0 0 8px 2px ${theme.other?.hero?.socials?.glowColor ||
-                  //         iconColor}`
-                  //     : "none",
-                  // }}
                 >
                   {link.external ? (
                     <Anchor

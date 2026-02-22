@@ -1,10 +1,11 @@
 import { Container, Grid, Text, Stack } from "@mantine/core";
-import { FaEnvelope, FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import ConnectHeading from "../design-system/connect/ConnectHeading";
 import ConnectSubheading from "../design-system/connect/ConnectSubheading";
 import ContactFormContainer from "../design-system/connect/ContactFormContainer";
 import ConnectLinkedIn from "../design-system/connect/ConnectLinkedIn";
 import ConnectLocation from "../design-system/connect/ConnectLocation";
+import ConnectCv from "../design-system/connect/ConnectCv";
 
 const Connect = () => {
   return (
@@ -31,8 +32,7 @@ const Connect = () => {
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
               >
-                <FaEnvelope size={20} />
-                <Text>your.email@example.com</Text>
+                <ConnectCv />
               </div>
               {/* Optional: Add social links */}
               <div
