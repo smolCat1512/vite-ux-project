@@ -22,6 +22,7 @@ const ConnectLinkedIn = () => {
         cursor: "pointer",
         height: "2rem",
         display: "block",
+        width: "200px",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
