@@ -46,6 +46,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           text: "#ffffff",
           hoverBackground: "#e66300",
         },
+        icons: {
+          iconStart: "#ff6e00",
+          iconEnd: "#f59e0b",
+          glow: false,
+          glowColor: "#10b981",
+          underlineColor: "#ff6e00",
+        },
       },
 
       hero: {
@@ -291,6 +298,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           background: "#f59e0b",
           text: "#000000",
           hoverBackground: "#d97706",
+        },
+        icons: {
+          iconStart: "#f59e0b",
+          iconEnd: "#d97706",
+          glow: false,
+          glowColor: "#10b981",
+          underlineColor: "#f59e0b",
         },
       },
 
@@ -549,6 +563,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           text: "#1a0033",
           hoverBackground: "#e60099",
         },
+        icons: {
+          iconStart: "#ffed1a",
+          iconEnd: "#ffed1a",
+          glow: true,
+          glowColor: "#ffed1a",
+          underline: "#ffed1a",
+        },
       },
 
       hero: {
@@ -805,6 +826,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           background: "#10b981",
           text: "#000000",
           hoverBackground: "#059669",
+        },
+        icons: {
+          iconStart: "#34d399",
+          iconEnd: "#10b981",
+          glow: false,
+          glowColor: "#10b981",
+          underlineColor: "#10b981",
         },
       },
 

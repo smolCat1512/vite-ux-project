@@ -10,7 +10,7 @@ interface ConnectSubheadingProps {
 const ConnectSubheading = ({ children, animate = true }: ConnectSubheadingProps) => {
   const theme = useMantineTheme();
   const subheading = theme.other?.hero?.subheading;
-  const color = subheading?.color ?? theme.colors.gray[7];
+  const color = theme?.other?.connect?.input?.placeholder;
   const glow = subheading?.glow;
 
   return (

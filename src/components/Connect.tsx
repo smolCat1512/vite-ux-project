@@ -1,13 +1,10 @@
 import { Container, Grid, Text, Stack } from "@mantine/core";
-import {
-  FaEnvelope,
-  FaLocationPin,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa6";
+import { FaEnvelope, FaGithub } from "react-icons/fa6";
 import ConnectHeading from "../design-system/connect/ConnectHeading";
 import ConnectSubheading from "../design-system/connect/ConnectSubheading";
 import ContactFormContainer from "../design-system/connect/ContactFormContainer";
+import ConnectLinkedIn from "../design-system/connect/ConnectLinkedIn";
+import ConnectLocation from "../design-system/connect/ConnectLocation";
 
 const Connect = () => {
   return (
@@ -17,7 +14,7 @@ const Connect = () => {
         <Grid.Col span={{ base: 12, md: 5 }}>
           <Stack gap="xl">
             <div>
-              <ConnectHeading>Get in Touch</ConnectHeading>
+              <ConnectHeading>Connect</ConnectHeading>
               <ConnectSubheading>
                 Have a project in mind or just want to chat? I'd love to hear
                 from you. Drop me a message and I'll get back to you as soon as
@@ -29,8 +26,7 @@ const Connect = () => {
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
               >
-                <FaLocationPin size={20} />
-                <Text>Coates, Cambridgeshire, England, UK</Text>
+                <ConnectLocation />
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
@@ -42,8 +38,7 @@ const Connect = () => {
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
               >
-                <FaLinkedin size={20} />
-                <Text>linkedin.com/in/yourprofile</Text>
+                <ConnectLinkedIn />
               </div>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
