@@ -1,5 +1,4 @@
-import { Container, Grid, Text, Stack } from "@mantine/core";
-import { FaGithub } from "react-icons/fa6";
+import { Container, Grid, Stack } from "@mantine/core";
 import ConnectHeading from "../design-system/connect/ConnectHeading";
 import ConnectSubheading from "../design-system/connect/ConnectSubheading";
 import ContactFormContainer from "../design-system/connect/ContactFormContainer";
@@ -39,12 +38,6 @@ const Connect = () => {
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
               >
                 <ConnectLinkedIn />
-              </div>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "12px" }}
-              >
-                <FaGithub size={20} />
-                <Text>github.com/yourusername</Text>
               </div>
             </Stack>
           </Stack>
