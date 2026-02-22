@@ -54,8 +54,16 @@ const RoleType = ({
   const theme = useMantineTheme();
   const color = theme?.other?.hero?.drumText?.color ?? "#ff6e00";
   const glow = theme?.other?.hero?.drumText?.glow ?? false;
-  const iconColor = theme?.other?.hero?.drumIcon;
+  const iconColor = theme?.other?.hero?.drumIcon?.color ?? "#ff6e00";
   const textGlow = getTextGlow(color, glow, 1.5);
+
+  const getBaselineOffset = () => {
+    const font = theme.fontFamily ?? "";
+    if (font.includes("Lexend")) return "42%";
+    if (font.includes("Orbitron")) return "44%";
+    if (font.includes("Inter")) return "42.5%";
+    return "43%";
+  };
 
   // Build default words inside the component so iconColor is in scope
   const defaultWords: WordEntry[] = DEFAULT_WORD_DEFS.map((w) =>
@@ -70,6 +78,7 @@ const RoleType = ({
   const [lineHeight, setLineHeight] = useState(52);
   const [isMobile, setIsMobile] = useState(false);
   const rulerRef = useRef<HTMLDivElement>(null);
+  const effectiveLineHeight = isMobile ? lineHeight * 0.8 : lineHeight;
 
   // useEffect to measure word widths and line height, and track mobile breakpoint
   useEffect(() => {
@@ -129,29 +138,27 @@ const RoleType = ({
       position: "absolute",
       left: isMobile ? "50%" : 0,
       top: "50%",
+      color: color,
+      textShadow: textGlow,
       transform: isMobile
-        ? `translate(-50%, calc(-50% + ${shift * lineHeight}px)) scale(${scale})`
-        : `translateY(calc(-50% + ${shift * lineHeight}px)) scale(${scale})`,
+        ? `translate(-50%, calc(-50% + ${shift * effectiveLineHeight}px)) scale(${scale})`
+        : `translateY(calc(-50% + ${shift * effectiveLineHeight}px)) scale(${scale})`,
       transformOrigin: isMobile ? "center center" : "left center",
       opacity,
       transition: isSliding
         ? `transform ${slideDuration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-           opacity   ${slideDuration}ms ease,
-           color     ${slideDuration}ms ease,
-           text-shadow ${slideDuration}ms ease`
+           opacity   ${slideDuration}ms ease`
         : "none",
       whiteSpace: "nowrap",
       display: "flex",
       alignItems: "center",
       gap: "0.3em",
-      color: offset === 0 ? color : "inherit",
-      textShadow: offset === 0 ? textGlow : undefined,
       paddingLeft: "0.15em",
     };
   };
 
   // The "window" for the "drum" is set to 3 lines tall
-  const windowHeight = lineHeight * 3;
+  const windowHeight = effectiveLineHeight * 3;
 
   // The window is an inline-block on desktop, with a translateY to sit flush with the headline text.
   // On mobile it's a block, centred, with no translateY so it sits on its own line - as we have less
@@ -173,8 +180,7 @@ const RoleType = ({
     : {
         display: "inline-block",
         position: "relative",
-        verticalAlign: "baseline",
-        transform: "translateY(43%)",
+        transform: `translateY(${getBaselineOffset()})`,
         width: measuredWidth ?? "auto",
         height: windowHeight,
         overflow: "hidden",
@@ -226,6 +232,7 @@ const RoleType = ({
                 fontSize: "0.82em",
                 lineHeight: 1,
                 display: "inline-block",
+                color: iconColor,
               }}
             >
               {getEntry(offset).icon}

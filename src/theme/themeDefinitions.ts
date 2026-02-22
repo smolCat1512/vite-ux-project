@@ -50,7 +50,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
 
       hero: {
         heading: {
-          color: "#777b7e",
+          color: "#4a5568",
           glow: false,
         },
         highlight: {
@@ -82,11 +82,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
         },
         drumText: {
-          color: "#ff6e00",
+          color: "#e65c00",
           glow: false,
         },
         drumIcon: {
-          color: "#ff6e00",
+          color: "#f59e0b",
           glow: false,
         },
       },
@@ -296,11 +296,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
 
       hero: {
         heading: {
-          color: "#ededed",
+          color: "#e2e8f0",
           glow: false,
         },
         highlight: {
-          color: "#f59e0b",
+          color: "#ff8c3a",
           glow: false,
         },
         cursor: {
@@ -332,7 +332,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
         },
         drumIcon: {
-          color: "#f59e0b",
+          color: "#fbbf24",
           glow: false,
         },
       },
@@ -568,9 +568,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glowColor: "#2de2e6",
         },
         subheading: {
-          color: "#2de2e6",
+          color: "#ff80d5",
           glow: true,
-          glowColor: "#2de2e6",
+          glowColor: "#ff80d5",
         },
         description: {
           color: "#ff8c00",
@@ -592,14 +592,14 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glowColor: "#2de2e6",
         },
         drumText: {
-          color: "#ffed1a",
+          color: "#2de2e6",
           glow: true,
-          glowColor: "#ffed1a",
+          glowColor: "#2de2e6",
         },
         drumIcon: {
-          color: "#ffed1a",
+          color: "#ff4dc4",
           glow: true,
-          glowColor: "#ffed1a",
+          glowColor: "#ff4dc4",
         },
       },
 
@@ -842,11 +842,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: false,
         },
         drumText: {
-          color: "#34d399",
+          color: "#6ee7b7",
           glow: false,
         },
         drumIcon: {
-          color: "#34d399",
+          color: "#10b981",
           glow: false,
         },
       },
