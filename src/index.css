@@ -64,21 +64,6 @@ body.forest {
   transform: scaleX(1);
 }
 
-/* Optional: other global styling (links, headings, etc.) can inherit --foreground */
-a,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-button {
-  color: var(--foreground);
-}
-
-
 @keyframes neonGlow {
   0% {
     text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
