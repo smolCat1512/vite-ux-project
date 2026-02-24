@@ -116,13 +116,15 @@ export default function CV() {
         {/* RIGHT PANEL — ~2/3 width */}
         <main className="w-2/3 p-10 flex flex-col gap-8">
           {/* Contact row */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-4 text-sm text-gray-500">
             <span>Coates, Cambridgeshire</span>
             <span className="text-gray-300">|</span>
             <span>shaunuxuidev@gmail.com</span>
-            <span className="text-gray-300">|</span>
-            <span>07958 324 694</span>
-            <span className="text-gray-300">|</span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-8 text-sm text-gray-500"
+          style={{ marginTop: "-1rem" }}
+          >
             <a
               href="https://www.linkedin.com/in/shaun-halliday-5001a6b2"
               className="underline text-teal-600 hover:text-teal-800"
@@ -133,7 +135,7 @@ export default function CV() {
             </a>
             <span className="text-gray-300">|</span>
             <a
-              href="http://www.shaunhalliday.co.uk/"
+              href="http://www.shaunhalliday.co.uk/" // !TODO Placeholder URL for personal portfolio
               className="underline text-teal-600 hover:text-teal-800"
               target="_blank"
               rel="noopener noreferrer"
