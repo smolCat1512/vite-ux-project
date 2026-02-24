@@ -105,8 +105,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           hoverBg: "#f0f0f0",
         },
         logo: {
-          color: "#777b7e",
+          color: "#212529",
           glow: false,
+          gradientFrom: "#ff6e00",
+          gradientTo: "#f59e0b",
+          buttonBackground: "#ffffff",
         },
       },
 
@@ -360,6 +363,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         logo: {
           color: "#ededed",
           glow: false,
+          gradientFrom: "#ff6e00",
+          gradientTo: "#f59e0b",
+          buttonBackground: "#121212",
         },
       },
 
@@ -635,6 +641,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           color: "#ffed1a",
           glow: true,
           glowColor: "#ffed1a",
+          gradientFrom: "#ff1ab3",
+          gradientTo: "#2de2e6",
+          buttonBackground: "#1a0033",
         },
       },
 
@@ -888,6 +897,9 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         logo: {
           color: "#d1fae5",
           glow: false,
+          gradientFrom: "#059669",
+          gradientTo: "#34d399",
+          buttonBackground: "#0b2e13",
         },
       },
 

@@ -11,79 +11,92 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
-
   const theme = useMantineTheme();
-
   const text = theme.other?.header?.logo?.color ?? "#000000";
   const glowColor = theme.other?.header?.logo?.glowColor;
   const glow = theme.other?.header?.logo?.glow ?? false;
   const textGlow = getTextGlow(glowColor, glow);
   const iconGlow = getIconGlow(glowColor, glow);
 
+  // Pull your gradient colours from the theme or hardcode them
+  const gradientFrom = theme.other?.header?.logo?.gradientFrom;
+  const gradientTo = theme.other?.header?.logo?.gradientTo;
+  const buttonBackground = theme.other?.header?.logo?.buttonBackground;
+
   return (
-    <Button
-      onClick={onClick}
-      className="group relative flex w-auto font-bold text-xl"
-      aria-label="Go to home page"
-      size="md"
-      variant="transparent"
-      styles={{
-        label: {
-          color: text,
-          textShadow: textGlow,
-        },
+    <div
+      style={{
+        background: `linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`,
+        padding: "4px",          
+        borderRadius: "var(--mantine-radius-md)",
+        display: "inline-flex",
+        color: text,
       }}
     >
-      {/* Initial letters */}
-      <span
-        className={`absolute transition-transform duration-500 transform left-2 ${
-          prefersReducedMotion
-            ? ""
-            : "translate-y-0 group-hover:-translate-y-10"
-        } opacity-100 group-hover:opacity-0`}
-        aria-hidden="true"
-      >
-        <span
-          className="relative -top-2 mr-1.5"
-          style={{
+      <Button
+        onClick={onClick}
+        className="group relative flex w-auto font-bold text-xl"
+        aria-label="Go to home page"
+        size="lg"
+        variant="transparent"
+        style={{
+          borderRadius: "calc(var(--mantine-radius-md) - 2px)",
+        }}
+        styles={{
+          label: {
             color: text,
-            textShadow: getTextGlow(glowColor, glow),
-          }}
-        >
-          S
-        </span>
-        <span
-          className="relative top-1"
-          style={{
-            color: text,
-            textShadow: getTextGlow(glowColor, glow),
-          }}
-        >
-          H
-        </span>
-      </span>
-
-      {/* Icon that appears on hover */}
-      <span
-        className={`absolute transition-transform duration-500 transform left-2 ${
-          prefersReducedMotion ? "" : "translate-y-10 group-hover:translate-y-0"
-        } opacity-0 group-hover:opacity-100`}
-        aria-hidden="true"
+            textShadow: textGlow,
+          },
+          root: {
+            backgroundColor: buttonBackground,
+          },
+        }}
       >
-        <FaHome
-          size={18}
-          focusable={false}
+        {/* Initial letters */}
+        <span
+          className={`absolute transition-transform duration-500 transform left-2 ${
+            prefersReducedMotion
+              ? ""
+              : "translate-y-0 group-hover:-translate-y-10"
+          } opacity-100 group-hover:opacity-0`}
           aria-hidden="true"
-          style={{
-            color: text,
-            filter: iconGlow,
-            position: "relative",
-            top: "1px",
-            left: "4px",
-          }}
-        />
-      </span>
-    </Button>
+        >
+          <span
+            className="relative -top-2.5 right-1 text-2xl"
+            style={{ color: text, textShadow: textGlow }}
+          >
+            S
+          </span>
+          <span
+            className="relative top-2.5 left-1.5  text-2xl"
+            style={{ color: text, textShadow: textGlow }}
+          >
+            H
+          </span>
+        </span>
+
+        {/* Icon that appears on hover */}
+        <span
+          className={`absolute transition-transform duration-500 transform left-2 ${
+            prefersReducedMotion ? "" : "translate-y-10 group-hover:translate-y-0"
+          } opacity-0 group-hover:opacity-100`}
+          aria-hidden="true"
+        >
+          <FaHome
+            size={22}
+            focusable={false}
+            aria-hidden="true"
+            style={{
+              color: text,
+              filter: iconGlow,
+              position: "relative",
+              top: "2px",
+              left: "8px",
+            }}
+          />
+        </span>
+      </Button>
+    </div>
   );
 };
 
