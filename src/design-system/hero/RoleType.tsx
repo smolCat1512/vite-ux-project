@@ -62,6 +62,7 @@ const RoleType = ({
     if (font.includes("Lexend")) return "42%";
     if (font.includes("Orbitron")) return "44%";
     if (font.includes("Inter")) return "42.5%";
+    if (font.includes("JetBrains")) return "41%";
     return "43%";
   };
 
@@ -92,7 +93,7 @@ const RoleType = ({
       const maxW = Math.max(...children.map((el) => el.offsetWidth));
       const lh = children[0].offsetHeight;
 
-      setMeasuredWidth(maxW + 4);
+      setMeasuredWidth(maxW + 32);
       if (lh > 0) setLineHeight(lh);
     };
 
@@ -212,7 +213,7 @@ const RoleType = ({
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "0.3em",
+              gap: "0.4em",
               whiteSpace: "nowrap",
             }}
           >
