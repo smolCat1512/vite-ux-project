@@ -515,7 +515,7 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
   },
 
   synthwave: {
-    fontFamily: "Orbitron, sans-serif",
+    fontFamily: "JetBrains Mono, monospace",
     primaryColor: "pink",
 
     colors: {
