@@ -19,7 +19,7 @@ export default function CV() {
           }
 
           html {
-            zoom: 0.65; /* tweak this — try 0.6, 0.65, 0.7 */
+            zoom: 0.8;
           }
 
           .cv-wrapper {
