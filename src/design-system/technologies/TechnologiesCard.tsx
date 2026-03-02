@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { useMantineTheme } from "@mantine/core";
 import { motion } from "framer-motion";
 
 interface TechnologiesCardProps {
@@ -13,11 +12,6 @@ const TechnologiesCard = ({
   shouldReduceMotion,
   jiggle,
 }: TechnologiesCardProps) => {
-  const theme = useMantineTheme();
-  const cardBg =
-    theme.other?.technologies?.card?.background ?? "rgba(219, 234, 254, 0.5)";
-  const cardBorder = theme.other?.technologies?.card?.border ?? "#dee2e6";
-  const textColor = theme.other?.technologies?.text?.color ?? "#343a40";
 
   return (
     <motion.div
@@ -26,14 +20,15 @@ const TechnologiesCard = ({
         alignItems: "center",
         justifyContent: "center",
         gap: "8px",
-        padding: "12px 18px",
+        padding: "18px 22px",
         fontSize: "0.9rem",
         borderRadius: "999px",
-        background: cardBg,
+        background: "#ffffff",
         borderWidth: "1px",
         borderStyle: "solid",
-        borderColor: cardBorder,
-        color: textColor,
+        borderColor: "rgba(0,0,0,0.1)",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+        color: "#000000",
         fontWeight: 500,
         backdropFilter: "blur(8px)",
         cursor: "default",

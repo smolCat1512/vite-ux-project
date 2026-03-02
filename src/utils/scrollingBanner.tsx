@@ -6,7 +6,6 @@ import {
   FaAws,
   FaCloudflare,
   FaCss3Alt,
-  FaFigma,
   FaGitAlt,
   FaHtml5,
   FaNpm,
@@ -19,28 +18,29 @@ import { RiJavascriptFill, RiNextjsFill } from "react-icons/ri";
 import { BiLogoTypescript, BiLogoNetlify } from "react-icons/bi";
 import { SiFramer, SiMantine, SiShadcnui } from "react-icons/si";
 import { TbBrandVite, TbBrandStorybook } from "react-icons/tb";
+import { IoLogoFigma } from "react-icons/io5";
 
 const technologies = [
-  { name: "React", icon: FaReact },
-  { name: "Next.js", icon: RiNextjsFill },
-  { name: "Python", icon: FaPython },
-  { name: "Typescript", icon: BiLogoTypescript },
-  { name: "JavaScript", icon: RiJavascriptFill },
-  { name: "HTML5", icon: FaHtml5 },
-  { name: "CSS3", icon: FaCss3Alt },
-  { name: "Sass", icon: FaSass },
-  { name: "AWS", icon: FaAws },
-  { name: "Cloudflare", icon: FaCloudflare },
-  { name: "Netlify", icon: BiLogoNetlify },
-  { name: "Git", icon: FaGitAlt },
-  { name: "Figma", icon: FaFigma },
-  { name: "Framer", icon: SiFramer },
-  { name: "Sketch", icon: FaSketch },
-  { name: "Vite", icon: TbBrandVite },
-  { name: "NPM", icon: FaNpm },
-  { name: "Storybook", icon: TbBrandStorybook },
-  { name: "Mantine", icon: SiMantine },
-  { name: "Shadcn", icon: SiShadcnui },
+  { name: "React", icon: FaReact, color: "#58C4DC" },
+  { name: "Next.js", icon: RiNextjsFill, color: "#000000" },
+  { name: "Python", icon: FaPython, color: "#3776AB" },
+  { name: "Typescript", icon: BiLogoTypescript, color: "#e34c26" },
+  { name: "JavaScript", icon: RiJavascriptFill, color: "#f7df1e" },
+  { name: "HTML5", icon: FaHtml5, color: "#e34c26" },
+  { name: "CSS3", icon: FaCss3Alt, color: "#663399" },
+  { name: "Sass", icon: FaSass, color: "#CC6699" },
+  { name: "AWS", icon: FaAws, color: "#FF9900" },
+  { name: "Cloudflare", icon: FaCloudflare, color: "#F48120" },
+  { name: "Netlify", icon: BiLogoNetlify, color: "#05BDBA" },
+  { name: "Git", icon: FaGitAlt, color: "#F1502F" },
+  { name: "Figma", icon: IoLogoFigma, color: "#a259ff" },
+  { name: "Framer", icon: SiFramer, color: "#0055FF" },
+  { name: "Sketch", icon: FaSketch, color: "#FFD32C" },
+  { name: "Vite", icon: TbBrandVite, color: "#9575CD" },
+  { name: "NPM", icon: FaNpm, color: "#cb3837" },
+  { name: "Storybook", icon: TbBrandStorybook, color: "#FF4785" },
+  { name: "Mantine", icon: SiMantine, color: "#339af0" },
+  { name: "Shadcn", icon: SiShadcnui, color: "#3B4F82" },
 ];
 
 const row1 = technologies.slice(0, 7); // → left
@@ -77,19 +77,24 @@ const ScrollRow = ({ items, direction, duration }: ScrollRowProps) => {
           aria-hidden={copy === 1}
           style={{
             display: "flex",
-            gap: "12px",
             flexWrap: "nowrap",
-            paddingRight: "12px",
             listStyle: "none",
             margin: 0,
             padding: 0,
           }}
         >
           {items.map((tech, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              style={{ display: "inline-flex", paddingRight: "12px" }}
+            >
               <TechnologiesCard shouldReduceMotion={true} jiggle={false}>
                 <TechnologiesText>{tech.name}</TechnologiesText>
-                <TechnologiesIcon icon={tech.icon} size={28} />
+                <TechnologiesIcon
+                  icon={tech.icon}
+                  size={28}
+                  color={tech.color}
+                />
               </TechnologiesCard>
             </li>
           ))}

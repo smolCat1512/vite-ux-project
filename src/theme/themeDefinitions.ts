@@ -124,17 +124,6 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         header: {
           color: "#343a40",
         },
-        card: {
-          background:
-            "linear-gradient(to right, rgba(219, 234, 254, 0.5), rgba(191, 219, 254, 0.5))",
-          border: "#dee2e6",
-        },
-        text: {
-          color: "#343a40",
-        },
-        icon: {
-          color: "#495057",
-        },
       },
 
       portfolio: {
@@ -379,16 +368,6 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       technologies: {
         header: {
           color: "#ededed",
-        },
-        card: {
-          background: "rgba(30, 30, 30, 0.6)",
-          border: "#3a3a3a",
-        },
-        text: {
-          color: "#ededed",
-        },
-        icon: {
-          color: "#9ca3af",
         },
       },
 
@@ -658,17 +637,6 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         header: {
           color: "#ff4dc4",
         },
-        card: {
-          background:
-            "linear-gradient(135deg, rgba(255, 26, 179, 0.2), rgba(45, 226, 230, 0.2))",
-          border: "#ff4dc4",
-        },
-        text: {
-          color: "#ffed1a",
-        },
-        icon: {
-          color: "#2de2e6",
-        },
       },
 
       portfolio: {
@@ -913,16 +881,6 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
       technologies: {
         header: {
           color: "#d1fae5",
-        },
-        card: {
-          background: "rgba(6, 78, 59, 0.4)",
-          border: "#10b981",
-        },
-        text: {
-          color: "#d1fae5",
-        },
-        icon: {
-          color: "#6ee7b7",
         },
       },
 

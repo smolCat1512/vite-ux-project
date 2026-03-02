@@ -22,6 +22,7 @@ const TechnologiesHeader = ({ children }: TechnologiesHeaderProps) => {
       style={{
         color,
         textShadow: textGlow,
+        marginBottom: "1.5rem",
       }}
     >
       {children}
