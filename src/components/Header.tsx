@@ -32,7 +32,7 @@ const Header = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-lg py-2 px-4 flex justify-between items-center z-40 overflow-hidden"
+        className="fixed top-0 left-0 w-full bg-opacity-80 backdrop-blur-lg py-2 px-4 flex justify-between items-center z-40"
       >
         {/* Logo as button */}
         <Logo onClick={handleLogoClick} />

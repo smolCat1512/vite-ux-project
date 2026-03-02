@@ -21,7 +21,7 @@ const PortfolioCard = ({
       <Link
         to={`/projects/${id}`}
         aria-label={`View ${title} project details`}
-        className="overflow-hidden block"
+        className="block"
       >
         {imageError || !cardImage ? (
           <PortfolioCardImagePlaceholder showText={true} />
