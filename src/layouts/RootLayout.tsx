@@ -12,7 +12,7 @@ const RootLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <a href="#main-content" className="sr-only focus:not-sr-only">
         Skip to main content
       </a>

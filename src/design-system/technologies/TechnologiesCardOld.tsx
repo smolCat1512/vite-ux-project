@@ -14,8 +14,7 @@ const TechnologiesCard = ({
   jiggle,
 }: TechnologiesCardProps) => {
   const theme = useMantineTheme();
-  const cardBg =
-    theme.other?.technologies?.card?.background ?? "rgba(219, 234, 254, 0.5)";
+  const cardBg = theme.other?.technologies?.card?.background ?? "rgba(219, 234, 254, 0.5)";
   const cardBorder = theme.other?.technologies?.card?.border ?? "#dee2e6";
   const textColor = theme.other?.technologies?.text?.color ?? "#343a40";
 
@@ -26,14 +25,14 @@ const TechnologiesCard = ({
         alignItems: "center",
         justifyContent: "center",
         gap: "8px",
-        padding: "12px 18px",
-        fontSize: "0.9rem",
+        padding: "6px 12px",
         borderRadius: "999px",
         background: cardBg,
         borderWidth: "1px",
         borderStyle: "solid",
         borderColor: cardBorder,
         color: textColor,
+        fontSize: "0.85rem",
         fontWeight: 500,
         backdropFilter: "blur(8px)",
         cursor: "default",

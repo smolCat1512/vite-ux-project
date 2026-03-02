@@ -160,12 +160,12 @@ const ContactFormContainer = () => {
           />
 
           {/* Turnstile Widget */}
-          <Turnstile
-            siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-            onSuccess={(token: string) => setTurnstileToken(token)}
-            onError={() => setTurnstileToken(null)}
-            onExpire={() => setTurnstileToken(null)}
-          />
+            <Turnstile
+              siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+              onSuccess={(token: string) => setTurnstileToken(token)}
+              onError={() => setTurnstileToken(null)}
+              onExpire={() => setTurnstileToken(null)}
+            />
 
           <Button
             type="submit"
