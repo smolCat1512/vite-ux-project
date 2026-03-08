@@ -1,14 +1,17 @@
 import { motion, useReducedMotion } from "framer-motion";
-import Socials from "./Socials";
-import { Box } from "@mantine/core";
+import { Box, Button, useMantineTheme } from "@mantine/core";
 import HeroHeading from "../design-system/hero/HeroHeading";
 import HeroHighlight from "../design-system/hero/HeroHighlight";
 import HeroSubheading from "../design-system/hero/HeroSubheading";
 import ScrollDownButton from "../design-system/hero/ScrollDownButton";
 import RoleType from "../design-system/hero/RoleType";
+import { FaRegHandshake } from "react-icons/fa";
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
+
+  const theme = useMantineTheme();
+  const connectTheme = theme.other.connect;
 
   const handleScrollToTechnologies = () => {
     const prefersReducedMotion = window.matchMedia(
@@ -18,6 +21,20 @@ const Hero = () => {
     if (techSection) {
       techSection.scrollIntoView({
         behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+    }
+  };
+
+  const handleScrollToConnect = () => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const connectSection = document.getElementById("connect");
+    if (connectSection) {
+      connectSection.scrollIntoView({
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+        // Adding a slight offset to account for fixed headers or spacing
+        block: "center",
       });
     }
   };
@@ -44,7 +61,27 @@ const Hero = () => {
           I create user-centered digital experiences
         </HeroDescription> */}
 
-        <Socials />
+        <Button
+          type="submit"
+          size="lg"
+          radius="xl"
+          mt="md"
+          style={{
+            backgroundColor: connectTheme.button.background,
+            color: connectTheme.button.text,
+          }}
+          styles={{
+            root: {
+              "&:hover": {
+                backgroundColor: connectTheme.button.hoverBackground,
+              },
+            },
+          }}
+          onClick={handleScrollToConnect}
+          rightSection={<FaRegHandshake size="2rem" className="inline-block mr-2" />}
+        >
+          Get in touch
+        </Button>
       </Box>
 
       {/* Scroll down arrow */}
