@@ -3,9 +3,10 @@ import { FaPalette } from "react-icons/fa";
 import { useThemeController } from "../../theme/ThemeProvider";
 import type { ThemeName } from "../../theme/themeDefinitions";
 import { getTextGlow, getIconGlow } from "../../design-system/utils/glow";
-import { FaSun, FaMoon } from "react-icons/fa";
 import { GiPalmTree } from "react-icons/gi";
 import { MdForest } from "react-icons/md";
+import { RiMoonClearFill } from "react-icons/ri";
+import { IoSunny } from "react-icons/io5";
 
 const SynthwaveIcon = () => (
   <span className="relative inline-flex items-center justify-center w-10 h-10">
@@ -71,8 +72,8 @@ const SynthwaveIcon = () => (
 const themeOptions: ThemeName[] = ["light", "dark", "synthwave", "forest"];
 
 const themeIcons: Record<ThemeName, React.ReactNode> = {
-  light: <FaSun className="text-yellow-300" size="28" />,
-  dark: <FaMoon className="text-gray-400" size="28" />,
+  light: <IoSunny className="text-yellow-300" size="28" />,
+  dark: <RiMoonClearFill className="text-gray-400" size="28" />,
   synthwave: <SynthwaveIcon />,
   forest: <MdForest className="text-green-500" size="28" />,
 };
