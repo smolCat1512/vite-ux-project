@@ -71,7 +71,7 @@ const ContactFormContainer = () => {
   return (
     <Paper
       shadow="md"
-      p="xl"
+      p={isMobile ? "md" : "xl"}
       radius="md"
       style={{
         backgroundColor: connectTheme.formContainer.background,

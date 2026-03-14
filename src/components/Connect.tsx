@@ -5,10 +5,25 @@ import ContactFormContainer from "../design-system/connect/ContactFormContainer"
 import ConnectLinkedIn from "../design-system/connect/ConnectLinkedIn";
 import ConnectLocation from "../design-system/connect/ConnectLocation";
 import ConnectCv from "../design-system/connect/ConnectCv";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Connect = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    amount: 0.1,
+  });
+
   return (
-    <div className="align-start justify-center mx-auto w-10/12 pt-30 pb-16 md:pb-20 mb-10" id="connect">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+      className="align-start justify-center mx-auto w-10/12 pt-30 pb-16 md:pb-20 mb-10"
+      id="connect"
+    >
       <Grid gutter={25}>
         {/* Left Side - Text Content */}
         <Grid.Col span={{ base: 12, md: 5 }}>
@@ -48,7 +63,7 @@ const Connect = () => {
           <ContactFormContainer />
         </Grid.Col>
       </Grid>
-    </div>
+    </motion.section>
   );
 };
 

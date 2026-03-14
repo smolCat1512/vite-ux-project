@@ -6,14 +6,16 @@ import PortfolioHeader from "../design-system/portfolio/PortfolioHeader";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Box } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 const Portfolio = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isMobile = useMediaQuery("(max-width: 480px)");
+  
   return (
     <motion.section
-      className="my-8 md:w-10/12 pt-30"
+      className={`my-8 md:w-10/12 ${isMobile ? "pt-10" : "pt-30"}`}
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -23,7 +25,7 @@ const Portfolio = () => {
         Portfolio
       </h2>
       <Box mb={24} className="text-center">
-      <PortfolioHeader>Portfolio</PortfolioHeader>
+        <PortfolioHeader>Portfolio</PortfolioHeader>
       </Box>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
         {projects.map((project: JSX.IntrinsicAttributes & Project) => (
