@@ -13,11 +13,13 @@ import { notifications } from "@mantine/notifications";
 import { getTextGlow } from "../utils/glow";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
 
 const ContactFormContainer = () => {
   const theme = useMantineTheme();
   const connectTheme = theme.other.connect;
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const isMobile = useMediaQuery("(max-width: 480px)");
 
   const form = useForm({
     initialValues: {
@@ -160,12 +162,25 @@ const ContactFormContainer = () => {
           />
 
           {/* Turnstile Widget */}
+          <div
+            style={
+              isMobile
+                ? {
+                    width: 300,
+                    transformOrigin: "left center",
+                    transform: "scale(0.85)",
+                    marginBottom: -12,
+                  }
+                : undefined
+            }
+          >
             <Turnstile
               siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
               onSuccess={(token: string) => setTurnstileToken(token)}
               onError={() => setTurnstileToken(null)}
               onExpire={() => setTurnstileToken(null)}
             />
+          </div>
 
           <Button
             type="submit"

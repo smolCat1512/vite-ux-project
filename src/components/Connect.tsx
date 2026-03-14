@@ -8,11 +8,11 @@ import ConnectCv from "../design-system/connect/ConnectCv";
 
 const Connect = () => {
   return (
-    <div className="align-start justify-center mx-auto w-10/12 pt-30" id="connect">
-      <Grid gutter={50}>
+    <div className="align-start justify-center mx-auto w-10/12 pt-30 pb-16 md:pb-20 mb-10" id="connect">
+      <Grid gutter={25}>
         {/* Left Side - Text Content */}
         <Grid.Col span={{ base: 12, md: 5 }}>
-          <Stack gap="xl">
+          <Stack className="sm:gap-8 md:gap-14">
             <div>
               <ConnectHeading>Connect</ConnectHeading>
               <ConnectSubheading>
@@ -22,7 +22,7 @@ const Connect = () => {
               </ConnectSubheading>
             </div>
 
-            <Stack gap="md">
+            <Stack gap="sm:md, md:lg">
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
               >
