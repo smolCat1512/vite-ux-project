@@ -13,7 +13,7 @@ const Portfolio = () => {
 
   return (
     <motion.section
-      className="my-8 md:w-10/12"
+      className="my-8 md:w-10/12 pt-30"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}

@@ -1,4 +1,4 @@
-import { Container, Grid, Stack } from "@mantine/core";
+import { Grid, Stack } from "@mantine/core";
 import ConnectHeading from "../design-system/connect/ConnectHeading";
 import ConnectSubheading from "../design-system/connect/ConnectSubheading";
 import ContactFormContainer from "../design-system/connect/ContactFormContainer";
@@ -8,7 +8,7 @@ import ConnectCv from "../design-system/connect/ConnectCv";
 
 const Connect = () => {
   return (
-    <Container size="lg" py={80} id="connect">
+    <div className="align-start justify-center mx-auto w-10/12 pt-30" id="connect">
       <Grid gutter={50}>
         {/* Left Side - Text Content */}
         <Grid.Col span={{ base: 12, md: 5 }}>
@@ -48,7 +48,7 @@ const Connect = () => {
           <ContactFormContainer />
         </Grid.Col>
       </Grid>
-    </Container>
+    </div>
   );
 };
 
