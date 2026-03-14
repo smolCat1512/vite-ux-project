@@ -99,6 +99,7 @@ const HeaderThemeSwitch = () => {
     <Menu
       shadow="md"
       width={200}
+      position="bottom-end"
       transitionProps={{ transition: "pop", duration: 300 }}
       styles={{
         dropdown: {
@@ -111,23 +112,28 @@ const HeaderThemeSwitch = () => {
       }}
     >
       <Menu.Target>
-        <Button
-          leftSection={<FaPalette size="20" />}
-          variant="outline"
-          radius="md"
-          styles={{
-            label: {
-              color: buttonColor,
-              textShadow: textGlow,
-            },
-            section: {
-              color: buttonColor,
-              filter: iconGlow,
-            },
+        <button
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: 8,
           }}
         >
-          Theme
-        </Button>
+          <FaPalette
+            size="22"
+            style={{
+              color: buttonColor,
+              filter:
+                glowColor && glow
+                  ? `drop-shadow(0 0 6px ${glowColor}) drop-shadow(0 0 12px ${glowColor})`
+                  : undefined,
+            }}
+          />
+        </button>
       </Menu.Target>
 
       <Menu.Dropdown
