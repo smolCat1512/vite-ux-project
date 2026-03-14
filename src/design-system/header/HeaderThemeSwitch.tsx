@@ -1,8 +1,7 @@
-import { Menu, Button, useMantineTheme } from "@mantine/core";
+import { Menu, useMantineTheme } from "@mantine/core";
 import { FaPalette } from "react-icons/fa";
 import { useThemeController } from "../../theme/ThemeProvider";
 import type { ThemeName } from "../../theme/themeDefinitions";
-import { getTextGlow, getIconGlow } from "../../design-system/utils/glow";
 import { GiPalmTree } from "react-icons/gi";
 import { MdForest } from "react-icons/md";
 import { RiMoonClearFill } from "react-icons/ri";
@@ -89,9 +88,6 @@ const HeaderThemeSwitch = () => {
   const text = theme.other?.layout?.text ?? "#000000";
   const glowColor = theme.other?.header?.button?.glowColor;
   const glow = theme.other?.header?.button?.glow ?? false;
-
-  const textGlow = getTextGlow(glowColor, glow);
-  const iconGlow = getIconGlow(glowColor, glow);
 
   const menu = theme.other?.menu;
 
