@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Hero from "../components/Hero";
-import Portfolio from "../components/Portoflio";
+import Portfolio from "../components/Portfolio";
 import Connect from "../components/Connect";
 import Technologies from "../components/Technologies";
 import { Box } from "@mantine/core";
