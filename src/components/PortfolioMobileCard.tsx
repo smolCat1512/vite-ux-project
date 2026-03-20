@@ -25,9 +25,9 @@ const PortfolioMobileCard = ({
 
   return (
     <article className="relative w-full overflow-hidden rounded-sm">
-      {/* Image */}
+      {/* Fixed height container so overlay always has enough room */}
       <div
-        className="relative w-full h-64 cursor-pointer"
+        className="relative w-full h-[480px] cursor-pointer"
         onClick={() => setOverlayOpen((prev) => !prev)}
         role="button"
         tabIndex={0}
@@ -39,6 +39,7 @@ const PortfolioMobileCard = ({
           }
         }}
       >
+        {/* Image fills the fixed-height container */}
         {imageError || !cardImage ? (
           <PortfolioCardImagePlaceholder showText={false} />
         ) : (
@@ -70,7 +71,7 @@ const PortfolioMobileCard = ({
         <AnimatePresence>
           {overlayOpen && (
             <motion.div
-              className="absolute inset-0 flex flex-col justify-end"
+              className="absolute inset-0 flex flex-col"
               style={{ backgroundColor: "var(--overlay-bg, rgba(10,10,10,0.96))" }}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}

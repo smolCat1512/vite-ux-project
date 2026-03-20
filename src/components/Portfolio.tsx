@@ -16,7 +16,7 @@ const Portfolio = () => {
 
   return (
     <motion.section
-      className={`my-8 md:w-10/12 ${isMobile ? "pt-10" : "pt-30"}`}
+      className={`my-8 w-full overflow-hidden md:w-10/12 ${isMobile ? "pt-10" : "pt-30"} ${isMobile ? "px-6" : "px-0"}`}
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -32,7 +32,7 @@ const Portfolio = () => {
 
       {isMobile ? (
         // Mobile: card grid with slide-up overlay
-        <div className="grid grid-cols-1 gap-8">
+        <div className="grid grid-cols-1 gap-8 w-full">
           {projects.map((project: JSX.IntrinsicAttributes & Project) => (
             <PortfolioMobileCard key={project.id} {...project} />
           ))}

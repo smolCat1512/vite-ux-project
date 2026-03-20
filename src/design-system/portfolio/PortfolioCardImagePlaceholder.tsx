@@ -15,7 +15,7 @@ const PortfolioCardImagePlaceholder = ({
 
   return (
     <div 
-      className="w-full h-50 flex flex-col items-center justify-center gap-2"
+      className="w-full h-100 flex flex-col items-center justify-center gap-2"
       style={{ backgroundColor }}
     >
       <HiPhotograph size={48} style={{ color: iconColor }} />
