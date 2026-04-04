@@ -1,4 +1,4 @@
-import ShelterCard from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
+import ShelterCard from "../../assets/shelter_images/shelter-macbook.png";
 import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
 
 export interface Project {

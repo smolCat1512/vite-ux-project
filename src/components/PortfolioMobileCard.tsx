@@ -18,7 +18,7 @@ const PortfolioMobileCard = ({
   const [overlayOpen, setOverlayOpen] = useState(false);
 
   return (
-    <article className="relative w-full overflow-hidden rounded-sm">
+    <article className="relative w-full overflow-hidden rounded-sm h-[320px]">
       {/* Fixed height container so overlay always has enough room */}
       <div
         className="relative w-full h-[320px] cursor-pointer"
@@ -40,7 +40,7 @@ const PortfolioMobileCard = ({
           <img
             src={cardImage}
             alt={`${title} project screenshot`}
-            className="w-full h-fit object-cover"
+            className="w-full h-[320px] object-cover"
             onError={() => setImageError(true)}
           />
         )}
@@ -107,10 +107,12 @@ const PortfolioMobileCard = ({
                 <div className="flex flex-row flex-wrap gap-3 items-center pb-1">
                   {hasCaseStudy && (
                     <Link
-                      to={`/projects/${id}`}
+                      to={`/case-studies/${id}`}
                       className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-white/60 text-white rounded-sm hover:bg-white hover:text-black transition-all duration-200 group"
                       aria-label={`Read full case study for ${title}`}
                       onClick={(e) => e.stopPropagation()}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <span>Read Case Study</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1">
