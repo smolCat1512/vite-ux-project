@@ -10,7 +10,7 @@ const CaseStudyTitle = ({ children }: CaseStudyTitleProps) => {
   const titleColor = theme.other?.caseStudy?.header?.title?.color ?? "#343a40";
 
   return (
-    <h1 className="text-4xl font-bold mb-2" style={{ color: titleColor }}>
+    <h1 className="text-4xl mb-2 font-medium" style={{ color: titleColor }}>
       {children}
     </h1>
   );

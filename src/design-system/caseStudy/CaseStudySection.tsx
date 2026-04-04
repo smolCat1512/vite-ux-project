@@ -13,10 +13,10 @@ const CaseStudySection = ({ title, children }: CaseStudySectionProps) => {
 
   return (
     <section className="mb-8">
-      <h2 className="text-2xl font-bold mb-4" style={{ color: headingColor }}>
+      <h2 className="text-3xl mb-4" style={{ color: headingColor }}>
         {title}
       </h2>
-      <div style={{ color: textColor }}>
+      <div className="text-base/10" style={{ color: textColor }}>
         {children}
       </div>
     </section>

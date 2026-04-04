@@ -12,6 +12,11 @@ import CaseStudyLiveButton from "../../design-system/caseStudy/CaseStudyLiveButt
 import CaseStudyNavButton from "../../design-system/caseStudy/CaseStudyNavButton";
 import CaseStudyImage from "../../design-system/caseStudy/CaseStudyImage";
 
+<link
+  href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+  rel="stylesheet"
+></link>;
+
 type CaseStudyDetailProps = CaseStudy & {
   previousStudy?: { title: string; slug: string };
   nextStudy?: { title: string; slug: string };
@@ -22,7 +27,6 @@ const CaseStudyDetail = ({
   tagline,
   role,
   client,
-  duration,
   overview,
   challenge,
   solution,
@@ -40,30 +44,68 @@ const CaseStudyDetail = ({
 
   return (
     <motion.article
-      className="max-w-4xl mx-auto px-4"
-      initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+      className="mx-auto"
+      initial={shouldReduceMotion ? {} : { opacity: 0, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
+      style={{ fontFamily: "Red Hat Display, sans-serif !important" }}
     >
       {/* Header */}
-      <header className="mb-8">
-        <CaseStudyTitle>{title}</CaseStudyTitle>
-        <CaseStudyTagline>{tagline}</CaseStudyTagline>
-      </header>
+      <motion.header
+        initial={shouldReduceMotion ? {} : { opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="pt-12 pb-12 px-4 md:grid gap-6 grid-cols-2 items-start md:py-24 md:p-4"
+        style={{ backgroundColor: "#efefef" }}
+      >
+        <div className="text-gray-500 mb-2">
+          <CaseStudyTitle>{title}</CaseStudyTitle>
+          <CaseStudyTagline>{tagline}</CaseStudyTagline>
+        </div>
+        <div className="flex gap-4 mt-4">
+          <img
+            src={images[0]}
+            alt={`${title} hero`}
+            className="w-full rounded"
+          />
+        </div>
+      </motion.header>
 
       {/* Project details */}
-      <section className="mb-8">
+      <motion.section
+        className="mb-8 flex justify-center"
+        initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
         <CaseStudyDetailsGrid>
           <CaseStudyDetailItem label="Role">{role}</CaseStudyDetailItem>
           <CaseStudyDetailItem label="Client">{client}</CaseStudyDetailItem>
-          <CaseStudyDetailItem label="Duration">{duration}</CaseStudyDetailItem>
         </CaseStudyDetailsGrid>
-      </section>
+      </motion.section>
+
+      <motion.section
+        className="mb-8 bg-gray-100 flex flex-row h-[320px] items-center justify-center"
+        initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <p>Supplementary images here</p>
+      </motion.section>
 
       {/* Content sections */}
-      <CaseStudySection title="Overview">{overview}</CaseStudySection>
-      <CaseStudySection title="The Challenge">{challenge}</CaseStudySection>
-      <CaseStudySection title="The Solution">{solution}</CaseStudySection>
+      <motion.section
+        className="mb-8 md:w-7/12 mx-auto px-4"
+        initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <CaseStudySection title="01. Overview">{overview}</CaseStudySection>
+        <CaseStudySection title="02. The Challenge">
+          {challenge}
+        </CaseStudySection>
+        <CaseStudySection title="03. The Solution">{solution}</CaseStudySection>
+      </motion.section>
 
       {images.length > 0 && (
         <CaseStudySection title="Project Images">
@@ -98,7 +140,7 @@ const CaseStudyDetail = ({
       )}
 
       {/* Navigation */}
-      <nav 
+      <nav
         className="border-t pt-8 mt-12 flex justify-between items-center"
         style={{ borderColor }}
       >

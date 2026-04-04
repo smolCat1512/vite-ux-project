@@ -1,3 +1,10 @@
+import ShelterCard from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
+import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
+import ShelterHero from "../../assets/shelter-wireframes/shelterHero.png";
+import ShelterStart from "../../assets/shelter-wireframes/start.png";
+import ShelterTriage from "../../assets/shelter-wireframes/triage.png";
+import ShelterPostChat from "../../assets/shelter-wireframes/postChat.png";
+
 export interface CaseStudy {
   id: string;
   title: string;
@@ -22,20 +29,26 @@ export const caseStudiesData: CaseStudy[] = [
     title: "Shelter",
     tagline: "Digital Advice Webchat",
     role: "Research, Design, Frontend Development, Design System",
-    client: "Shelter England",
-    duration: "18 months",
+    client: "Shelter",
+    duration: "initial build - 3 months",
     overview:
-      "Led the development and migration of Shelter's digital advice webchat service...",
+      "Shelter is a UK-based charity campaigning for housing justice in England and Scotland. They provide advice, support, and advocacy to individuals, and run national campaigns to address housing issues. Shelter proide this support from in-person hubs, and via voice and digital channels. They had been using an online web chat service for 2 years, and are a relatively newcomer to digital services.",
     challenge:
-      "The existing webchat system was outdated and difficult to maintain...",
+      "The previous service was constrained by an inflexible platform, weak triage, and a dated agent experience. Shelter needed a system that could better prioritise urgent need, support staff workflows, and reflect their service more accurately.",
     solution:
-      "Built a modern, accessible webchat interface using React...",
+      "I worked across research, interaction design, UI, and frontend implementation to shape a custom interface in React and TypeScript, with clearer queue states, stronger triage, and a more maintainable design system approach.",
     outcome:
-      "Improved user satisfaction by 40%...",
-    images: ["/images/shelter1.jpg", "/images/shelter2.jpg"],
+      "The project gave Shelter a more tailored and resilient service experience, improved the clarity of the journey for people seeking help, and created a stronger foundation for ongoing iteration.",
+    images: [
+      ShelterHero,
+      ShelterStart,
+      ShelterTriage,
+      ShelterPostChat,
+      ShelterCard,
+    ],
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
-    technologies: ["React", "TypeScript", "Design System"],
-    cardImage: "/images/shelter_card.jpg",
+    technologies: ["React", "TypeScript", "Figma", "Design Systems"],
+    cardImage: ShelterCard,
     hasDetailPage: true,
   },
   {
@@ -46,17 +59,17 @@ export const caseStudiesData: CaseStudy[] = [
     client: "National Foundation for Credit Counseling",
     duration: "18 months",
     overview:
-      "Developed a user-friendly financial counseling platform...",
+      "Helped shape a financial counselling platform for the US nonprofit sector, focusing on a clearer UI, accessible patterns, and a more dependable front-end experience for people navigating complex support journeys.",
     challenge:
-      "The previous platform had low engagement rates...",
+      "The product needed a cleaner and more trustworthy interface for users dealing with high-stress financial situations, while also supporting nonprofit partner workflows and evolving product requirements.",
     solution:
-      "Implemented a responsive design with intuitive navigation...",
+      "I contributed across UI design and frontend delivery, refining flows, building reusable interface patterns, and working within an established component system to improve clarity and consistency.",
     outcome:
-      "Increased user engagement by 35%...",
-    images: ["/images/nfcc1.jpg", "/images/nfcc2.jpg"],
+      "The work moved the platform toward a more polished and accessible product experience, with stronger visual consistency and a UI better suited to sensitive, decision-heavy tasks.",
+    images: [NFCCCard],
     liveUrl: "https://www.nfcc.org/financial-counseling",
-    technologies: ["Vue.js", "JavaScript", "CSS Modules"],
-    cardImage: "/images/nfcc_card.jpg",
+    technologies: ["React", "TypeScript", "Figma", "Twilio Paste"],
+    cardImage: NFCCCard,
     hasDetailPage: true,
   },
 ];

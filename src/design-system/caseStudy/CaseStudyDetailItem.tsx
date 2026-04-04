@@ -13,10 +13,10 @@ const CaseStudyDetailItem = ({ label, children }: CaseStudyDetailItemProps) => {
 
   return (
     <div>
-      <h3 className="font-semibold" style={{ color: headingColor }}>
+      <h3 style={{ color: headingColor }}>
         {label}
       </h3>
-      <p className="text-sm" style={{ color: textColor }}>
+      <p className="italic" style={{ color: textColor }}>
         {children}
       </p>
     </div>

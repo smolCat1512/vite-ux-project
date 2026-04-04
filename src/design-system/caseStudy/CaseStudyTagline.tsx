@@ -7,10 +7,10 @@ interface CaseStudyTaglineProps {
 
 const CaseStudyTagline = ({ children }: CaseStudyTaglineProps) => {
   const theme = useMantineTheme();
-  const taglineColor = theme.other?.caseStudy?.header?.tagline?.color ?? "#6c757d";
+  const taglineColor = theme.other?.caseStudy?.header?.tagline?.color ?? "#343a40";
 
   return (
-    <p className="text-xl" style={{ color: taglineColor }}>
+    <p className="text-md font-medium" style={{ color: taglineColor }}>
       {children}
     </p>
   );
