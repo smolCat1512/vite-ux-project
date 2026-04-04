@@ -2,22 +2,16 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import type { Project } from "../pages/CaseStudies/projectsData";
 import PortfolioCardImagePlaceholder from "../design-system/portfolio/PortfolioCardImagePlaceholder";
-import PortfolioCardTechnologies from "../design-system/portfolio/PortfolioCardTechnologies";
 import PortfolioCardTitle from "../design-system/portfolio/PortfolioCardTitle";
-import PortfolioCardLink from "../design-system/portfolio/PortfolioCardLink";
 import { motion, AnimatePresence } from "framer-motion";
-import { Box } from "@mantine/core";
 
 type PortfolioMobileCardProps = Project;
 
 const PortfolioMobileCard = ({
   id,
   title,
-  role,
   summary,
-  technologies,
   cardImage,
-  liveUrl,
   hasCaseStudy,
 }: PortfolioMobileCardProps) => {
   const [imageError, setImageError] = useState(false);
@@ -27,7 +21,7 @@ const PortfolioMobileCard = ({
     <article className="relative w-full overflow-hidden rounded-sm">
       {/* Fixed height container so overlay always has enough room */}
       <div
-        className="relative w-full h-[480px] cursor-pointer"
+        className="relative w-full h-[320px] cursor-pointer"
         onClick={() => setOverlayOpen((prev) => !prev)}
         role="button"
         tabIndex={0}
@@ -46,7 +40,7 @@ const PortfolioMobileCard = ({
           <img
             src={cardImage}
             alt={`${title} project screenshot`}
-            className="w-full h-full object-cover"
+            className="w-full h-fit object-cover"
             onError={() => setImageError(true)}
           />
         )}
@@ -97,11 +91,6 @@ const PortfolioMobileCard = ({
 
                 {/* Content */}
                 <div className="flex flex-col gap-3 flex-1 justify-center">
-                  {role && (
-                    <span className="text-xs uppercase tracking-widest text-white/40 font-medium">
-                      {role}
-                    </span>
-                  )}
 
                   <PortfolioCardTitle>
                     <span className="text-white">{title}</span>
@@ -112,12 +101,6 @@ const PortfolioMobileCard = ({
                       {summary}
                     </p>
                   )}
-
-                  <Box className="mt-1">
-                    <PortfolioCardTechnologies>
-                      {technologies}
-                    </PortfolioCardTechnologies>
-                  </Box>
                 </div>
 
                 {/* Actions */}
@@ -134,12 +117,6 @@ const PortfolioMobileCard = ({
                         →
                       </span>
                     </Link>
-                  )}
-                  {liveUrl && (
-                    <PortfolioCardLink
-                      href={liveUrl}
-                      title={`Open ${title} live site`}
-                    />
                   )}
                 </div>
               </div>

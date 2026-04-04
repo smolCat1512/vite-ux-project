@@ -1,4 +1,4 @@
-import PortfolioRow from "./PortfolioRow";
+import PortfolioCard from "./PortfolioCard";
 import PortfolioMobileCard from "./PortfolioMobileCard";
 import { projects } from "../pages/CaseStudies/projectsData";
 import type { JSX } from "react/jsx-runtime";
@@ -32,19 +32,17 @@ const Portfolio = () => {
 
       {isMobile ? (
         // Mobile: card grid with slide-up overlay
-        <div className="grid grid-cols-1 gap-8 w-full">
+        <div className="flex flex-col gap-20 w-full">
           {projects.map((project: JSX.IntrinsicAttributes & Project) => (
             <PortfolioMobileCard key={project.id} {...project} />
           ))}
         </div>
       ) : (
-        // Tablet / Desktop: full-width alternating rows
-        <div className="flex flex-col gap-10">
-          {projects.map(
-            (project: JSX.IntrinsicAttributes & Project, index: number) => (
-              <PortfolioRow key={project.id} {...project} index={index} />
-            )
-          )}
+        // Tablet / Desktop: two-column portfolio grid
+        <div className="grid grid-cols-1 gap-x-8 gap-y-12 pb-20 md:grid-cols-2">
+          {projects.map((project: JSX.IntrinsicAttributes & Project) => (
+            <PortfolioCard key={project.id} {...project} />
+          ))}
         </div>
       )}
     </motion.section>

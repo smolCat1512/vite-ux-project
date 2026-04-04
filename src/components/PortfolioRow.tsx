@@ -2,121 +2,66 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import type { Project } from "../pages/CaseStudies/projectsData";
 import PortfolioCardImagePlaceholder from "../design-system/portfolio/PortfolioCardImagePlaceholder";
-import PortfolioCardTechnologies from "../design-system/portfolio/PortfolioCardTechnologies";
 import PortfolioCardTitle from "../design-system/portfolio/PortfolioCardTitle";
-import PortfolioCardLink from "../design-system/portfolio/PortfolioCardLink";
 import { motion } from "framer-motion";
-import { Box } from "@mantine/core";
 
-interface PortfolioRowProps extends Project {
-  index: number;
-}
-
-const PortfolioRow = ({
+const PortfolioLayout = ({
   id,
   title,
-  role,
   summary,
-  technologies,
   cardImage,
-  liveUrl,
-  hasCaseStudy,
-  index,
-}: PortfolioRowProps) => {
+}: Project) => {
   const [imageError, setImageError] = useState(false);
-  const isReversed = index % 2 !== 0;
 
   const imagePanel = (
-    <div className="relative w-full md:w-3/5 overflow-hidden group">
-      <Link
-        to={`/projects/${id}`}
-        aria-label={`View ${title} project details`}
-        className="block h-full"
-      >
+    <div className="group relative w-full">
+      <Link to={`/projects/${id}`} aria-label={`View ${title} project details`}>
         {imageError || !cardImage ? (
-          <PortfolioCardImagePlaceholder showText={true} />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-stone-100">
+            <div className="flex h-full w-full items-center justify-center p-8 md:p-10">
+              <div className="flex h-[70%] w-[70%] items-center justify-center overflow-hidden rounded-sm border border-black/8 bg-white shadow-sm">
+                <PortfolioCardImagePlaceholder showText={true} />
+              </div>
+            </div>
+          </div>
         ) : (
-          <img
-            src={cardImage}
-            alt={`${title} project screenshot`}
-            className="w-full h-72 md:h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:opacity-90"
-            onError={() => setImageError(true)}
-          />
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-stone-100 justify-center items-center flex">
+              <div className="flex justify-center align-middle">
+                <img
+                  src={cardImage}
+                  alt={`${title} project screenshot`}
+                  className="h-3/4 w-3/4 object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                  onError={() => setImageError(true)}
+                />
+              </div>
+          </div>
         )}
       </Link>
     </div>
   );
 
   const contentPanel = (
-    <div className="flex flex-col justify-center gap-4 w-full md:w-2/5 px-6 py-8 md:py-10">
-      {role && (
-        <span className="text-xs uppercase tracking-widest opacity-50 font-medium">
-          {role}
-        </span>
-      )}
-
-      <PortfolioCardTitle>
-        <Link
-          to={`/projects/${id}`}
-          aria-label={`View ${title} project details`}
-          className="hover:opacity-70 transition-opacity duration-200"
-        >
-          {title}
-        </Link>
-      </PortfolioCardTitle>
+    <div className="flex flex-col gap-4 px-1 py-5 md:px-0 md:py-6">
+      <PortfolioCardTitle>{title}</PortfolioCardTitle>
 
       {summary && (
-        <p className="text-sm leading-relaxed opacity-70 max-w-sm">{summary}</p>
+        <p className="max-w-xl text-sm leading-relaxed opacity-70">{summary}</p>
       )}
-
-      <Box className="mt-1">
-        <PortfolioCardTechnologies>{technologies}</PortfolioCardTechnologies>
-      </Box>
-
-      <div className="flex flex-row flex-wrap gap-3 mt-2 items-center">
-        {hasCaseStudy && (
-          <Link
-            to={`/projects/${id}`}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-current rounded-sm hover:bg-current hover:text-white transition-all duration-200 group"
-            aria-label={`Read full case study for ${title}`}
-          >
-            <span>Read Case Study</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
-        )}
-        {liveUrl && (
-          <PortfolioCardLink
-            href={liveUrl}
-            title={`Open ${title} live site`}
-          />
-        )}
-      </div>
     </div>
   );
 
   return (
     <motion.article
-      className="flex flex-col md:flex-row w-full overflow-hidden rounded-sm"
+      className="flex flex-col w-full overflow-hidden rounded-sm"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {isReversed ? (
-        <>
-          {contentPanel}
-          {imagePanel}
-        </>
-      ) : (
-        <>
-          {imagePanel}
-          {contentPanel}
-        </>
-      )}
+      {imagePanel}
+      {contentPanel}
     </motion.article>
   );
 };
 
-export default PortfolioRow;
+export default PortfolioLayout;

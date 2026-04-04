@@ -6,6 +6,7 @@ import shelterHero from "../../assets/shelter-wireframes/shelterHero.png";
 import wireframeStart from "../../assets/shelter-wireframes/start.png";
 import wireframeTriage from "../../assets/shelter-wireframes/triage.png";
 import wireframePostChat from "../../assets/shelter-wireframes/postChat.png";
+import { Flex } from "@mantine/core";
 
 // Reusable List Component
 const ContentList = ({ title, items }: { title: string; items: string[] }) => (
@@ -153,30 +154,6 @@ const CaseStudyShelterDetailed = () => {
           solutions using wireframes, prototyping, and user testing.
         </p>
 
-        <section className="flex flex-row gap-2 flex-wrap justify-center my-6">
-          <img
-            src={wireframeStart}
-            alt="Start screen wireframe"
-            className="rounded-lg shadow-lg"
-            width={200}
-            height={300}
-          />
-          <img
-            src={wireframeTriage}
-            alt="Triage screen wireframe"
-            className="rounded-lg shadow-lg"
-            width={200}
-            height={300}
-          />
-          <img
-            src={wireframePostChat}
-            alt="Post-chat screen wireframe"
-            className="rounded-lg shadow-lg"
-            width={200}
-            height={300}
-          />
-        </section>
-
         <ContentList
           title="Key design insights"
           items={[
@@ -187,13 +164,32 @@ const CaseStudyShelterDetailed = () => {
           ]}
         />
 
-        <img
-          src="https://via.placeholder.com/800x500"
-          alt="Shelter design sketches and prototypes"
-          className="rounded-lg shadow-lg my-6"
-          width={800}
-          height={500}
-        />
+        <section className="flex flex-row gap-2 flex-wrap justify-center my-6">
+          <Flex direction="column" align="center" gap="2">
+          <img
+            src={wireframeStart}
+            alt="Start screen wireframe"
+            className="rounded-lg shadow-lg"
+            width={200}
+            height={300}
+          />
+          <p className="font-light">Start Screen Wireframe</p>
+          </Flex>
+          <img
+            src={wireframeTriage}
+            alt="Triage screen wireframe"
+            className="rounded-lg shadow-lg"
+            width={200}
+            height={300}
+          />
+          <img
+            src={wireframePostChat}
+            alt="Shelter design sketches of insights and ideas"
+            className="rounded-lg shadow-lg"
+            width={200}
+            height={300}
+          />
+        </section>
       </motion.section>
 
       {/* Section: Engineering */}

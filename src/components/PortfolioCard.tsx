@@ -21,17 +21,25 @@ const PortfolioCard = ({
       <Link
         to={`/projects/${id}`}
         aria-label={`View ${title} project details`}
-        className="block"
+        className="group block"
       >
         {imageError || !cardImage ? (
-          <PortfolioCardImagePlaceholder showText={true} />
+          <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm bg-stone-100">
+            <div className="flex h-3/4 w-3/4 items-center justify-center overflow-hidden rounded-sm">
+              <PortfolioCardImagePlaceholder showText={true} />
+            </div>
+          </div>
         ) : (
-          <img
-            src={cardImage}
-            alt={`${title} project screenshot`}
-            className="w-full h-50 object-cover transition-transform duration-300 hover:opacity-80"
-            onError={() => setImageError(true)}
-          />
+          <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm bg-stone-100">
+            <div className="flex h-3/4 w-3/4 items-center justify-center overflow-hidden rounded-sm">
+              <img
+                src={cardImage}
+                alt={`${title} project screenshot`}
+                className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                onError={() => setImageError(true)}
+              />
+            </div>
+          </div>
         )}
       </Link>
       <Box className="mt-4 flex flex-row justify-between items-start">
