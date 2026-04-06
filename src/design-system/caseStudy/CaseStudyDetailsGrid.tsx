@@ -8,7 +8,7 @@ const CaseStudyDetailsGrid = ({ children }: CaseStudyDetailsGridProps) => {
 
   return (
     <div 
-      className="grid md:grid-cols-2 gap-24 p-8 md:p-16"
+      className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-72"
     >
       {children}
     </div>

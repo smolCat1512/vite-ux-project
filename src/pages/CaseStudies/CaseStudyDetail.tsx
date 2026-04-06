@@ -33,6 +33,7 @@ const CaseStudyDetail = ({
   outcome,
   images = [],
   liveUrl,
+  liveUrlText = "",
   technologies = [],
   cardImage,
   // previousStudy,
@@ -45,7 +46,7 @@ const CaseStudyDetail = ({
 
   return (
     <motion.article
-      className="mx-auto"
+      className="mx-auto gap-16 flex flex-col"
       initial={shouldReduceMotion ? {} : { opacity: 0, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -70,7 +71,7 @@ const CaseStudyDetail = ({
 
       {/* Project details */}
       <motion.section
-        className="mb-8 flex justify-center"
+        className="flex justify-center"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -82,7 +83,7 @@ const CaseStudyDetail = ({
       </motion.section>
 
       <motion.section
-        className="mb-8 bg-gray-100 flex flex-row h-[320px] items-center justify-center"
+        className="bg-gray-100 flex flex-row h-[320px] items-center justify-center"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -92,7 +93,7 @@ const CaseStudyDetail = ({
 
       {/* Content sections */}
       <motion.section
-        className="mb-16 md:w-7/12 mx-auto px-4"
+        className=" md:w-7/12 mx-auto px-4"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -106,14 +107,14 @@ const CaseStudyDetail = ({
 
       {images.length > 0 && (
         <motion.section
-          className="mb-8 mx-auto px-4"
+          className="mx-auto px-4"
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
           style={{ backgroundColor: "#f9f9f9" }}
         >
           <CaseStudySection title="">
-            <div className="pt-8 mb-8 md:w-7/12 mx-auto px-4 flex flex-row gap-6">
+            <div className="pt-8 md:w-7/12 mx-auto px-4 flex flex-row gap-6">
               {images.map((img, i) => (
                 <CaseStudyImage
                   key={img}
@@ -122,7 +123,7 @@ const CaseStudyDetail = ({
                 />
               ))}
             </div>
-            <p className="text-sm text-gray-500 mt-2 text-center italic pb-8">
+            <p className="text-sm text-gray-500 mt-2 text-center italic">
               Pictured above: Wireframes of the web chat interface, and design
               system components.
             </p>
@@ -131,7 +132,7 @@ const CaseStudyDetail = ({
       )}
 
       <motion.section
-        className="mb-8 md:w-7/12 mx-auto px-4"
+        className="md:w-7/12 mx-auto px-4"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -141,7 +142,7 @@ const CaseStudyDetail = ({
 
       {/* Technologies */}
       <motion.section
-        className="mb-8 md:w-7/12 mx-auto px-4"
+        className="md:w-7/12 mx-auto px-4"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -158,11 +159,13 @@ const CaseStudyDetail = ({
       {/* Live site */}
       {liveUrl && (
         <motion.section
-          className="mb-16 md:w-7/12 mx-auto px-4 flex justify-center"
+          className="mb-16 md:w-7/12 mx-auto px-4 flex justify-start items-start flex-col gap-4"
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
+          <p className="text-3xl mb-4">View the Live Site</p>
+          <p>{liveUrlText}</p>
           <CaseStudyLiveButton href={liveUrl}>
             Visit Live Site →
           </CaseStudyLiveButton>

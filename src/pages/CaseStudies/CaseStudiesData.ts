@@ -8,7 +8,7 @@ export interface CaseStudy {
   id: string;
   title: string;
   tagline: string;
-  role: string;
+  role: string | string[];
   client?: string;
   duration?: string;
   overview?: string;
@@ -18,6 +18,7 @@ export interface CaseStudy {
   technologies?: string[];
   images?: string[];
   liveUrl?: string;
+  liveUrlText?: string;
   cardImage: string;
   hasDetailPage: boolean;
 }
@@ -27,11 +28,11 @@ export const caseStudiesData: CaseStudy[] = [
     id: "shelter",
     title: "Shelter",
     tagline: "Digital Advice Webchat",
-    role: "Research, Design, Frontend Development, Design System",
+    role: ["Research", "Design", "Frontend Development", "Design System"],
     client: "Shelter",
     duration: "initial build - 3 months",
     overview:
-      "Shelter is a UK-based charity campaigning for housing justice in England and Scotland. They provide advice, support, and advocacy to individuals, and run national campaigns to address housing issues. Shelter proide this support from in-person hubs, and via voice and digital channels. They had been using an online web chat service for roughly 2 years, and are a relatively newcomer to digital services.",
+      "Shelter is a UK-based charity campaigning for housing justice in England and Scotland. They provide advice, support, and advocacy to individuals, and run national campaigns to address housing issues. Shelter deliver this support from in-person hubs, and via voice and digital channels. They have been using an online web chat service for roughly 2 years, and are a relative newcomer to the provision and adoption of digital services.",
     challenge:
       "The previous web chat service was constrained by an inflexible platform, weak triage, and a dated agent and end-user experience. Shelter needed a system that could better prioritise urgent needs, support staff workflows, and reflect their service more accurately. The project also needed to be delivered within a tight timeline, and set up for ongoing iteration and improvement. Adding to this was a large range of stakeholders, and a need to balance the needs of end users with those of staff and the organisation as a whole. This involved additionally taking on project management and stakeholder management responsibilities, to ensure the project was delivered on time and met the needs of all parties involved.",
     solution:
@@ -44,6 +45,7 @@ export const caseStudiesData: CaseStudy[] = [
       ShelterPostChat,
     ],
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
+    liveUrlText: "To visit the live site, click the button below. This will take to Shelter Helpline England live service, where you can experience the web chat service in action. Please note that this is a live service for people seeking help with emergency housing issues, so if you do visit the site, please be respectful and mindful of the fact that real people are using the service to get support.",
     technologies: ["React", "TypeScript", "Figma", "Design Systems"],
     cardImage: ShelterCard,
     hasDetailPage: true,
