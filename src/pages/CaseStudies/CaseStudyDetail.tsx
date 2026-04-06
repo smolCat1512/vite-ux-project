@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import type { CaseStudy } from "./CaseStudiesData";
-import { useMantineTheme } from "@mantine/core";
+// import { useMantineTheme } from "@mantine/core";
 import CaseStudyTitle from "../../design-system/caseStudy/CaseStudyTitle";
 import CaseStudyTagline from "../../design-system/caseStudy/CaseStudyTagline";
 import CaseStudyDetailsGrid from "../../design-system/caseStudy/CaseStudyDetailsGrid";
@@ -9,7 +9,7 @@ import CaseStudyDetailItem from "../../design-system/caseStudy/CaseStudyDetailIt
 import CaseStudySection from "../../design-system/caseStudy/CaseStudySection";
 import CaseStudyTechnologyBadge from "../../design-system/caseStudy/CaseStudyTechnologyBadge";
 import CaseStudyLiveButton from "../../design-system/caseStudy/CaseStudyLiveButton";
-import CaseStudyNavButton from "../../design-system/caseStudy/CaseStudyNavButton";
+// import CaseStudyNavButton from "../../design-system/caseStudy/CaseStudyNavButton";
 import CaseStudyImage from "../../design-system/caseStudy/CaseStudyImage";
 
 <link
@@ -34,13 +34,14 @@ const CaseStudyDetail = ({
   images = [],
   liveUrl,
   technologies = [],
-  previousStudy,
-  nextStudy,
+  cardImage,
+  // previousStudy,
+  // nextStudy,
 }: CaseStudyDetailProps) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const shouldReduceMotion = useReducedMotion();
-  const theme = useMantineTheme();
-  const borderColor = theme.other?.caseStudy?.navigation?.border ?? "#e5e7eb";
+  // const theme = useMantineTheme();
+  // const borderColor = theme.other?.caseStudy?.navigation?.border ?? "#e5e7eb";
 
   return (
     <motion.article
@@ -55,19 +56,15 @@ const CaseStudyDetail = ({
         initial={shouldReduceMotion ? {} : { opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="pt-12 pb-12 px-4 md:grid gap-6 grid-cols-2 items-start md:py-24 md:p-4"
+        className="pt-12 pb-12 px-4 md:grid gap-6 grid-cols-2 items-start md:py-24 md:p-42"
         style={{ backgroundColor: "#efefef" }}
       >
         <div className="text-gray-500 mb-2">
           <CaseStudyTitle>{title}</CaseStudyTitle>
           <CaseStudyTagline>{tagline}</CaseStudyTagline>
         </div>
-        <div className="flex gap-4 mt-4">
-          <img
-            src={images[0]}
-            alt={`${title} hero`}
-            className="w-full rounded"
-          />
+        <div className="flex gap-4 mt-4 md:mt-0 justify-center items-center">
+          <img src={cardImage} alt={`${title} hero`} />
         </div>
       </motion.header>
 
@@ -95,7 +92,7 @@ const CaseStudyDetail = ({
 
       {/* Content sections */}
       <motion.section
-        className="mb-8 md:w-7/12 mx-auto px-4"
+        className="mb-16 md:w-7/12 mx-auto px-4"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -108,47 +105,80 @@ const CaseStudyDetail = ({
       </motion.section>
 
       {images.length > 0 && (
-        <CaseStudySection title="Project Images">
-          <div className="grid md:grid-cols-2 gap-4">
-            {images.map((img, i) => (
-              <CaseStudyImage
-                key={img}
-                src={img}
-                alt={`${title} screenshot ${i + 1}`}
-              />
-            ))}
-          </div>
-        </CaseStudySection>
+        <motion.section
+          className="mb-8 mx-auto px-4"
+          initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          style={{ backgroundColor: "#f9f9f9" }}
+        >
+          <CaseStudySection title="">
+            <div className="pt-8 mb-8 md:w-7/12 mx-auto px-4 flex flex-row gap-6">
+              {images.map((img, i) => (
+                <CaseStudyImage
+                  key={img}
+                  src={img}
+                  alt={`${title} screenshot ${i + 1}`}
+                />
+              ))}
+            </div>
+            <p className="text-sm text-gray-500 mt-2 text-center italic pb-8">
+              Pictured above: Wireframes of the web chat interface, and design
+              system components.
+            </p>
+          </CaseStudySection>
+        </motion.section>
       )}
 
-      <CaseStudySection title="Outcome">{outcome}</CaseStudySection>
+      <motion.section
+        className="mb-8 md:w-7/12 mx-auto px-4"
+        initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <CaseStudySection title="Outcome">{outcome}</CaseStudySection>
+      </motion.section>
 
       {/* Technologies */}
-      <CaseStudySection title="Technologies Used">
-        <ul className="flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <CaseStudyTechnologyBadge key={tech} technology={tech} />
-          ))}
-        </ul>
-      </CaseStudySection>
+      <motion.section
+        className="mb-8 md:w-7/12 mx-auto px-4"
+        initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <CaseStudySection title="Technologies Used">
+          <ul className="flex flex-wrap gap-8 pt-4">
+            {technologies.map((tech) => (
+              <CaseStudyTechnologyBadge key={tech} technology={tech} />
+            ))}
+          </ul>
+        </CaseStudySection>
+      </motion.section>
 
       {/* Live site */}
       {liveUrl && (
-        <CaseStudyLiveButton href={liveUrl}>
-          Visit Live Site →
-        </CaseStudyLiveButton>
+        <motion.section
+          className="mb-16 md:w-7/12 mx-auto px-4 flex justify-center"
+          initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <CaseStudyLiveButton href={liveUrl}>
+            Visit Live Site →
+          </CaseStudyLiveButton>
+        </motion.section>
       )}
 
       {/* Navigation */}
-      <nav
+      {/* <nav
         className="border-t pt-8 mt-12 flex justify-between items-center"
         style={{ borderColor }}
-      >
-        <CaseStudyNavButton onClick={() => navigate("/#portfolio")}>
+      > */}
+      {/* <CaseStudyNavButton onClick={() => navigate("/#portfolio")}>
           ← Back to Portfolio
-        </CaseStudyNavButton>
+        </CaseStudyNavButton> */}
 
-        <div className="flex gap-4">
+      {/* <div className="flex gap-4">
           {previousStudy && (
             <CaseStudyNavButton
               onClick={() => navigate(`/case-studies/${previousStudy.slug}`)}
@@ -163,8 +193,8 @@ const CaseStudyDetail = ({
               {nextStudy.title} →
             </CaseStudyNavButton>
           )}
-        </div>
-      </nav>
+        </div> */}
+      {/* </nav> */}
     </motion.article>
   );
 };

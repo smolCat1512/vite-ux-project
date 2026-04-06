@@ -10,6 +10,9 @@ export interface Project {
   cardImage: string;
   liveUrl?: string;
   role?: string;
+  cardBackgroundClass?: string;
+  cardInnerFrameClass?: string;
+  cardImageClass?: string;
 
   // navigation
   hasCaseStudy: boolean;
@@ -32,6 +35,9 @@ export const projects: Project[] = [
     ],
     cardImage: ShelterCard,
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
+    cardBackgroundClass:
+      "bg-gradient-to-br from-red-600 via-red-100 to-white-200",
+    cardImageClass: "scale-[1.02]",
     hasCaseStudy: true,
   },
   {
@@ -51,6 +57,10 @@ export const projects: Project[] = [
     ],
     cardImage: NFCCCard,
     liveUrl: "https://www.nfcc.org/",
+    cardBackgroundClass:
+      "bg-gradient-to-br from-sky-200 via-blue-200 to-indigo-200",
+    cardInnerFrameClass: "items-end justify-center",
+    cardImageClass: "translate-y-16 scale-[1.03] rounded-t-lg",
     hasCaseStudy: false,
   },
   {
@@ -69,7 +79,8 @@ export const projects: Project[] = [
       },
     ],
     cardImage: "",
-    liveUrl: "https://www.unhcr.org/uk/media/unhcraaptoolctengaging-communities-whatsapp",
+    liveUrl:
+      "https://www.unhcr.org/uk/media/unhcraaptoolctengaging-communities-whatsapp",
     hasCaseStudy: false,
   },
   {

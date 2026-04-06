@@ -14,23 +14,38 @@ const PortfolioCard = ({
   cardImage,
   liveUrl,
   hasCaseStudy,
+  cardBackgroundClass,
+  cardInnerFrameClass,
+  cardImageClass,
 }: Project) => {
   const [imageError, setImageError] = useState(false);
   const caseStudyHref = hasCaseStudy ? `/case-studies/${id}` : null;
+  const backgroundClass = cardBackgroundClass ?? "bg-stone-100";
+  const innerFrameClass =
+    cardInnerFrameClass ?? "items-center justify-center";
+  const imageClass = cardImageClass ?? "";
 
   const imageContent = imageError || !cardImage ? (
-    <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm bg-stone-100">
-      <div className="flex h-3/4 w-3/4 items-center justify-center overflow-hidden rounded-sm">
+    <div
+      className={`flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
+    >
+      <div
+        className={`flex h-3/4 w-3/4 overflow-hidden rounded-sm ${innerFrameClass}`}
+      >
         <PortfolioCardImagePlaceholder showText={true} />
       </div>
     </div>
   ) : (
-    <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm bg-stone-100">
-      <div className="flex h-3/4 w-3/4 items-center justify-center overflow-hidden rounded-sm">
+    <div
+      className={`flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
+    >
+      <div
+        className={`flex h-3/4 w-3/4 overflow-visible rounded-sm ${innerFrameClass}`}
+      >
         <img
           src={cardImage}
           alt={`${title} project screenshot`}
-          className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          className={`h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] ${imageClass}`}
           onError={() => setImageError(true)}
         />
       </div>
