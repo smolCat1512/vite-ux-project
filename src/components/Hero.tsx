@@ -43,7 +43,7 @@ const Hero = () => {
     <Box className="flex flex-col">
       <Box className="text-center justify-center mx-auto w-10/12 md:w-auto lg:w-auto">
         {/* Main heading */}
-        <div className="flex flex-row items-center justify-center">
+        <div className="flex flex-row items-center justify-center md:pb-12">
           <HeroHeading animate={!shouldReduceMotion}>
             Hi, I'm <HeroHighlight>Shaun</HeroHighlight> I <RoleType />
           </HeroHeading>
