@@ -94,7 +94,7 @@ const RoleType = ({
     window.addEventListener("resize", measure);
 
     return () => window.removeEventListener("resize", measure);
-  }, [activeWords, mobileBreakpoint]);
+  }, [activeWords, mobileBreakpoint, gap]);
 
   const rowHeight = itemHeight;
   const mobileWindowHeight = rowHeight * 2.7 + gap;
