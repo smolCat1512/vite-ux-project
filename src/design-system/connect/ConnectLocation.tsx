@@ -2,6 +2,8 @@ import { useMantineTheme } from "@mantine/core";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLocationPin } from "react-icons/fa6";
 import { useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ConnectLocation = () => {
   const theme = useMantineTheme();
@@ -11,6 +13,8 @@ const ConnectLocation = () => {
   const iconGlow = theme?.other?.connect?.icons?.glow ?? false;
   const iconGlowColor = theme?.other?.connect?.icons?.glowColor;
   const underlineColor = theme?.other?.connect?.icons?.underlineColor;
+
+  const isMobile = useMediaQuery("(max-width: 480px)");
 
   const [hovered, setHovered] = useState(false);
 
@@ -42,14 +46,25 @@ const ConnectLocation = () => {
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.25 }}
             style={{
-              display: "block",
+              display: "flex",
               color,
               fontSize: "1rem",
               textDecoration: "underline",
               textDecorationColor: underlineColor,
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "8px",
             }}
           >
-            Location
+            Location{" "}
+            {isMobile ? (
+              <FaExternalLinkAlt
+                color={gradientStart}
+                filter={
+                  iconGlow ? `drop-shadow(0 0 6px ${iconGlowColor})` : undefined
+                }
+              />
+            ) : null}
           </motion.span>
         ) : (
           <motion.div
