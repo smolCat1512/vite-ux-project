@@ -2,6 +2,8 @@ import { useMantineTheme } from "@mantine/core";
 import { motion, AnimatePresence } from "framer-motion";
 import { PiReadCvLogoFill } from "react-icons/pi";
 import { useState } from "react";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { useMediaQuery } from "@mantine/hooks";
 
 const ConnectCv = () => {
   const theme = useMantineTheme();
@@ -13,6 +15,8 @@ const ConnectCv = () => {
   const underlineColor = theme?.other?.connect?.icons?.underlineColor;
 
   const [hovered, setHovered] = useState(false);
+
+  const isMobile = useMediaQuery("(max-width: 480px)");
 
   return (
     <div
@@ -37,14 +41,25 @@ const ConnectCv = () => {
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.25 }}
             style={{
-              display: "block",
+              display: "flex",
               color,
               fontSize: "1rem",
               textDecoration: "underline",
               textDecorationColor: underlineColor,
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "8px",
             }}
           >
             CV
+            {isMobile ? (
+              <FaExternalLinkAlt
+                color={gradientStart}
+                filter={
+                  iconGlow ? `drop-shadow(0 0 6px ${iconGlowColor})` : undefined
+                }
+              />
+            ) : null}
           </motion.span>
         ) : (
           <motion.div

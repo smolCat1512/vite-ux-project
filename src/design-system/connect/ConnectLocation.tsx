@@ -56,7 +56,7 @@ const ConnectLocation = () => {
               gap: "8px",
             }}
           >
-            Location{" "}
+            Location
             {isMobile ? (
               <FaExternalLinkAlt
                 color={gradientStart}
