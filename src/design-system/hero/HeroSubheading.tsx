@@ -33,8 +33,9 @@ const HeroSubheading = ({
     <motion.div
       initial={animate ? { y: 40, opacity: 0 } : false}
       animate={animate ? { y: 0, opacity: 1 } : false}
-      transition={{ duration: 1, delay: 0.2 }}
+      transition={{ duration: 1, delay: 0.7 }}
       style={{ marginTop: isMobile ? 4 : 48 }}
+      id="HeroSubheading"
     >
       <Typography
         className="text-center text-2xl"
