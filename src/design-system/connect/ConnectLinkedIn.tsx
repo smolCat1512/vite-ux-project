@@ -2,6 +2,8 @@ import { useMantineTheme } from "@mantine/core";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa6";
 import { useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const ConnectLinkedIn = () => {
   const theme = useMantineTheme();
@@ -13,6 +15,8 @@ const ConnectLinkedIn = () => {
   const underlineColor = theme?.other?.connect?.icons?.underlineColor;
 
   const [hovered, setHovered] = useState(false);
+
+  const isMobile = useMediaQuery("(max-width: 480px)");
 
   return (
     <div
@@ -41,9 +45,28 @@ const ConnectLinkedIn = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.25 }}
-            style={{ display: "block", color, fontSize: "1rem", textDecoration: "underline", textDecorationColor: underlineColor }}
+            style={{
+              display: "flex",
+              color,
+              fontSize: "1rem",
+              textDecoration: "underline",
+              textDecorationColor: underlineColor,
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "8px",
+            }}
           >
             LinkedIn
+            {isMobile ? (
+              <FaExternalLinkAlt
+                color={gradientStart}
+                filter={
+                  iconGlow
+                    ? `drop-shadow( 0 0 6px ${iconGlowColor})`
+                    : undefined
+                }
+              />
+            ) : null}
           </motion.span>
         ) : (
           <motion.div
