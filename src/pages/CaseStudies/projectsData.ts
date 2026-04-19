@@ -61,7 +61,7 @@ export const projects: Project[] = [
       "bg-gradient-to-br from-sky-200 via-blue-200 to-indigo-200",
     cardInnerFrameClass: "items-end justify-center",
     cardImageClass: "translate-y-16 scale-[1.03] rounded-t-lg",
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     id: "unhcr",
