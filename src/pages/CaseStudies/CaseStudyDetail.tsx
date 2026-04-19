@@ -32,6 +32,7 @@ const CaseStudyDetail = ({
   solution,
   outcome,
   images = [],
+  imagesCaption = "",
   liveUrl,
   liveUrlText = "",
   technologies = [],
@@ -124,8 +125,7 @@ const CaseStudyDetail = ({
               ))}
             </div>
             <p className="text-sm text-gray-500 mt-2 text-center italic">
-              Pictured above: Wireframes of the web chat interface, and design
-              system components.
+              {imagesCaption}
             </p>
           </CaseStudySection>
         </motion.section>

@@ -3,6 +3,7 @@ import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg
 import ShelterStart from "../../assets/shelter-wireframes/start.png";
 import ShelterTriage from "../../assets/shelter-wireframes/triage.png";
 import ShelterPostChat from "../../assets/shelter-wireframes/postChat.png";
+import NFCCWizardStart from "../../assets/nfcc_images/NFCCWireframe1.png";
 
 export interface CaseStudy {
   id: string;
@@ -17,6 +18,7 @@ export interface CaseStudy {
   outcome?: string;
   technologies?: string[];
   images?: string[];
+  imagesCaption?: string;
   liveUrl?: string;
   liveUrlText?: string;
   cardImage: string;
@@ -40,6 +42,7 @@ export const caseStudiesData: CaseStudy[] = [
     outcome:
       "The project delivered to Shelter a more tailored and resilient service experience, improved the clarity of the journey for people seeking help, and created a stronger foundation for ongoing iteration. Users now received timely and visible feedback, in relation to the availability of web chat, and in queue positioning UI feedback. The increase of handled webchats increased by roughly 20% in the first 3 months after launch, and the project has been well received by both staff and end users. The project also set up a stronger foundation for ongoing iteration, with a custom design system and a more flexible platform for future improvements. The project has also been a valuable learning experience for me, in terms of working with a large range of stakeholders, balancing different needs and priorities, and delivering a complex project within a tight timeline.",
     images: [ShelterStart, ShelterTriage, ShelterPostChat],
+    imagesCaption: "Pictured above: Wireframes of the web chat interface, and design system components.",
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
     liveUrlText:
       "To visit the live site, click the button below. This will take to Shelter Helpline England live service, where you can experience the web chat service in action. Please note that this is a live service for people seeking help with emergency housing issues, so if you do visit the site, please be respectful and mindful of the fact that real people are using the service to get support.",
@@ -62,7 +65,8 @@ export const caseStudiesData: CaseStudy[] = [
       "I worked across multiple stages and responsibilities on the project - starting at user research and requirements gathering, an iterative design process, and the frontend development integrating with backend services. I worked closely with stakeholders to understand their needs and priorities, and to ensure the design met their needs. I also worked closely with backend developers to integrate with backend services and APIs, and to ensure a smooth handoff between frontend and backend development. The project involved building a new frontend system for agencies to onboard themselves, and manage their presence on the platform. This involved working within an established design system, and iterating on the design based on feedback from users and stakeholders. The project also had a strong focus on accessibility and performance, to ensure the platform was usable by a wide range of users, and performed well even on slower connections or devices.",
     outcome:
       "The work created a new onboarding platform for NFCC member agencies, which significantly reduced the administrative work required to onboard new agencies, and provided a much improved user experience for agencies. The platform also allowed agencies to manage their presence on the NFCC platform more easily, and provided a stronger foundation for ongoing iteration and improvement. The project was well received by stakeholders and users, and has been a valuable learning experience for me in terms of working with a large range of stakeholders, balancing different needs and priorities, and delivering a complex project over an extended timeline.",
-    images: [NFCCCard],
+    images: [NFCCWizardStart],
+    imagesCaption: "Early wireframe of the onboarding wizard",
     liveUrl: "https://www.nfcc.org/financial-counseling",
     technologies: ["React", "TypeScript", "Figma", "Twilio Paste"],
     cardImage: NFCCCard,
