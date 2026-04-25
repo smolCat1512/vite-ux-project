@@ -218,7 +218,7 @@ export default function CV() {
               <div className="mb-6">
                 <div className="flex justify-between items-baseline">
                   <h3 className="font-semibold text-gray-800">
-                    Frontend Software Engineer
+                    Frontend Software Engineer/Technical Project Manager
                   </h3>
                   <span className="text-sm text-gray-400">
                     June 2021 – Present
@@ -265,7 +265,7 @@ export default function CV() {
                   <h3 className="font-semibold text-gray-800">
                     LGBTQ+ Safety App
                   </h3>
-                  <span className="text-sm text-gray-400">Ongoing</span>
+                  <span className="text-sm text-gray-400">2024-2025</span>
                 </div>
                 <p className="text-sm text-teal-600 font-medium mb-1">
                   Pre-funding Startup · Volunteer UX/Dev

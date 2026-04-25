@@ -54,11 +54,11 @@ export const caseStudiesData: CaseStudy[] = [
     id: "nfcc",
     title: "NFCC",
     tagline: "Financial Counseling Platform",
-    role: "Research, Design, Frontend Development, Integrating Backend Services",
+    role: ["Research", "Design", "Frontend Development", "Integrating Backend Services"],
     client: "National Foundation for Credit Counseling",
     duration: "18 months",
     overview:
-      "Helped build a financial agency onboarding platform for the US nonprofit sector, from no front end to a polished and accessible product experience. The NFCC is a US-based nonprofit organisation that provides financial counseling and education services to individuals and families. They work with a network of member agencies across the country, who provide these services on the ground.",
+      "Helped build a financial agency onboarding and management platform for the US nonprofit sector, from no front end system exisiting, to a polished and accessible product experience. The National Foundation for Credit Counseling (NFCC) is a US-based nonprofit organisation, that provides financial counseling and education services to individuals and families. They work with a network of member agencies across the country, who provide these services on the ground.",
     challenge:
       "NFCC were manually onboarding agencies, requiring a large amount of administrative work. There was no front end system to speak of, so the process was slow, and the user experience was poor. The project involved building a new frontend system for agencies to onboard themselves, and manage their presence on the platform. This involved working within an established design system, and integrating with backend services and APIs. The project also involved working closely with stakeholders to ensure the design met their needs, and iterating on the design based on feedback from users and stakeholders. The project also had a strong focus on accessibility and performance, to ensure the platform was usable by a wide range of users, and performed well even on slower connections or devices.",
     solution:
