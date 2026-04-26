@@ -58,7 +58,7 @@ const PortfolioCard = ({
         <Link
           to={caseStudyHref}
           aria-label={`View ${title} case study`}
-          className="group block"
+          className="group block brightness-100 transition-all hover:brightness-90 duration-500"
           target="_blank"
           rel="noopener noreferrer"
         >

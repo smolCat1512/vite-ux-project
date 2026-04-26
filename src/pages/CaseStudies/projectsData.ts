@@ -37,7 +37,8 @@ export const projects: Project[] = [
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
     cardBackgroundClass:
       "bg-gradient-to-br from-red-600 via-red-100 to-white-200",
-    cardImageClass: "scale+[2.0]",
+    cardImageClass:
+      "scale+[2.0]",
     hasCaseStudy: true,
   },
   {
