@@ -21,7 +21,7 @@ const PortfolioCardImagePlaceholder = ({
       <HiPhotograph size={48} style={{ color: iconColor }} />
       {showText && (
         <span className="text-sm" style={{ color: textColor }}>
-          No image available
+          Image coming soon...
         </span>
       )}
     </div>
