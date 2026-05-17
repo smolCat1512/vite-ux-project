@@ -11,6 +11,7 @@ import CaseStudyTechnologyBadge from "../../design-system/caseStudy/CaseStudyTec
 import CaseStudyLiveButton from "../../design-system/caseStudy/CaseStudyLiveButton";
 // import CaseStudyNavButton from "../../design-system/caseStudy/CaseStudyNavButton";
 import CaseStudyImage from "../../design-system/caseStudy/CaseStudyImage";
+import CaseStudyImagesBanner from "../../utils/caseStudyScrollingBanner";
 
 <link
   href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
@@ -89,7 +90,7 @@ const CaseStudyDetail = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <p>Supplementary images here</p>
+        <CaseStudyImagesBanner />
       </motion.section>
 
       {/* Content sections */}
