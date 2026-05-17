@@ -85,7 +85,7 @@ const CaseStudyDetail = ({
       </motion.section>
 
       <motion.section
-        className="bg-gray-100 flex flex-row h-[320px] items-center justify-center"
+        className="bg-gray-100 flex flex-row items-center justify-center"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
