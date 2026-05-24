@@ -1,7 +1,5 @@
-// import { useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import type { CaseStudy } from "./CaseStudiesData";
-// import { useMantineTheme } from "@mantine/core";
 import CaseStudyTitle from "../../design-system/caseStudy/CaseStudyTitle";
 import CaseStudyTagline from "../../design-system/caseStudy/CaseStudyTagline";
 import CaseStudyDetailsGrid from "../../design-system/caseStudy/CaseStudyDetailsGrid";
@@ -9,9 +7,9 @@ import CaseStudyDetailItem from "../../design-system/caseStudy/CaseStudyDetailIt
 import CaseStudySection from "../../design-system/caseStudy/CaseStudySection";
 import CaseStudyTechnologyBadge from "../../design-system/caseStudy/CaseStudyTechnologyBadge";
 import CaseStudyLiveButton from "../../design-system/caseStudy/CaseStudyLiveButton";
-// import CaseStudyNavButton from "../../design-system/caseStudy/CaseStudyNavButton";
 import CaseStudyImage from "../../design-system/caseStudy/CaseStudyImage";
-import CaseStudyImagesBanner from "../../utils/caseStudyScrollingBanner";
+import CaseStudyImagesBanner from "./CaseStudyImagesBanner";
+import { CaseStudyImageConfig } from "./CaseStudyImages";
 
 <link
   href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
@@ -38,13 +36,8 @@ const CaseStudyDetail = ({
   liveUrlText = "",
   technologies = [],
   cardImage,
-  // previousStudy,
-  // nextStudy,
 }: CaseStudyDetailProps) => {
-  // const navigate = useNavigate();
   const shouldReduceMotion = useReducedMotion();
-  // const theme = useMantineTheme();
-  // const borderColor = theme.other?.caseStudy?.navigation?.border ?? "#e5e7eb";
 
   return (
     <motion.article
@@ -90,7 +83,12 @@ const CaseStudyDetail = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <CaseStudyImagesBanner />
+        {title === "Shelter" && (
+          <CaseStudyImagesBanner {...CaseStudyImageConfig.shelter} />
+        )}
+        {title === "NFCC" && (
+          <CaseStudyImagesBanner {...CaseStudyImageConfig.nfcc} />
+        )}
       </motion.section>
 
       {/* Content sections */}
@@ -172,33 +170,6 @@ const CaseStudyDetail = ({
           </CaseStudyLiveButton>
         </motion.section>
       )}
-
-      {/* Navigation */}
-      {/* <nav
-        className="border-t pt-8 mt-12 flex justify-between items-center"
-        style={{ borderColor }}
-      > */}
-      {/* <CaseStudyNavButton onClick={() => navigate("/#portfolio")}>
-          ← Back to Portfolio
-        </CaseStudyNavButton> */}
-
-      {/* <div className="flex gap-4">
-          {previousStudy && (
-            <CaseStudyNavButton
-              onClick={() => navigate(`/case-studies/${previousStudy.slug}`)}
-            >
-              ← {previousStudy.title}
-            </CaseStudyNavButton>
-          )}
-          {nextStudy && (
-            <CaseStudyNavButton
-              onClick={() => navigate(`/case-studies/${nextStudy.slug}`)}
-            >
-              {nextStudy.title} →
-            </CaseStudyNavButton>
-          )}
-        </div> */}
-      {/* </nav> */}
     </motion.article>
   );
 };

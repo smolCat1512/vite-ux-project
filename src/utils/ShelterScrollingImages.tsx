@@ -1,28 +1,19 @@
 import { Box } from "@mantine/core";
-import NFCCWizardWireframe from "../assets/nfcc_images/NFCCWireframe1.png";
-import NFCCAgencies from "../assets/nfcc_images/NFCC_Agencies.png";
-import NFCCServiceSetup from "../assets/nfcc_images/NFCC_ServiceSetup1.png";
-import NFCCBilling from "../assets/nfcc_images/NFCC_Billing.png";
-import NFCCHolidays from "../assets/nfcc_images/NFCC_Holidays.png";
-import NFCCInsights from "../assets/nfcc_images/NFCC_Insights.png";
-import NFCCServices1 from "../assets/nfcc_images/NFCC_ManageServices01.png";
-import NFCCServices2 from "../assets/nfcc_images/NFCC_ManageServices02.png";
-import NFCCProfile from "../assets/nfcc_images/NFCC_Profile.png";
-import NFCCVideoAgencies from "../assets/nfcc_images/NFCC_VideoAgencies.png";
-
-import ZoomableImage from "./zoomableImage";
+import ShelterImageZoom from "./shelterImageZoom";
+import ShelterWebchat1 from "../assets/shelter_images/ShelterWebchat1.png";
+import ShelterWebchat2 from "../assets/shelter_images/ShelterWebchat2.png";
+import ShelterWebchat3 from "../assets/shelter_images/ShelterWebchat3.png";
+import ShelterWebchat4 from "../assets/shelter_images/ShelterWebchat4.png";
+import ShelterWebchat5 from "../assets/shelter_images/ShelterWebchat5.png";
+import ShelterWebchat6 from "../assets/shelter_images/ShelterWebchat6.png";
 
 const images = [
-  { name: "WizardStart", image: NFCCWizardWireframe },
-  { name: "Agencies", image: NFCCAgencies },
-  { name: "ServiceSetup", image: NFCCServiceSetup },
-  { name: "Billing", image: NFCCBilling },
-  { name: "Holidays", image: NFCCHolidays },
-  { name: "Insights", image: NFCCInsights },
-  { name: "Services1", image: NFCCServices1 },
-  { name: "Services2", image: NFCCServices2 },
-  { name: "Profile", image: NFCCProfile },
-  { name: "VideoAgencies", image: NFCCVideoAgencies },
+  { name: "Webchat1", image: ShelterWebchat1 },
+  { name: "Webchat2", image: ShelterWebchat2 },
+  { name: "Webchat3", image: ShelterWebchat3 },
+  { name: "Webchat4", image: ShelterWebchat4 },
+  { name: "Webchat5", image: ShelterWebchat5 },
+  { name: "Webchat6", image: ShelterWebchat6 },
 ];
 
 const row1 = images.filter((_, i) => i % 2 === 0);
@@ -40,7 +31,6 @@ const ScrollRow = ({ items, direction, duration }: ScrollRowProps) => {
 
   return (
     <div style={{ overflow: "hidden", width: "100%" }}>
-      {" "}
       {/* 👈 wrapper */}
       <div
         style={{
@@ -77,11 +67,11 @@ const ScrollRow = ({ items, direction, duration }: ScrollRowProps) => {
                   padding: "8px",
                 }}
               >
-                <ZoomableImage
+                <ShelterImageZoom
                   src={images.image}
                   alt={images.name}
-                  w={320}
-                  h={240}
+                  w={240}
+                  h={400}
                 />
               </li>
             ))}
