@@ -36,8 +36,32 @@ function ZoomableImage({ src, alt, w, h }: ZoomableImageProps) {
           boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
         }}
       />
-      <Modal opened={opened} onClose={close} size="100%" centered>
-        <Image src={src} alt={alt} />
+      <Modal
+        opened={opened}
+        onClose={close}
+        size="xl"
+        centered
+        styles={{
+          body: {
+            overflowY: "hidden",
+            maxHeight: "85vh",
+          },
+          content: {
+            overflowY: "hidden",
+          },
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          style={{
+            maxHeight: "80vh",
+            maxWidth: "80vw",
+            objectFit: "contain",
+            display: "block",
+            margin: "auto",
+          }}
+        />
       </Modal>
     </Box>
   );
