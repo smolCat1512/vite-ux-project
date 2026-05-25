@@ -24,7 +24,7 @@ const Connect = () => {
       className="align-start justify-center mx-auto w-10/12 pt-30 pb-16 md:pb-20 mb-10"
       id="connect"
     >
-      <Grid gutter={25}>
+      <Grid gap={25}>
         {/* Left Side - Text Content */}
         <Grid.Col span={{ base: 12, md: 5 }}>
           <Stack className="sm:gap-8 md:gap-14">

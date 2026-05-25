@@ -1,13 +1,19 @@
-import { Box } from "@mantine/core";
+import { Box, SimpleGrid } from "@mantine/core";
 import TechnologiesHeader from "../design-system/technologies/TechnologiesHeader";
-import ScrollingBanner from "../utils/scrollingBanner";
-
+import TechnologiesScrollingBanner from "../utils/TechonologiesScroliingBanner";
+import MethodologiesScrollingBanner from "../utils/MethodologiesScrollingBanner";
 
 const Technologies = () => {
   return (
-    <Box className="flex flex-col p-4 text-center w-full">
-      <TechnologiesHeader>Technologies</TechnologiesHeader>
-      <ScrollingBanner />
+    <Box py="xl" ta="center">
+      <TechnologiesHeader> Technologies &amp; Methodologies</TechnologiesHeader>
+      <SimpleGrid 
+        cols={{ base: 1, md: 2 }}
+        spacing="0"
+      >
+        <TechnologiesScrollingBanner />
+        <MethodologiesScrollingBanner />
+      </SimpleGrid>
     </Box>
   );
 };

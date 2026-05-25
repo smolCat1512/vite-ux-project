@@ -127,6 +127,7 @@ const RoleType = ({
           "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 18%, black 36%, black 64%, rgba(0,0,0,0.45) 82%, transparent 100%)",
         maskImage:
           "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 18%, black 36%, black 64%, rgba(0,0,0,0.45) 82%, transparent 100%)",
+          fontWeight: "bold",
       };
 
   const itemStyle: React.CSSProperties = {

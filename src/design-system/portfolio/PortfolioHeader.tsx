@@ -18,10 +18,12 @@ const PortfolioHeader = ({ children }: PortfolioHeaderProps) => {
 
   return (
     <span
-      className={`${glow ? "animate-hero-glow" : ""} text-3xl font-inherit`}
+      className={`${glow ? "animate-hero-glow" : ""} font-inherit`}
       style={{
         color,
         textShadow: textGlow,
+        fontSize: "clamp(1.5rem, 3vw, 1.75rem)",
+        textAlign: "center",
       }}
     >
       {children}

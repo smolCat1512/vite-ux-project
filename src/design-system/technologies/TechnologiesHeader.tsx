@@ -18,11 +18,13 @@ const TechnologiesHeader = ({ children }: TechnologiesHeaderProps) => {
 
   return (
     <span
-      className={`${glow ? "animate-hero-glow" : ""} text-3xl font-inherit`}
+      className={`${glow ? "animate-hero-glow" : ""} font-inherit`}
       style={{
         color,
         textShadow: textGlow,
         marginBottom: "1.5rem",
+        fontSize: "clamp(1.5rem, 3vw, 1.75rem)",
+        textAlign: "center",
       }}
     >
       {children}

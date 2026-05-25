@@ -22,6 +22,7 @@ const HeroHighlight = ({ children }: HeroHighlightProps) => {
       style={{
         color,
         textShadow: textGlow,
+        fontWeight: "bold",
       }}
     >
       {children}

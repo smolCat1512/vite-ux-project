@@ -15,7 +15,7 @@ const HeroHeading = ({ children, animate = true }: HeroHeadingProps) => {
 
   const color = heading?.color ?? theme.colors.gray[9];
   const glow = heading?.glow ?? false;
-  
+
   const textGlow = getTextGlow(color, glow, 1.5);
 
   return (
@@ -26,11 +26,11 @@ const HeroHeading = ({ children, animate = true }: HeroHeadingProps) => {
     >
       <Typography
         component="h1"
-        fw={700}
-        fz="2rem"
         style={{
           color,
           textShadow: textGlow,
+          fontSize: "clamp(1.5rem, 3vw, 1.75rem)",
+          textAlign: "center",
         }}
       >
         {children}
