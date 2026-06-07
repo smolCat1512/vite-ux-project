@@ -57,7 +57,6 @@ const TechnologiesScrollingBanner = () => {
       w="100%"
       my="xl"
     >
-        <TechnologiesScrollingBanner />
       <Marquee pauseOnHover duration={25000} fadeEdgeSize="8%">
         {row1.map((tech) => (
           <TechnologiesCard

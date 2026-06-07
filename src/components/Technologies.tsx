@@ -1,6 +1,6 @@
 import { Box, SimpleGrid } from "@mantine/core";
 import TechnologiesHeader from "../design-system/technologies/TechnologiesHeader";
-import TechnologiesScrollingBanner from "../utils/TechonologiesScroliingBanner";
+import TechnologiesScrollingBanner from "../utils/TechnologiesScroliingBanner";
 import MethodologiesScrollingBanner from "../utils/MethodologiesScrollingBanner";
 
 const Technologies = () => {
