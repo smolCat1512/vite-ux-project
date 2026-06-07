@@ -20,7 +20,7 @@ const Hero = () => {
         </div>
         <div className="pb-4">
           <HeroSubheading animate={!shouldReduceMotion}>
-            Front-end Software Engineer and UX/UI Engineer
+            Front-end Software Engineer and Technical Project Manager
           </HeroSubheading>
         </div>
         <ContactButton animate={!shouldReduceMotion}>
