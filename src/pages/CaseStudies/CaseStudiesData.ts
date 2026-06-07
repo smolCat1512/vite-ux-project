@@ -11,7 +11,7 @@ export interface CaseStudy {
   id: string;
   title: string;
   tagline: string;
-  role: string | string[];
+  roles: string | string[];
   client?: string;
   duration?: string;
   overview?: string;
@@ -32,24 +32,67 @@ export const caseStudiesData: CaseStudy[] = [
     id: "shelter",
     title: "Shelter",
     tagline: "Digital Advice Webchat",
-    role: ["Research", "Design", "Frontend Development", "Design System"],
+    roles: [
+      "Research",
+      "Design",
+      "Frontend Development",
+      "Design System",
+      "Project Management",
+    ],
     client: "Shelter",
-    duration: "initial build - 3 months",
-    overview:
-      "Shelter is a UK-based charity campaigning for housing justice in England and Scotland. They provide advice, support, and advocacy to individuals, and run national campaigns to address housing issues. Shelter deliver this support from in-person hubs, and via voice and digital channels. They have been using an online web chat service for roughly 2 years, and are a relative newcomer to the provision and adoption of digital services.",
-    challenge:
-      "The previous web chat service was constrained by an inflexible platform, weak triage, and a dated agent and end-user experience. Shelter needed a system that could better prioritise urgent needs, support staff workflows, and reflect their service more accurately. The project also needed to be delivered within a tight timeline, and set up for ongoing iteration and improvement. Adding to this was a large range of stakeholders, and a need to balance the needs of end users with those of staff and the organisation as a whole. This involved additionally taking on project management and stakeholder management responsibilities, to ensure the project was delivered on time and met the needs of all parties involved.",
-    solution:
-      "I worked across multiple stages and responsibilities on the project - starting at user research and requirements gathering, an iterative design process, and the frontend development. Throught these processes I was interacting with stakeholders and colleagues, to iteratively demo and refine the product and process. The project involved building a custom web chat interface, and on a seperate piece of the project, a custom content management system. This involved implementing a more robust triage system, and working closely with Shelter staff to ensure the design met their needs. I also built a custom design system for the project, to support a more efficient development process and a more consistent product experience.",
-    outcome:
-      "The project delivered to Shelter a more tailored and resilient service experience, improved the clarity of the journey for people seeking help, and created a stronger foundation for ongoing iteration. Users now received timely and visible feedback, in relation to the availability of web chat, and in queue positioning UI feedback. The increase of handled webchats increased by roughly 20% in the first 3 months after launch, and the project has been well received by both staff and end users. The project also set up a stronger foundation for ongoing iteration, with a custom design system and a more flexible platform for future improvements. The project has also been a valuable learning experience for me, in terms of working with a large range of stakeholders, balancing different needs and priorities, and delivering a complex project within a tight timeline.",
+    duration: "Initial build - 3 months",
+    overview: `
+    Shelter is a UK-based charity campaigning for housing justice in England 
+    and Scotland. They provide advice, support, and advocacy to individuals, 
+    and run national campaigns to address housing issues. Shelter deliver this 
+    support from in-person hubs, and via voice and digital channels. They have 
+    been using an online web chat service for roughly 2 years, and are a 
+    relative newcomer to the provision and adoption of digital services.
+  `,
+    challenge: `
+    The previous web chat service was constrained by an inflexible platform, 
+    weak triage, and a dated experience for both end users and support staff. 
+    Shelter needed a system that could better prioritise urgent needs, reflect 
+    their brand more accurately, and be set up for ongoing iteration — all 
+    within a tight three-month timeline. The engagement required balancing the 
+    needs of end users, frontline staff, and a wide range of organisational 
+    stakeholders, with project and stakeholder management sitting alongside 
+    the design and development work.
+  `,
+    solution: `
+    Working alongside a backend-focused solutions engineer, I took full 
+    ownership of the research, design, and frontend development — from initial 
+    requirements gathering through to a shipped product. Designed and built a 
+    custom web chat interface with a more robust triage system, giving users 
+    clearer pathways and staff better visibility of incoming demand. I also 
+    delivered a separate custom CMS to support content ownership by the Shelter 
+    team. Throughout, I ran stakeholder demos, gathered iterative feedback, and 
+    managed competing priorities across a wide range of internal and external 
+    parties. A custom design system was built in parallel, providing a consistent 
+    component library and accelerating the development process.
+  `,
+    outcome: `
+    Delivered a more tailored and resilient web chat service for one of the UK's 
+    leading housing charities — increasing handled webchats by roughly 20% in 
+    the first three months post-launch. Users gained real-time visibility of 
+    chat availability and queue position, reducing uncertainty during high-stress 
+    moments. The project shipped a custom design system alongside the product, 
+    creating a more consistent experience and a stronger foundation for future 
+    iteration — all delivered within a tight three-month timeline across a 
+    complex, multi-stakeholder environment.
+  `,
     images: [ShelterStart, ShelterTriage, ShelterPostChat],
     imagesCaption:
       "Pictured above: Wireframes of the web chat interface, and design system components.",
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
-    liveUrlText:
-      "To visit the live site, click the button below. This will take to Shelter Helpline England live service, where you can experience the web chat service in action. Please note that this is a live service for people seeking help with emergency housing issues, so if you do visit the site, please be respectful and mindful of the fact that real people are using the service to get support.",
-    technologies: ["React", "TypeScript", "Figma", "Design Systems"],
+    liveUrlText: `
+    To visit the live site, click the button below. This will take you to the 
+    Shelter Helpline England live service, where you can experience the web chat 
+    in action. Please note that this is a live service for people seeking help 
+    with emergency housing issues, so if you do visit, please be respectful and 
+    mindful that real people are using it to get support.
+  `,
+    technologies: ["React", "TypeScript", "Figma", "Mantine", "Vite"],
     cardImage: ShelterCard,
     hasDetailPage: true,
   },
@@ -57,7 +100,7 @@ export const caseStudiesData: CaseStudy[] = [
     id: "nfcc",
     title: "NFCC",
     tagline: "Financial Counselling Platform",
-    role: [
+    roles: [
       "Research",
       "Design",
       "Frontend Development",
@@ -72,9 +115,10 @@ export const caseStudiesData: CaseStudy[] = [
     solution:
       "I worked across multiple stages and responsibilities on the project - starting at user research and requirements gathering, an iterative design process, and the frontend development integrating with backend services. I worked closely with stakeholders to understand their needs and priorities, and to ensure the design met their needs. I also worked closely with backend developers to integrate with backend services and APIs, and to ensure a smooth handoff between frontend and backend development. The project involved building a new frontend system for agencies to onboard themselves, and manage their presence on the platform. This involved working within an established design system, and iterating on the design based on feedback from users and stakeholders. The project also had a strong focus on accessibility and performance, to ensure the platform was usable by a wide range of users, and performed well even on slower connections or devices.",
     outcome:
-      "The work created a new onboarding platform for NFCC and their member agencies, which significantly reduced the administrative work required to onboard new agencies, and provided a much improved user experience for member agencies. The platform also allowed agencies to manage their presence on the NFCC platform more easily, and provided a stronger foundation for ongoing iteration and improvement. The project was well received by stakeholders and users, and has been a valuable learning experience for me in terms of working with a large range of stakeholders, balancing different needs and priorities, and delivering a complex project over an extended timeline.",
+      "Empowered agencies to self-serve their own onboarding, removing a significant administrative burden from NFCC staff and freeing them up for higher-value work. Reduced the onboarding process from 3-4 days to 1-2 hours. The platform gave agencies direct control over their services, availability, and presence — replacing a slow, manual process with a polished, accessible product that scaled across their national network of member agencies.",
     images: [NFCCWizardStart, NFCCServiceSetup, NFCCAgencies],
-    imagesCaption: "Early wireframe of the onboarding wizard; The service setup interface; Agency member dashboard;",
+    imagesCaption:
+      "Early wireframe of the onboarding wizard; The service setup interface; Agency member dashboard;",
     liveUrl: "https://www.nfcc.org/agency-finder/",
     liveUrlText:
       "The agency locator tool requires an authorised username and password, so I can't provide a live link to the onboarding platform. However, if you visit the NFCC financial counselling page, you can see and read up on the agency locator and its functionality.",

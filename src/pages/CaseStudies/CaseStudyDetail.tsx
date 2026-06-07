@@ -24,7 +24,7 @@ type CaseStudyDetailProps = CaseStudy & {
 const CaseStudyDetail = ({
   title,
   tagline,
-  role,
+  roles,
   client,
   overview,
   challenge,
@@ -72,7 +72,7 @@ const CaseStudyDetail = ({
         transition={{ duration: 1, delay: 0.5 }}
       >
         <CaseStudyDetailsGrid>
-          <CaseStudyDetailItem label="Role">{role}</CaseStudyDetailItem>
+          <CaseStudyDetailItem label="Roles">{roles}</CaseStudyDetailItem>
           <CaseStudyDetailItem label="Client">{client}</CaseStudyDetailItem>
         </CaseStudyDetailsGrid>
       </motion.section>
