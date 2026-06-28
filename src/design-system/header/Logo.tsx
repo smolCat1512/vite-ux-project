@@ -2,6 +2,7 @@ import { Button, useMantineTheme } from "@mantine/core";
 import React from "react";
 import { FaHome } from "react-icons/fa";
 import { getTextGlow, getIconGlow } from "../utils/glow";
+import { motion, useTime, useTransform } from "framer-motion";
 
 type LogoProps = {
   onClick?: () => void;
@@ -9,25 +10,33 @@ type LogoProps = {
 
 const Logo: React.FC<LogoProps> = ({ onClick }) => {
   const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
+
   const theme = useMantineTheme();
+  const gradientFrom = theme.other?.header?.logo?.gradientFrom;
+  const gradientTo = theme.other?.header?.logo?.gradientTo;
+  const buttonBackground = theme.other?.header?.logo?.buttonBackground;
   const text = theme.other?.header?.logo?.color ?? "#000000";
   const glowColor = theme.other?.header?.logo?.glowColor;
   const glow = theme.other?.header?.logo?.glow ?? false;
   const textGlow = getTextGlow(glowColor, glow);
   const iconGlow = getIconGlow(glowColor, glow);
 
-  // Pull your gradient colours from the theme or hardcode them
-  const gradientFrom = theme.other?.header?.logo?.gradientFrom;
-  const gradientTo = theme.other?.header?.logo?.gradientTo;
-  const buttonBackground = theme.other?.header?.logo?.buttonBackground;
+  const time = useTime();
+  const rotate = useTransform(time, [0, 6000], [0, 360], { clamp: false });
+  const rotatingBorder = useTransform(
+    rotate,
+    (r) => `conic-gradient(from ${r}deg, ${gradientFrom}, ${gradientTo})`,
+  );
 
   return (
-    <div
+    <motion.div
       style={{
-        background: `linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`,
-        padding: "4px",          
+        background: prefersReducedMotion
+          ? `conic-gradient(${gradientFrom}, ${gradientTo})`
+          : rotatingBorder,
+        padding: "4px",
         borderRadius: "var(--mantine-radius-md)",
         display: "inline-flex",
         color: text,
@@ -78,7 +87,9 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
         {/* Icon that appears on hover */}
         <span
           className={`absolute transition-transform duration-500 transform left-2 ${
-            prefersReducedMotion ? "" : "translate-y-10 group-hover:translate-y-0"
+            prefersReducedMotion
+              ? ""
+              : "translate-y-10 group-hover:translate-y-0"
           } opacity-0 group-hover:opacity-100`}
           aria-hidden="true"
         >
@@ -96,7 +107,7 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
           />
         </span>
       </Button>
-    </div>
+    </motion.div>
   );
 };
 
