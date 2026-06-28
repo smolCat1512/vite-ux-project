@@ -43,8 +43,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         button: {
           background: "#ff6e00",
-          text: "#ffffff",
+          text: "#000000",
           hoverBackground: "#e66300",
+          gradientFrom: "#ff6e00",
+          gradientTo: "#7c3aed",
+          color: "#000000",
+          buttonBackground: "#ffffff",
+          glow: false,
         },
         icons: {
           iconStart: "#ff6e00",
@@ -288,8 +293,12 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         button: {
           background: "#f59e0b",
-          text: "#000000",
+          text: "#ffffff",
           hoverBackground: "#d97706",
+          gradientFrom: "#ff6e00",
+          gradientTo: "#06b6d4",
+          buttonBackground: "#121212",
+          glow: false,
         },
         icons: {
           iconStart: "#f59e0b",
@@ -545,8 +554,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         button: {
           background: "#ff1ab3",
-          text: "#1a0033",
+          text: "#ffed1a",
           hoverBackground: "#e60099",
+          gradientFrom: "#ff1ab3",
+          gradientTo: "#2de2e6",
+          buttonBackground: "#1a0033",
+          glow: true,
+          glowColor: "#ffed1a",
         },
         icons: {
           iconStart: "#ffed1a",
@@ -801,8 +815,13 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         button: {
           background: "#10b981",
-          text: "#000000",
+          text: "#a7f3d0",
           hoverBackground: "#059669",
+          gradientFrom: "#059669",
+          gradientTo: "#f59e0b",
+          buttonBackground: "#0b2e13",
+          glow: false,
+          glowColor: "#10b981",
         },
         icons: {
           iconStart: "#34d399",
