@@ -23,7 +23,7 @@ const Header = () => {
       {/* Skip-to-content link, bumped down so visible */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-20 focus:left-2 focus:bg-[var(--foreground)] focus:text-[var(--background)] p-2 rounded z-50"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-20 focus:left-2 focus.bg-[var(--foreground)] focus.text-[var(--background)] p-2 rounded z-50"
       >
         Skip to main content
       </a>
