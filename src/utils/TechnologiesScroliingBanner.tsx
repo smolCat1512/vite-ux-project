@@ -19,6 +19,7 @@ import { BiLogoTypescript, BiLogoNetlify } from "react-icons/bi";
 import { SiFramer, SiMantine, SiShadcnui } from "react-icons/si";
 import { TbBrandVite, TbBrandStorybook } from "react-icons/tb";
 import { IoLogoFigma } from "react-icons/io5";
+import { useMediaQuery } from "@mantine/hooks";
 
 const technologies = [
   { name: "React", icon: FaReact, color: "#58C4DC" },
@@ -48,13 +49,15 @@ const row2 = technologies.slice(7, 14);
 const row3 = technologies.slice(14, 20);
 
 const TechnologiesScrollingBanner = () => {
+  const smallerDevices = useMediaQuery("(max-width: 768px)");
+
   return (
     <Stack
       id="technologies-section"
       gap="xs"
       mx="auto"
       maw="80vw"
-      w="100%"
+      w={smallerDevices ? "100%" : "80%"}
       my="xl"
     >
       <Marquee pauseOnHover duration={25000} fadeEdgeSize="8%">

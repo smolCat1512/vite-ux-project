@@ -23,6 +23,7 @@ import {
 } from "react-icons/tb";
 import { LuWorkflow } from "react-icons/lu";
 import { BiTestTube } from "react-icons/bi";
+import { useMediaQuery } from "@mantine/hooks";
 
 const methodologies = [
   { name: "Agile", icon: MdOutlineAutorenew, color: "#0ea5e9" },
@@ -49,18 +50,24 @@ const row2 = methodologies.slice(6, 12);
 const row3 = methodologies.slice(12, 17);
 
 const MethodologiesScrollingBanner = () => {
+  const smallerDevices = useMediaQuery("(max-width: 768px)");
+
   return (
     <Stack
       id="methodologies-section"
       gap="xs"
       mx="auto"
       maw="80vw"
-      w="100%"
+      w={smallerDevices ? "100%" : "80%"}
       my="xl"
     >
       <Marquee pauseOnHover duration={28000} fadeEdgeSize="8%">
         {row1.map((item) => (
-          <TechnologiesCard key={item.name} shouldReduceMotion={true} jiggle={false}>
+          <TechnologiesCard
+            key={item.name}
+            shouldReduceMotion={true}
+            jiggle={false}
+          >
             <TechnologiesText>{item.name}</TechnologiesText>
             <TechnologiesIcon icon={item.icon} size={28} color={item.color} />
           </TechnologiesCard>
@@ -69,7 +76,11 @@ const MethodologiesScrollingBanner = () => {
 
       <Marquee pauseOnHover reverse duration={38000} fadeEdgeSize="8%">
         {row2.map((item) => (
-          <TechnologiesCard key={item.name} shouldReduceMotion={true} jiggle={false}>
+          <TechnologiesCard
+            key={item.name}
+            shouldReduceMotion={true}
+            jiggle={false}
+          >
             <TechnologiesText>{item.name}</TechnologiesText>
             <TechnologiesIcon icon={item.icon} size={28} color={item.color} />
           </TechnologiesCard>
@@ -78,7 +89,11 @@ const MethodologiesScrollingBanner = () => {
 
       <Marquee pauseOnHover duration={32000} fadeEdgeSize="8%">
         {row3.map((item) => (
-          <TechnologiesCard key={item.name} shouldReduceMotion={true} jiggle={false}>
+          <TechnologiesCard
+            key={item.name}
+            shouldReduceMotion={true}
+            jiggle={false}
+          >
             <TechnologiesText>{item.name}</TechnologiesText>
             <TechnologiesIcon icon={item.icon} size={28} color={item.color} />
           </TechnologiesCard>

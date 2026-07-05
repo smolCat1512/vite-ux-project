@@ -9,7 +9,8 @@ const Technologies = () => {
       <TechnologiesHeader> Technologies &amp; Methodologies</TechnologiesHeader>
       <SimpleGrid 
         cols={{ base: 1, md: 2 }}
-        spacing="0"
+        spacing="xl"
+
       >
         <TechnologiesScrollingBanner />
         <MethodologiesScrollingBanner />
