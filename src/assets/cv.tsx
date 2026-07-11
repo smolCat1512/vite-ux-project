@@ -218,7 +218,7 @@ export default function CV() {
               <div className="mb-6">
                 <div className="flex justify-between items-baseline">
                   <h3 className="font-semibold text-gray-800">
-                    Frontend Software Engineer/Technical Project Manager
+                    Technical Project Manager & Frontend Engineer
                   </h3>
                   <span className="text-sm text-gray-400">
                     June 2021 – Present

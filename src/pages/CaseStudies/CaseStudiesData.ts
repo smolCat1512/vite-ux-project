@@ -37,7 +37,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Design",
       "Frontend Development",
       "Design System",
-      "Project Management",
+      "Technical Project Management",
     ],
     client: "Shelter",
     duration: "Initial build - 3 months",
