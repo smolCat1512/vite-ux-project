@@ -27,7 +27,7 @@ const Portfolio = () => {
       </h2>
 
       <Box mb={24} className="text-center">
-        <PortfolioHeader>Portfolio</PortfolioHeader>
+        <PortfolioHeader>Featured Work</PortfolioHeader>
       </Box>
 
       {isMobile ? (
