@@ -31,55 +31,76 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: "shelter",
     title: "Shelter",
-    tagline: "Digital Advice Webchat",
+    tagline: "Digital Advice Webchat & Ongoing Product Ownership",
     roles: [
       "Research",
       "Design",
       "Frontend Development",
       "Design System",
       "Technical Project Management",
+      "Commercial Management",
     ],
     client: "Shelter",
-    duration: "Initial build - 3 months",
+    duration: "2023 — Present",
     overview: `
     Shelter is a UK-based charity campaigning for housing justice in England 
-    and Scotland. They provide advice, support, and advocacy to individuals, 
-    and run national campaigns to address housing issues. Shelter deliver this 
-    support from in-person hubs, and via voice and digital channels. They have 
-    been using an online web chat service for roughly 2 years, and are a 
-    relative newcomer to the provision and adoption of digital services.
+    and Scotland, delivering advice and support via in-person hubs, voice, 
+    and digital channels. What began as a three-month engagement to replace 
+    an underperforming web chat service has grown into an ongoing product 
+    relationship — spanning multiple separate engagements, a large-scale 
+    Dynamics 365 implementation, and future-facing AI integration work.
   `,
     challenge: `
-    The previous web chat service was constrained by an inflexible platform, 
+    The original web chat service was constrained by an inflexible platform, 
     weak triage, and a dated experience for both end users and support staff. 
     Shelter needed a system that could better prioritise urgent needs, reflect 
-    their brand more accurately, and be set up for ongoing iteration — all 
-    within a tight three-month timeline. The engagement required balancing the 
-    needs of end users, frontline staff, and a wide range of organisational 
-    stakeholders, with project and stakeholder management sitting alongside 
-    the design and development work.
+    their brand, and be set up for ongoing iteration — all within a tight 
+    three-month timeline. Beyond the initial build, subsequent engagements 
+    have required owning the full project lifecycle independently: from 
+    requirements gathering and commercial scoping through to delivery and 
+    sign-off.
   `,
     solution: `
-    Working alongside a backend-focused solutions engineer, I took full 
-    ownership of the research, design, and frontend development — from initial 
-    requirements gathering through to a shipped product. Designed and built a 
-    custom web chat interface with a more robust triage system, giving users 
-    clearer pathways and staff better visibility of incoming demand. I also 
-    delivered a separate custom CMS to support content ownership by the Shelter 
-    team. Throughout, I ran stakeholder demos, gathered iterative feedback, and 
-    managed competing priorities across a wide range of internal and external 
-    parties. A custom design system was built in parallel, providing a consistent 
-    component library and accelerating the development process.
+    Phase 1 — Initial Build: Working alongside a backend-focused solutions 
+    engineer, I took full ownership of the research, design, and frontend 
+    development. Designed and built a custom web chat interface with a more 
+    robust triage system, giving users clearer pathways and staff better 
+    visibility of incoming demand. A custom CMS was delivered alongside the 
+    product to support content ownership by the Shelter team, and a bespoke 
+    design system was built in parallel to accelerate development and ensure 
+    consistency. Throughout, I ran stakeholder demos, gathered iterative 
+    feedback, and managed competing priorities across a wide range of internal 
+    and external parties.
+
+    Phase 2 — Ongoing Ownership & Expansion: Following the initial delivery, 
+    Shelter returned with a series of separate engagements — each scoped, 
+    priced, and delivered independently. I authored Statements of Requirements 
+    and Statements of Work, agreed pricing, obtained client sign-off, and 
+    managed delivery end to end. Projects included a quick exit button 
+    (a safeguarding feature allowing users to rapidly leave the service in 
+    sensitive situations), sound notifications, maximise and minimise 
+    controls, and an automated webchat deletion script. The deletion script 
+    replaced a manual, one-at-a-time API process taking 20-30 seconds per 
+    record — across hundreds of thousands of webchats — with a fully automated 
+    GitHub Actions workflow running every Monday at 2am, requiring zero human 
+    intervention and reporting any errors automatically.
+
+    Currently leading a large-scale Dynamics 365 implementation for Shelter, 
+    owning the full engagement across project management, development, and 
+    delivery. A Twilio AI Copilot integration has also been built and demoed 
+    to the client, securing commitment for future adoption.
   `,
     outcome: `
-    Delivered a more tailored and resilient web chat service for one of the UK's 
-    leading housing charities — increasing handled webchats by roughly 20% in 
-    the first three months post-launch. Users gained real-time visibility of 
-    chat availability and queue position, reducing uncertainty during high-stress 
-    moments. The project shipped a custom design system alongside the product, 
-    creating a more consistent experience and a stronger foundation for future 
-    iteration — all delivered within a tight three-month timeline across a 
-    complex, multi-stakeholder environment.
+    Delivered a more tailored and resilient web chat service for one of the 
+    UK's leading housing charities — increasing handled webchats by roughly 
+    20% in the first three months post-launch. Users gained real-time 
+    visibility of chat availability and queue position, reducing uncertainty 
+    during high-stress moments. The initial engagement grew into a trusted 
+    ongoing client relationship spanning multiple engagements worth £10k+, 
+    with full commercial ownership sitting with me across scoping, pricing, 
+    and delivery. The automated deletion scripting eliminated a previously 
+    unscalable manual process entirely, replacing hundreds of thousands of 
+    individual API calls with a zero-intervention automated workflow.
   `,
     images: [ShelterStart, ShelterTriage, ShelterPostChat],
     imagesCaption:
@@ -92,37 +113,102 @@ export const caseStudiesData: CaseStudy[] = [
     with emergency housing issues, so if you do visit, please be respectful and 
     mindful that real people are using it to get support.
   `,
-    technologies: ["React", "TypeScript", "Figma", "Mantine", "Vite"],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Figma",
+      "Mantine",
+      "Vite",
+      "Twilio",
+      "Dynamics 365",
+      "GitHub Actions",
+    ],
     cardImage: ShelterCard,
     hasDetailPage: true,
   },
   {
     id: "nfcc",
     title: "NFCC",
-    tagline: "Financial Counselling Platform",
+    tagline: "Financial Counselling Agency Platform",
     roles: [
       "Research",
       "Design",
       "Frontend Development",
-      "Integrating Backend Services",
+      "Backend Integration",
+      "Technical Project Management",
     ],
     client: "National Foundation for Credit Counseling",
     duration: "18 months",
-    overview:
-      "Helped build a financial agency onboarding and management platform, known as the Agency Locator, for the US nonprofit sector, from no front end system existing, to a polished and accessible product experience. The National Foundation for Credit Counseling (NFCC) (Americanised spelling of counselling) is a US-based nonprofit organisation, that provides financial counselling and education services to individuals and families. They work with a network of member agencies across the country, who provide these services via voice, email or online video.",
-    challenge:
-      "NFCC were manually onboarding agencies themselves, requiring a large amount of initial and ongoing administrative work. There was no front end system to speak of, so the process was slow, inefficient, prone to mistakes and frustrating. This project involved building a new user interface for both NFCC and agencies to onboard and manage services, holidays, billing and much more. As no front end system existed, this involved creating and harnessing a design system from scratch, and integrating with completely new backend services and APIs, and migrating existing data. The application also needed to be secure, so we harnessed Auth0 to provide secure authentication and authorisation, and set up automated password resetting and 2 factor authentication services. We worked closely with key stakeholders and end user member agencies, to ensure the design and functionality met their needs, and iterating on the designs based on feedback. This project also had a strong focus on accessibility and performance, to ensure the platform was usable by a wide range of users, and performed well even on slower connections or devices.",
-    solution:
-      "I worked across multiple stages and responsibilities on the project - starting at user research and requirements gathering, an iterative design process, and the frontend development integrating with backend services. I worked closely with stakeholders to understand their needs and priorities, and to ensure the design met their needs. I also worked closely with backend developers to integrate with backend services and APIs, and to ensure a smooth handoff between frontend and backend development. The project involved building a new frontend system for agencies to onboard themselves, and manage their presence on the platform. This involved working within an established design system, and iterating on the design based on feedback from users and stakeholders. The project also had a strong focus on accessibility and performance, to ensure the platform was usable by a wide range of users, and performed well even on slower connections or devices.",
-    outcome:
-      "Empowered agencies to self-serve their own onboarding, removing a significant administrative burden from NFCC staff and freeing them up for higher-value work. Reduced the onboarding process from 3-4 days to 1-2 hours. The platform gave agencies direct control over their services, availability, and presence — replacing a slow, manual process with a polished, accessible product that scaled across their national network of member agencies.",
+    overview: `
+    The National Foundation for Credit Counseling (NFCC) is a US-based nonprofit 
+    providing financial counselling and education services through a national 
+    network of member agencies. Working alongside a backend-focused solutions 
+    engineer, I helped take their agency onboarding and management platform — 
+    known as the Agency Locator — from no frontend system at all, to a polished, 
+    accessible, and fully integrated product used by agencies across the country.
+  `,
+    challenge: `
+    NFCC were manually onboarding member agencies themselves, a slow and 
+    error-prone process that consumed significant staff time and limited their 
+    ability to scale. No frontend system existed — agencies had no way to 
+    self-serve, manage their own services, or update their availability. The 
+    platform needed to integrate with multiple data sources and services, 
+    including a Snowflake data platform, AWS infrastructure, timezone and 
+    state-based APIs for geographic routing, and Twilio for call routing and 
+    data handling. Security was a hard requirement, necessitating Auth0 for 
+    authentication, two-factor authentication, and automated password management. 
+    Accessibility was a formal requirement throughout, targeting WCAG 2.1 AA 
+    as a baseline with a push to AAA wherever achievable.
+  `,
+    solution: `
+    I led the research, design, and frontend development across the full 
+    18-month engagement — running client workshops, presenting iterative demos 
+    to stakeholders, managing feature agreement, and coordinating access to 
+    systems and platforms across both teams. On the frontend, I built the agency 
+    onboarding wizard, service management interface, and agency dashboard — 
+    working within and extending Twilio Paste, their design system, building 
+    custom components where Paste's coverage was limited, inline with its base 
+    styling and tokens.
+
+    Key integrations included bridging NFCC's Snowflake data platform with AWS 
+    infrastructure — later migrated to NFCC's own AWS environment — alongside 
+    timezone and US state recognition APIs to surface agency availability 
+    accurately across regions. The platform connected directly with Twilio to 
+    manage call routing and data handling, enabling agencies to offer services 
+    across state lines and handle overflow demand for the first time. 
+    Accessibility was treated as a first-class requirement throughout, with high 
+    Google Lighthouse scores achieved across the platform.
+  `,
+    outcome: `
+    Empowered agencies to self-serve their own onboarding and service management 
+    — reducing the onboarding process from 3-4 days to 1-2 hours, and removing 
+    a significant administrative burden from NFCC staff. The platform enabled 
+    agencies to offer services across state lines and manage overflow demand in 
+    ways their previous setup couldn't support, directly contributing to an 
+    uptick in agencies onboarded and additional funding secured by NFCC. The 
+    engagement expanded to include a kiosk product build, demonstrating the 
+    strength of the ongoing relationship and the platform's potential for 
+    further reach.
+  `,
     images: [NFCCWizardStart, NFCCServiceSetup, NFCCAgencies],
     imagesCaption:
-      "Early wireframe of the onboarding wizard; The service setup interface; Agency member dashboard;",
+      "Early wireframe of the onboarding wizard; The service setup interface; Agency member dashboard.",
     liveUrl: "https://www.nfcc.org/agency-finder/",
-    liveUrlText:
-      "The agency locator tool requires an authorised username and password, so I can't provide a live link to the onboarding platform. However, if you visit the NFCC financial counselling page, you can see and read up on the agency locator and its functionality.",
-    technologies: ["React", "TypeScript", "Figma", "Twilio Paste"],
+    liveUrlText: `
+    The agency management platform requires authorised credentials, so a direct 
+    link isn't possible. You can read more about the Agency Locator and its 
+    impact on the NFCC website via the link below.
+  `,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Figma",
+      "Twilio Paste",
+      "Twilio",
+      "Auth0",
+      "AWS",
+      "Snowflake",
+    ],
     cardImage: NFCCCard,
     hasDetailPage: true,
   },
