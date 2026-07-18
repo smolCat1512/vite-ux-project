@@ -3,7 +3,6 @@ import {
   Stack,
   TextInput,
   Textarea,
-  Button,
   useMantineTheme,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
@@ -14,6 +13,7 @@ import { getTextGlow } from "../utils/glow";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useState } from "react";
 import { useMediaQuery } from "@mantine/hooks";
+import ConnectFormButton from "./ConnectFormButton";
 
 const ContactFormContainer = () => {
   const theme = useMantineTheme();
@@ -181,26 +181,7 @@ const ContactFormContainer = () => {
               onExpire={() => setTurnstileToken(null)}
             />
           </div>
-
-          <Button
-            type="submit"
-            size="lg"
-            fullWidth
-            mt="md"
-            style={{
-              backgroundColor: connectTheme.button.background,
-              color: connectTheme.button.text,
-            }}
-            styles={{
-              root: {
-                "&:hover": {
-                  backgroundColor: connectTheme.button.hoverBackground,
-                },
-              },
-            }}
-          >
-            Send Message
-          </Button>
+          <ConnectFormButton>Send Message</ConnectFormButton>
         </Stack>
       </form>
     </Paper>

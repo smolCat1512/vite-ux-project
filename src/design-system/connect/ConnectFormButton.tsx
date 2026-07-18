@@ -1,32 +1,31 @@
 import { motion, useReducedMotion, useTime, useTransform } from "framer-motion";
 import { Button, useMantineTheme } from "@mantine/core";
-import { FaRegHandshake } from "react-icons/fa";
 import { useEffect, useState, type ReactNode } from "react";
-import { getIconGlow, getTextGlow } from "../utils/glow";
+import { getTextGlow } from "../utils/glow";
 
-interface ContactButtonProps {
+interface ConnectFormButtonProps {
   children: ReactNode;
   animate?: boolean;
   mobileBreakpoint?: number;
 }
 
-const ContactButton: React.FC<ContactButtonProps> = ({
+const ConnectFormButton: React.FC<ConnectFormButtonProps> = ({
   children,
   animate = true,
   mobileBreakpoint = 768,
-}: ContactButtonProps) => {
+}: ConnectFormButtonProps) => {
   const shouldReduceMotion = useReducedMotion();
 
   const theme = useMantineTheme();
+  const connectTheme = theme.other.connect;
   const gradientFrom = theme.other?.connect?.button?.gradientFrom;
   const gradientTo = theme.other?.connect?.button?.gradientTo;
-  const buttonBackground = theme.other?.connect?.button?.buttonBackground;
   const text = theme.other?.connect?.button?.text ?? "#000000";
   console.log("connect button text:", text);
   const glowColor = theme.other?.connect?.button?.glowColor;
   const glow = theme.other?.connect?.button?.glow ?? false;
   const textGlow = getTextGlow(glowColor, glow);
-  const iconGlow = getIconGlow(glowColor, glow);
+  const buttonBackground = theme.other?.connect?.button?.buttonBackground;
 
   const time = useTime();
   const rotate = useTransform(time, [0, 6000], [0, 360], { clamp: false });
@@ -36,20 +35,6 @@ const ContactButton: React.FC<ContactButtonProps> = ({
   );
 
   const [isMobile, setIsMobile] = useState(false);
-
-  const handleScrollToConnect = () => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const connectSection = document.getElementById("connect");
-    if (connectSection) {
-      connectSection.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-        // Adding a slight offset to account for fixed headers or spacing
-        block: "center",
-      });
-    }
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -69,45 +54,38 @@ const ContactButton: React.FC<ContactButtonProps> = ({
     >
       <motion.div
         style={{
-          padding: "4px",
+          padding: "3px",
           background: shouldReduceMotion
             ? `conic-gradient(from 0deg, ${gradientFrom}, ${gradientTo})`
             : rotatingBorder,
           borderRadius: "var(--mantine-radius-lg)",
           display: "inline-flex",
           color: text,
+          width: "100%",
         }}
       >
         <Button
           type="submit"
-          variant="transparent"
-          size={isMobile ? "xl" : "lg"}
-          radius="lg"
+          size="lg"
+          fullWidth
           style={{
             borderRadius: "calc(var(--mantine-radius-lg) - 3px)",
+            backgroundColor: buttonBackground,
+            color: connectTheme.button.text,
           }}
           styles={{
-            label: { color: text, textShadow: textGlow },
-            root: { backgroundColor: buttonBackground },
+            root: {
+              "&:hover": {
+                backgroundColor: connectTheme.button.hoverBackground,
+              },
+            },
           }}
-          onClick={handleScrollToConnect}
-          rightSection={
-            <FaRegHandshake
-              size="2rem"
-              className="inline-block mr-2"
-              style={{ color: text, filter: iconGlow }}
-            />
-          }
         >
-          <span
-            style={{ color: text, textShadow: textGlow, fontWeight: "lighter" }}
-          >
-            {children}
-          </span>
+          <span style={{ color: text, textShadow: textGlow, fontWeight: "lighter" }}>{children}</span>
         </Button>
       </motion.div>
     </motion.div>
   );
 };
 
-export default ContactButton;
+export default ConnectFormButton;
