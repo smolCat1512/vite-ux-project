@@ -69,7 +69,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({
     >
       <motion.div
         style={{
-          padding: "4px",
+          padding: "3px",
           background: shouldReduceMotion
             ? `conic-gradient(from 0deg, ${gradientFrom}, ${gradientTo})`
             : rotatingBorder,

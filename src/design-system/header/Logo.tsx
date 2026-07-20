@@ -36,7 +36,7 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
         background: prefersReducedMotion
           ? `conic-gradient(${gradientFrom}, ${gradientTo})`
           : rotatingBorder,
-        padding: "4px",
+        padding: "3px",
         borderRadius: "var(--mantine-radius-md)",
         display: "inline-flex",
         color: text,
