@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/projects/:projectId" element={<ProjectSummary />} />
-      </Route>
+      </Route> 
 
       {/* Case study and CV outside RootLayout - so do not inherit theming */}
       <Route
