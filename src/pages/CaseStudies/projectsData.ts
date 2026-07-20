@@ -82,7 +82,7 @@ export const projects: Project[] = [
     cardImage: "",
     liveUrl:
       "https://www.unhcr.org/uk/media/unhcraaptoolctengaging-communities-whatsapp",
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     id: "shane",
