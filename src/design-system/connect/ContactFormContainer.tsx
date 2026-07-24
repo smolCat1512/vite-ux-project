@@ -44,6 +44,7 @@ const ContactFormContainer = () => {
         message: "Please complete the verification challenge.",
         color: "yellow",
         icon: <FaXmark />,
+        position: isMobile ? "bottom-center" : "top-right",
       });
       return;
     }
@@ -54,6 +55,7 @@ const ContactFormContainer = () => {
         message: "Your message has been sent successfully - have a great day!",
         color: "teal",
         icon: <FaCheck />,
+        position: isMobile ? "bottom-center" : "top-right",
       });
       form.reset();
       setTurnstileToken(null);
@@ -63,6 +65,7 @@ const ContactFormContainer = () => {
         message: "Failed to send message. Please try again later.",
         color: "red",
         icon: <FaXmark />,
+        position: isMobile ? "bottom-center" : "top-right",
       });
       console.error("Email sending error:", error);
     }
