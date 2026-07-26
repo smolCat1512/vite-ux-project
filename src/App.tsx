@@ -13,9 +13,10 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/projects/:projectId" element={<ProjectSummary />} />
-      </Route> 
+      </Route>
 
-      {/* Case study and CV outside RootLayout - so do not inherit theming */}
+      {/* Case study and CV outside RootLayout - so do not inherit theming, and can open
+      as target_blank items so viewer does not have to go back and forwards on web site */}
       <Route
         path="/case-studies/legacy/shelter"
         element={<CaseStudyShelterLegacy />}

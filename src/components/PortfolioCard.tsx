@@ -27,7 +27,7 @@ const PortfolioCard = ({
 
   const imageContent = imageError || !cardImage ? (
     <div
-      className={`flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
+      className={`flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
     >
       <div
         className={`flex h-3/4 w-3/4 overflow-hidden rounded-sm ${innerFrameClass}`}
@@ -37,7 +37,7 @@ const PortfolioCard = ({
     </div>
   ) : (
     <div
-      className={`flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
+      className={`flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
     >
       <div
         className={`flex h-3/4 w-3/4 overflow-visible rounded-sm ${innerFrameClass}`}

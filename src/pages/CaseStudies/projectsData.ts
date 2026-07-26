@@ -1,5 +1,6 @@
 import ShelterCard from "../../assets/shelter_images/shelter-macbook.png";
 import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
+import UNHCRCard from "../../assets/portfolio_card_images/unhcr_card_placeholder.jpg";
 
 export interface Project {
   id: string;
@@ -79,7 +80,7 @@ export const projects: Project[] = [
         text: "Integration with backend services and APIs",
       },
     ],
-    cardImage: "",
+    cardImage: UNHCRCard,
     liveUrl:
       "https://www.unhcr.org/uk/media/unhcraaptoolctengaging-communities-whatsapp",
     hasCaseStudy: true,

@@ -6,6 +6,7 @@ import ShelterPostChat from "../../assets/shelter-wireframes/postChat.png";
 import NFCCWizardStart from "../../assets/nfcc_images/NFCCWireframe1.png";
 import NFCCAgencies from "../../assets/nfcc_images/NFCC_Agencies.png";
 import NFCCServiceSetup from "../../assets/nfcc_images/NFCC_ServiceSetup1.png";
+import UNHCRCard from "../../assets/portfolio_card_images/unhcr_card_placeholder.jpg";
 
 export interface CaseStudy {
   id: string;
@@ -215,20 +216,97 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: "unhcr",
     title: "UNHCR",
-    tagline: "Refugee Support Platform",
-    roles: ["Research", "Design", "Frontend Development"],
-    client: "United Nations High Commissioner for Refugees",
-    duration: "3 months",
-    overview: ``,
-    challenge: ``,
-    solution: ``,
-    outcome: ``,
-    images: [],
-    imagesCaption: "",
-    liveUrl: "",
-    liveUrlText: "",
-    technologies: [],
-    cardImage: "",
+    tagline: "Humanitarian Aid Communication Platform",
+    roles: [
+      "UX Research & Design",
+      "Frontend Development",
+      "Technical Project Management",
+      "Stakeholder Management",
+      "Documentation & Training",
+    ],
+    client: "UNHCR — The UN Refugee Agency",
+    duration: "2022 — 2023",
+    overview: `
+    UNHCR — the United Nations High Commissioner for Refugees — is the UN agency 
+    mandated to protect and support refugees, asylum seekers, and displaced people 
+    worldwide. Working alongside a  backend-focused solutions engineer, I led the 
+    design, build, and initial rollout of a rapid-deployment communication platform 
+    — enabling UNHCR field teams to stand up call centres and WhatsApp-based advice 
+    services in areas of humanitarian crisis, conflict, and mass displacement.
+  `,
+    challenge: `
+    UNHCR needed a fast-to-deploy, field-ready communication solution that could 
+    be stood up quickly in disaster and conflict zones — providing displaced 
+    people with access to critical advice on refuge, asylum, food, water, and 
+    safety. The solution needed to support both voice (via human agents) and 
+    WhatsApp-based self-service flows, work across multiple languages, meet 
+    strict data residency requirements, and be operable by non-technical field 
+    staff. Stakeholders spanned multiple agencies and relief zones across 
+    different continents, with requirements evolving rapidly in response to 
+    real-world events on the ground.
+  `,
+    solution: `
+    I led the project across UX research and design, frontend development, 
+    stakeholder management, documentation, and training — running workshops and 
+    design sessions with multi-agency personnel across numerous relief zones to 
+    ensure the solution met real field requirements. Stakeholder sessions were 
+    managed with the flexibility the context demanded; in one instance, a 
+    scheduled call with colleagues in Indonesia was rescheduled at short notice 
+    as they were called away to assist refugees arriving from war-torn Myanmar.
+
+    The platform was built on Twilio Flex, with a custom Flex plugin enabling 
+    UNHCR agents to create content and build "WhatsApp Trees" — branching 
+    conversational flows providing advice and signposting to displaced people 
+    via WhatsApp. The flow builder was built using ReactFlow in conjunction with 
+    Twilio Paste, with custom components built inline with Paste's base styling 
+    where the design system's coverage was limited. Error handling was built 
+    into the flow builder to ensure all nodes were correctly connected, and 
+    dynamic flow configuration allowed each deployment to have its own phone 
+    number or web URL, operating hours, and policy and privacy links.
+
+    A shared Content Flow Manager — originally built for the Shelter webchat 
+    project — was adapted and redeployed here, enabling field teams to build 
+    and manage content flows for both WhatsApp and web chatbot solutions, with 
+    triage logic to escalate users to human agents where needed.
+
+    Data residency was a hard requirement throughout. UNHCR data was held only 
+    on their own Azure servers — our architecture was designed to pull data into 
+    AWS or Twilio for the duration of a transaction only, consume it, and 
+    immediately delete it, with the reverse process applied when writing data 
+    back. No UNHCR data persisted outside their own infrastructure at any point.
+
+    Large-scale documentation and training materials were produced and 
+    coordinated across agencies, with multi-lingual content reviewed to ensure 
+    the solution met the needs of field teams operating across language borders. 
+    The platform was built to be handed over — other Ciptex solutions engineers 
+    were trained to deploy and manage it independently, enabling rollout to 
+    scale beyond the initial engagement.
+  `,
+    outcome: `
+    Delivered a fully operational humanitarian communication platform, 
+    successfully rolled out across an initial Americas deployment — including 
+    a Twilio Flex call centre in Mexico serving South American refugees and 
+    migrants, and WhatsApp Tree deployments across Panama, Guatemala, Honduras, 
+    and wider South American countries with large-scale migration patterns. The 
+    platform was robust and well-documented enough that other engineers were 
+    trained to deploy it independently, enabling it to scale to 10+ countries 
+    globally — including Uganda, Serbia, Turkey, Sudan, and ongoing rollouts 
+    in Iraq, Libya, Syria, and Nigeria — without further direct involvement 
+    from the original build team.
+  `,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Twilio Flex",
+      "Twilio Studio",
+      "ReactFlow",
+      "Twilio Paste",
+      "AWS",
+      "Azure",
+      "WhatsApp Business API",
+      "Figma",
+    ],
+    cardImage: UNHCRCard,
     hasDetailPage: true,
   },
 ];
