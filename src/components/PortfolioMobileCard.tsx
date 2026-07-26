@@ -18,10 +18,10 @@ const PortfolioMobileCard = ({
   const [overlayOpen, setOverlayOpen] = useState(false);
 
   return (
-    <article className="relative w-full overflow-hidden rounded-sm h-[320px]">
+    <article className="relative w-full overflow-hidden rounded-sm h-80">
       {/* Fixed height container so overlay always has enough room */}
       <div
-        className="relative w-full h-[320px] cursor-pointer"
+        className="relative w-full h-80 cursor-pointer"
         onClick={() => setOverlayOpen((prev) => !prev)}
         role="button"
         tabIndex={0}
@@ -40,7 +40,7 @@ const PortfolioMobileCard = ({
           <img
             src={cardImage}
             alt={`${title} project screenshot`}
-            className="w-full h-[320px] object-cover"
+            className="w-full h-80 object-cover"
             onError={() => setImageError(true)}
           />
         )}
