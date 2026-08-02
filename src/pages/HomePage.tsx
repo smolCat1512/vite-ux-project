@@ -34,7 +34,7 @@ const HomePage = () => {
           aria-labelledby="technologies-heading"
         >
           <h2 id="technologies-heading" className="sr-only">
-            Technologies I use
+            Technologies and Methodologies I use section
           </h2>
           <Technologies />
         </section>
@@ -45,12 +45,18 @@ const HomePage = () => {
           className="flex items-start justify-center"
           aria-labelledby="portfolio-heading"
         >
+          <h2 id="portfolio-heading" className="sr-only">
+            Featured Work section
+          </h2>
           <Portfolio />
         </section>
       </motion.div>
 
       {/* Footer / Connect Section */}
       <footer id="connect" className="flex items-start justify-center">
+        <h2 id="connect-heading" className="sr-only">
+          Connect with me section
+        </h2>
         <Connect />
       </footer>
     </Box>

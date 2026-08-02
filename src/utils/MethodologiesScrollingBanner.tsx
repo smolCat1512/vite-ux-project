@@ -3,51 +3,48 @@ import TechnologiesCard from "../design-system/technologies/TechnologiesCard";
 import TechnologiesIcon from "../design-system/technologies/TechnologiesIcon";
 import TechnologiesText from "../design-system/technologies/TechnologiesText";
 import {
-  MdOutlineAutorenew,
-  MdOutlineGroupWork,
-  MdOutlineTrackChanges,
-  MdOutlineChecklist,
-  MdOutlineTimeline,
-  MdOutlinePeople,
-  MdOutlineHub,
-} from "react-icons/md";
-import {
-  TbLayoutKanban,
-  TbBulb,
-  TbPresentationAnalytics,
-  TbRoute,
-  TbMessage2Check,
-  TbUserSearch,
-  TbDeviceDesktop,
-  TbArrowsShuffle,
-} from "react-icons/tb";
-import { LuWorkflow } from "react-icons/lu";
-import { BiTestTube } from "react-icons/bi";
+  IconRefresh,
+  IconUsersGroup,
+  IconLayoutKanban,
+  IconFilter,
+  IconTimeline,
+  IconUserSearch,
+  IconDeviceDesktop,
+  IconBulb,
+  IconFlask,
+  IconSitemap,
+  IconUsers,
+  IconAffiliate,
+  IconMessage2Check,
+  IconPresentationAnalytics,
+} from "@tabler/icons-react";
 import { useMediaQuery } from "@mantine/hooks";
 
 const methodologies = [
-  { name: "Agile", icon: MdOutlineAutorenew, color: "#0ea5e9" },
-  { name: "Scrum", icon: MdOutlineGroupWork, color: "#6366f1" },
-  { name: "Kanban", icon: TbLayoutKanban, color: "#f59e0b" },
-  { name: "Sprint Planning", icon: MdOutlineTrackChanges, color: "#10b981" },
-  { name: "Retrospectives", icon: MdOutlineChecklist, color: "#8b5cf6" },
-  { name: "Backlog Grooming", icon: TbRoute, color: "#ec4899" },
-  { name: "Roadmapping", icon: MdOutlineTimeline, color: "#14b8a6" },
-  { name: "UX Research", icon: TbUserSearch, color: "#f97316" },
-  { name: "Wireframing", icon: TbDeviceDesktop, color: "#6366f1" },
-  { name: "Prototyping", icon: TbBulb, color: "#eab308" },
-  { name: "Usability Testing", icon: BiTestTube, color: "#ef4444" },
-  { name: "Design Systems", icon: LuWorkflow, color: "#a855f7" },
-  { name: "Stakeholder Mgmt", icon: MdOutlinePeople, color: "#0ea5e9" },
-  { name: "Cross-functional", icon: MdOutlineHub, color: "#10b981" },
-  { name: "Workshops", icon: TbMessage2Check, color: "#f59e0b" },
-  { name: "Presentations", icon: TbPresentationAnalytics, color: "#ec4899" },
-  { name: "Iterative Dev", icon: TbArrowsShuffle, color: "#8b5cf6" },
+  // Process / delivery — blue/teal cluster
+  { name: "Agile", icon: IconRefresh, color: "#0ea5e9" },
+  { name: "Scrum", icon: IconUsersGroup, color: "#0284c7" },
+  { name: "Kanban", icon: IconLayoutKanban, color: "#0d9488" },
+  { name: "Backlog Grooming", icon: IconFilter, color: "#14b8a6" },
+  { name: "Roadmapping", icon: IconTimeline, color: "#38bdf8" },
+
+  // Design / UX — purple/violet cluster
+  { name: "UX Research", icon: IconUserSearch, color: "#8b5cf6" },
+  { name: "Wireframing", icon: IconDeviceDesktop, color: "#a855f7" },
+  { name: "Prototyping", icon: IconBulb, color: "#7c3aed" },
+  { name: "Usability Testing", icon: IconFlask, color: "#6366f1" },
+  { name: "Design Systems", icon: IconSitemap, color: "#c026d3" },
+
+  // People / comms — orange/amber cluster
+  { name: "Stakeholder Mgmt", icon: IconUsers, color: "#f59e0b" },
+  { name: "Cross-functional", icon: IconAffiliate, color: "#f97316" },
+  { name: "Workshops", icon: IconMessage2Check, color: "#ea580c" },
+  { name: "Presentations", icon: IconPresentationAnalytics, color: "#eab308" },
 ];
 
-const row1 = methodologies.slice(0, 6);
-const row2 = methodologies.slice(6, 12);
-const row3 = methodologies.slice(12, 17);
+const row1 = methodologies.slice(0, 5);
+const row2 = methodologies.slice(5, 10);
+const row3 = methodologies.slice(10, 14);
 
 const MethodologiesScrollingBanner = () => {
   const smallerDevices = useMediaQuery("(max-width: 768px)");
