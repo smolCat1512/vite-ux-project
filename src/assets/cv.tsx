@@ -46,9 +46,11 @@ export default function CV() {
                 Shaun Halliday
               </h1>
               <p className="text-sm text-teal-700 font-medium mt-1">
-                Front End Software Engineer
+                Technical Project Manager
               </p>
-              <p className="text-sm text-teal-800">UX / Usability Engineer</p>
+              <p className="text-sm text-teal-800">
+                Frontend Engineer & UX/Usability Specialist
+              </p>
             </div>
 
             {/* Skills */}
@@ -57,16 +59,16 @@ export default function CV() {
                 Skills
               </h2>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>React / Next.js / TypeScript</li>
-                <li>HTML5, CSS3, Python</li>
-                <li>Tailwind CSS / Sass / Bootstrap</li>
-                <li>Figma / Framer / Prototyping</li>
-                <li>Storybook / Design Systems</li>
-                <li>Twilio / API Integration</li>
-                <li>Accessibility (WCAG 2.1 / 2.2)</li>
-                <li>Usability Testing</li>
-                <li>npm Package Deployment</li>
+                <li>Agile | Scrum</li>
+                <li>React | Next.js | TypeScript</li>
+                <li>HTML | CSS | Python</li>
+                <li>Tailwind | Sass | Bootstrap</li>
+                <li>Figma | Framer</li>
+                <li>Storybook | Design Systems</li>
+                <li>Twilio | API Integration</li>
                 <li>GitHub</li>
+                <li>WCAG 2.1 | 2.2 Accessibility</li>
+                <li>Usability Testing</li>
               </ul>
             </section>
 
@@ -76,14 +78,14 @@ export default function CV() {
                 Areas of Expertise
               </h2>
               <ul className="text-sm text-gray-600 space-y-1">
-                <li>UX Research & Methodology</li>
-                <li>User Interviews & Focus Groups</li>
-                <li>Personas & Journey Mapping</li>
-                <li>Wireframing & Prototyping</li>
+                <li>Project & Delivery Management</li>
+                <li>Stakeholder & Client Management</li>
+                <li>Requirements Gathering & Analysis</li>
+                <li>Risk & Issue Management</li>
+                <li>Cross-functional Team Coordination</li>
                 <li>Front End Architecture</li>
-                <li>Component Libraries</li>
                 <li>Solutions Engineering</li>
-                <li>Requirements Gathering</li>
+                <li>UX Research & Methodology</li>
                 <li>End-User Training & Testing</li>
               </ul>
             </section>
@@ -130,7 +132,7 @@ export default function CV() {
                   </p>
                   <p>Edge Hill University</p>
                   <p className="text-gray-400">
-                    2018 – 2021 · First Class Honours
+                    2018 - 2021 · First Class Honours
                   </p>
                 </div>
                 <div>
@@ -138,12 +140,12 @@ export default function CV() {
                     Diploma of Higher Education
                   </p>
                   <p>The Open University</p>
-                  <p className="text-gray-400">2015 – 2018 · Computing & IT</p>
+                  <p className="text-gray-400">2015 - 2018 · Computing & IT</p>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-700">6 GCSEs (A–C)</p>
+                  <p className="font-semibold text-gray-700">6 GCSEs (A - C)</p>
                   <p>Albany High School</p>
-                  <p className="text-gray-400">1992 – 1997</p>
+                  <p className="text-gray-400">1992 - 1997</p>
                 </div>
               </div>
             </section>
@@ -196,15 +198,18 @@ export default function CV() {
                 Profile
               </h2>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Front End Software Engineer and UX/Usability Engineer with a
-                first-class degree in Web Design & Development and 4+ years of
-                hands-on experience delivering end-to-end UX research, design,
-                and development. Experienced working with major NGOs including
-                UNHCR and Shelter, with a strong focus on accessibility,
-                user-centred design, and building robust React/TypeScript
-                frontends. Brings a grounded, human perspective to complex
-                problems — shaped by 21 years of team leadership, operational
-                management, and client-facing roles across diverse industries.
+                Technical Project Manager with 2 years' experience leading
+                delivery for major clients including UNHCR and Shelter, combined
+                with a first-class degree in Web Design & Development and 4+
+                years of hands-on Front End Engineering and UX practice.
+                Comfortable operating across the full delivery lifecycle —
+                gathering and translating requirements, running stakeholder
+                conversations, and staying close enough to the technical detail
+                to plan, scope, and troubleshoot alongside the team, not just
+                report on it. Brings a grounded, human perspective to complex
+                problems, shaped by 21 years of team leadership, operational
+                management, and client-facing roles across diverse industries
+                prior to re-training in tech.
               </p>
             </section>
 
@@ -221,7 +226,7 @@ export default function CV() {
                     Technical Project Manager & Frontend Engineer
                   </h3>
                   <span className="text-sm text-gray-400">
-                    June 2021 – Present
+                    June 2021 - Present
                   </span>
                 </div>
                 <p className="text-sm text-teal-600 font-medium mb-2">
@@ -229,26 +234,28 @@ export default function CV() {
                 </p>
                 <ul className="text-sm text-gray-500 space-y-1 list-disc list-inside">
                   <li>
-                    Led end-to-end UX processes — requirements gathering, user
-                    interviews, prototype testing, and iterative development —
-                    for clients including{" "}
+                    Led project delivery for major clients including{" "}
                     <span className="text-gray-700 font-medium">UNHCR</span> and{" "}
-                    <span className="text-gray-700 font-medium">Shelter</span>.
+                    <span className="text-gray-700 font-medium">Shelter</span> —
+                    owning planning, scoping, stakeholder communication, and
+                    risk management from kickoff through to release.
                   </li>
                   <li>
-                    Built and deployed React/TypeScript frontends and design
-                    systems via Storybook and npm, with API integrations using
-                    the Twilio communications platform.
+                    Ran requirements gathering and stakeholder workshops,
+                    translating client needs into actionable delivery plans and
+                    technical specifications for cross-functional teams.
+                  </li>
+                  <li>
+                    Stayed hands-on with the technical build — developing
+                    React/TypeScript frontends and design systems via Storybook
+                    and npm, with API integrations using the Twilio
+                    communications platform — to plan realistically and
+                    troubleshoot alongside developers.
                   </li>
                   <li>
                     Conducted usability testing and accessibility audits to WCAG
                     2.1 standards; produced test scripts and delivered end-user
                     training sessions.
-                  </li>
-                  <li>
-                    Collaborated closely with solutions engineers and clients to
-                    translate requirements into scalable, accessible UI
-                    components and applications.
                   </li>
                 </ul>
               </div>
@@ -265,7 +272,7 @@ export default function CV() {
                   <h3 className="font-semibold text-gray-800">
                     LGBTQ+ Safety App
                   </h3>
-                  <span className="text-sm text-gray-400">2024-2025</span>
+                  <span className="text-sm text-gray-400">2024 - 2025</span>
                 </div>
                 <p className="text-sm text-teal-600 font-medium mb-1">
                   Pre-funding Startup · Volunteer UX/Dev
@@ -303,8 +310,8 @@ export default function CV() {
                 Previous Experience
               </h2>
               <p className="text-xs text-gray-400 mb-3 italic">
-                21 years across operational, leadership and management roles
-                prior to re-training in tech.
+                21 years across operational, leadership and management roles —
+                the foundation Technical Project Management now builds on.
               </p>
 
               <div className="mb-3">
@@ -313,17 +320,20 @@ export default function CV() {
                     Senior Works Coordinator
                   </h3>
                   <span className="text-sm text-gray-400">
-                    Aug 2015 – Sep 2018
+                    Aug 2015 - Sep 2018
                   </span>
                 </div>
                 <p className="text-sm text-teal-600 font-medium mb-1">
                   Telent Communications · Chorley
                 </p>
                 <p className="text-sm text-gray-500">
-                  Managed Openreach systems, production reporting and team
-                  coaching. Led project management on a national software suite
-                  rollout. Contributions credited with helping retain Openreach
-                  within BT following Ofcom scrutiny.
+                  Led project management on a national software suite rollout —
+                  planning, coordinating, and reporting across teams, the early
+                  proving ground for the delivery skills now applied as a
+                  Technical Project Manager. Managed Openreach systems and
+                  production reporting, and coached a team through the
+                  transition. Contributions credited with helping retain
+                  Openreach within BT following Ofcom scrutiny.
                 </p>
               </div>
 
@@ -333,16 +343,18 @@ export default function CV() {
                     Company Director
                   </h3>
                   <span className="text-sm text-gray-400">
-                    Apr 2013 – May 2014
+                    Apr 2013 - May 2014
                   </span>
                 </div>
                 <p className="text-sm text-teal-600 font-medium mb-1">
                   Global Guarding · Preston
                 </p>
                 <p className="text-sm text-gray-500">
-                  Founded and managed a security company operating across the UK
-                  — responsible for client relationships, operations, staffing,
-                  and business development.
+                  Founded and ran a security company operating across the UK —
+                  owning client relationships, operations, staffing, and
+                  business development end-to-end. Built the stakeholder
+                  management and business ownership instincts now brought to
+                  client-facing delivery work.
                 </p>
               </div>
             </section>
