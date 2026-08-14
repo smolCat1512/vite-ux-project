@@ -27,14 +27,20 @@ const Logo: React.FC<LogoProps> = ({ onClick }) => {
   const rotate = useTransform(time, [0, 6000], [0, 360], { clamp: false });
   const rotatingBorder = useTransform(
     rotate,
-    (r) => `conic-gradient(from ${r}deg, ${gradientFrom}, ${gradientTo})`,
+    (r) =>
+      `conic-gradient(from ${r}deg,
+      transparent 0%,
+      transparent 45%,
+      ${gradientFrom} 72%,
+      ${gradientTo} 96%,
+      transparent 100%)`,
   );
 
   return (
     <motion.div
       style={{
         background: prefersReducedMotion
-          ? `conic-gradient(${gradientFrom}, ${gradientTo})`
+          ? `linear-gradient(90deg, transparent, ${gradientFrom}, ${gradientTo}, transparent)`
           : rotatingBorder,
         padding: "3px",
         borderRadius: "var(--mantine-radius-md)",

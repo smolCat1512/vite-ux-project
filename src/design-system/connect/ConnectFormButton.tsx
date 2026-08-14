@@ -31,7 +31,13 @@ const ConnectFormButton: React.FC<ConnectFormButtonProps> = ({
   const rotate = useTransform(time, [0, 6000], [0, 360], { clamp: false });
   const rotatingBorder = useTransform(
     rotate,
-    (r) => `conic-gradient(from ${r}deg, ${gradientFrom}, ${gradientTo})`,
+    (r) =>
+      `conic-gradient(from ${r}deg,
+      transparent 0%,
+      transparent 45%,
+      ${gradientFrom} 72%,
+      ${gradientTo} 80%,
+      transparent 100%)`,
   );
 
   const [isMobile, setIsMobile] = useState(false);
@@ -56,7 +62,7 @@ const ConnectFormButton: React.FC<ConnectFormButtonProps> = ({
         style={{
           padding: "3px",
           background: shouldReduceMotion
-            ? `conic-gradient(from 0deg, ${gradientFrom}, ${gradientTo})`
+            ? `linear-gradient(90deg, transparent, ${gradientFrom}, ${gradientTo}, transparent)`
             : rotatingBorder,
           borderRadius: "var(--mantine-radius-lg)",
           display: "inline-flex",
@@ -81,7 +87,11 @@ const ConnectFormButton: React.FC<ConnectFormButtonProps> = ({
             },
           }}
         >
-          <span style={{ color: text, textShadow: textGlow, fontWeight: "lighter" }}>{children}</span>
+          <span
+            style={{ color: text, textShadow: textGlow, fontWeight: "lighter" }}
+          >
+            {children}
+          </span>
         </Button>
       </motion.div>
     </motion.div>
