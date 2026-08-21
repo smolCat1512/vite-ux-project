@@ -20,7 +20,7 @@ const ConnectFormButton: React.FC<ConnectFormButtonProps> = ({
   const connectTheme = theme.other.connect;
   const gradientFrom = theme.other?.connect?.button?.gradientFrom;
   const gradientTo = theme.other?.connect?.button?.gradientTo;
-  const text = theme.other?.connect?.button?.text ?? "#000000";
+  const text = theme.other?.connect?.button?.text;
   console.log("connect button text:", text);
   const glowColor = theme.other?.connect?.button?.glowColor;
   const glow = theme.other?.connect?.button?.glow ?? false;
