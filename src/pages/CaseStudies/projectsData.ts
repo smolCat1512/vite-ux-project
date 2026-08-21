@@ -1,4 +1,5 @@
 import ShelterCard from "../../assets/shelter_images/shelter-macbook.png";
+import ShelterCardMobile from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
 import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
 import UNHCRCard from "../../assets/portfolio_card_images/unhcr_card_placeholder.jpg";
 import ShaneCard from "../../assets/portfolio_card_images/shane_portfolio_card.png";
@@ -10,6 +11,7 @@ export interface Project {
   technologies: string;
   process: Array<string | { icon: string; text: string }>;
   cardImage: string;
+  cardImageMobile?: string;
   liveUrl?: string;
   role?: string;
   cardBackgroundClass?: string;
@@ -29,18 +31,16 @@ export const projects: Project[] = [
       "Digital advice webchat for people facing homelessness or harm in the UK.",
     technologies: "React, TypeScript, Figma",
     process: [
-      { icon: "search", text: "User research and requirements gathering" },
-      { icon: "pencil", text: "Wireframing and prototyping" },
-      { icon: "code", text: "Frontend development with React TypeScript" },
+      { icon: "search", text: "UX/UI requirements gathering, research and design" },
+      { icon: "code", text: "Frontend development with React Typescript" },
       { icon: "vial", text: "Usability testing and iteration" },
       { icon: "rocket", text: "Deployment and continuous development" },
     ],
     cardImage: ShelterCard,
+    cardImageMobile: ShelterCardMobile,
     liveUrl: "https://england.shelter.org.uk/get_help/webchat",
     cardBackgroundClass:
       "bg-gradient-to-br from-red-600 via-red-100 to-white-200",
-    cardImageClass:
-      "scale+[2.0]",
     hasCaseStudy: true,
   },
   {
@@ -50,8 +50,8 @@ export const projects: Project[] = [
     summary: "Financial counselling platform for the US nonprofit sector.",
     technologies: "React, TypeScript, Figma, Twilio Paste",
     process: [
-      { icon: "pencil", text: "UI design and prototyping" },
-      { icon: "code", text: "Frontend development with React TypeScript" },
+      { icon: "pencil", text: "UI/UX research, design and prototyping" },
+      { icon: "code", text: "Frontend development with React Typescript" },
       { icon: "server", text: "Integration with backend services and APIs" },
       {
         icon: "accessibility",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     cardBackgroundClass:
       "bg-gradient-to-br from-sky-200 via-blue-200 to-indigo-200",
     cardInnerFrameClass: "items-end justify-center",
-    cardImageClass: "translate-y-16 scale-[1.03] rounded-t-lg",
+    cardImageClass: "translate-y-16 rounded-t-lg",
     hasCaseStudy: true,
   },
   {
@@ -73,9 +73,8 @@ export const projects: Project[] = [
     summary: "Flow builder for humanitarian and emergency disaster responses.",
     technologies: "React, TypeScript, Figma, Twilio Paste, Miro",
     process: [
-      { icon: "vial", text: "Multiple level user research" },
-      { icon: "pencil", text: "UI design and prototyping" },
-      { icon: "code", text: "Frontend development with React TypeScript" },
+      { icon: "pencil", text: "UI/UX research, design and prototyping" },
+      { icon: "code", text: "Frontend development with React Typescript" },
       {
         icon: "server",
         text: "Integration with backend services and APIs",
@@ -93,8 +92,7 @@ export const projects: Project[] = [
     summary: "LGBTQIA+ safety and inclusivity mobile concept.",
     technologies: "Tamagui, React Native, TypeScript, SquareSpace, Figma",
     process: [
-      { icon: "search", text: "Concept ideation and user research" },
-      { icon: "pencil", text: "UI/UX design and prototyping" },
+      { icon: "pencil", text: "UI/UX research, design and prototyping" },
       { icon: "cog", text: "Design system creation and implementation" },
       { icon: "code", text: "Frontend development with React Typescript" },
       { icon: "vial", text: "User testing and feedback incorporation" },
