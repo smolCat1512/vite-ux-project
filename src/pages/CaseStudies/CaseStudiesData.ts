@@ -7,6 +7,11 @@ import NFCCWizardStart from "../../assets/nfcc_images/NFCCWireframe1.png";
 import NFCCAgencies from "../../assets/nfcc_images/NFCC_Agencies.png";
 import NFCCServiceSetup from "../../assets/nfcc_images/NFCC_ServiceSetup1.png";
 import UNHCRCard from "../../assets/portfolio_card_images/unhcr_card_placeholder.jpg";
+import ShaneCard from "../../assets/portfolio_card_images/shane_portfolio_card.png";
+// TODO: swap in your actual Shane image filenames/paths below
+// import ShaneDesignSystem from "../../assets/shane_images/design_system.png";
+// import ShaneWebsite from "../../assets/shane_images/website.png";
+// import ShaneApp from "../../assets/shane_images/app.png";
 
 export interface CaseStudy {
   id: string;
@@ -307,6 +312,84 @@ export const caseStudiesData: CaseStudy[] = [
       "Figma",
     ],
     cardImage: UNHCRCard,
+    hasDetailPage: true,
+  },
+  {
+    id: "shane",
+    title: "Shane",
+    tagline:
+      "LGBTQIA+ Safety & Navigation Platform — Design System & Early-Stage Build",
+    roles: [
+      "Frontend Development",
+      "Design System (Storybook / Tamagui)",
+      "UX & Design Collaboration",
+      "Requirements Coordination",
+      "Stakeholder & Team Coordination",
+      "Website Build",
+    ],
+    client: "Shane Collective",
+    duration: "2024 (8 months)",
+    overview: `
+    Shane is a queer-owned platform and mobile app helping LGBTQIA+ people 
+    discover and navigate the world safely — combining peer-reviewed search, 
+    safety-focused routing, and emergency support tools. I joined the project 
+    at the invitation of a friend and former colleague, Caz, the backend 
+    developer on the team, contributing as frontend developer, UX 
+    collaborator, and informal coordinator across a small volunteer team 
+    during the platform's early build phase.
+  `,
+    challenge: `
+    At the point I joined, Shane had no established design system and no 
+    website — early priorities for a pre-launch product needing to look and 
+    feel credible to prospective users, partners, and certified businesses 
+    ahead of any funding or formal team structure. As a volunteer-run 
+    project, work was distributed across a small group without dedicated 
+    project management, so keeping design, frontend, and content work 
+    moving in the same direction relied on informal coordination rather 
+    than process.
+  `,
+    solution: `
+    I led the build of the initial design system, using Storybook alongside 
+    the Tamagui UI framework, React, and TypeScript — creating a shared 
+    component library intended to support both the web app and a future 
+    mobile build. Working closely with Anjali on Figma designs, I 
+    contributed to UX and design decisions, translating design work into 
+    functional, reusable components.
+
+    Alongside the design system, I designed and built the project's initial 
+    website on Squarespace, giving Shane a public-facing presence ahead of 
+    launch. With no formal PM in place, I helped hold and coordinate team 
+    meetings to keep design, frontend, and backend work aligned across the 
+    volunteer group.
+
+    After around eight months, the project's needs shifted toward a level 
+    of ongoing commitment I wasn't able to sustain alongside other 
+    work, and I stepped back from active involvement.
+  `,
+    outcome: `
+    Delivered the initial web app build, which was rolled out as the 
+    project's first live product — with components from the design system 
+    later carried into the subsequent mobile app build. Delivered the 
+    initial version of the Shane website, which has since been iterated on 
+    and refined by the team as the platform has grown. Shane has since 
+    launched its mobile app on the Apple App Store and Google Play.
+  `,
+    technologies: [
+      "React",
+      "TypeScript",
+      "Tamagui",
+      "Storybook",
+      "Figma",
+      "Squarespace",
+    ],
+    liveUrl: "https://getshane.io/",
+    liveUrlText: `
+    To visit the live site, click the button below. Note that the platform 
+    has evolved significantly since my involvement — the original web app 
+    has been superseded by Shane's mobile app, now live on the App Store 
+    and Google Play.
+  `,
+    cardImage: ShaneCard,
     hasDetailPage: true,
   },
 ];

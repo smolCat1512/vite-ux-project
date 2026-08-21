@@ -16,7 +16,7 @@ export interface Project {
   cardInnerFrameClass?: string;
   cardImageClass?: string;
 
-  // navigation
+  // navigation trigger for case study page, if true, the project will have a case study page
   hasCaseStudy: boolean;
 }
 
@@ -100,6 +100,6 @@ export const projects: Project[] = [
     ],
     cardImage: ShaneCard,
     liveUrl: "https://getshane.io/",
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
 ];
