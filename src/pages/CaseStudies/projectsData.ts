@@ -1,6 +1,7 @@
 import ShelterCard from "../../assets/shelter_images/shelter-macbook.png";
 import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
 import UNHCRCard from "../../assets/portfolio_card_images/unhcr_card_placeholder.jpg";
+import ShaneCard from "../../assets/portfolio_card_images/shane_portfolio_card.png";
 
 export interface Project {
   id: string;
@@ -97,7 +98,7 @@ export const projects: Project[] = [
       { icon: "code", text: "Frontend development with React Typescript" },
       { icon: "vial", text: "User testing and feedback incorporation" },
     ],
-    cardImage: "",
+    cardImage: ShaneCard,
     liveUrl: "https://getshane.io/",
     hasCaseStudy: false,
   },

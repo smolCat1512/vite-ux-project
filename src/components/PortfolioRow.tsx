@@ -17,7 +17,7 @@ const PortfolioLayout = ({
     <div className="group relative w-full">
       <Link to={`/projects/${id}`} aria-label={`View ${title} project details`}>
         {imageError || !cardImage ? (
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-stone-100">
+          <div className="aspect-4/3 w-full overflow-hidden rounded-sm bg-stone-100">
             <div className="flex h-full w-full items-center justify-center p-8 md:p-10">
               <div className="flex h-[70%] w-[70%] items-center justify-center overflow-hidden rounded-sm border border-black/8 bg-white shadow-sm">
                 <PortfolioCardImagePlaceholder showText={true} />
@@ -25,7 +25,7 @@ const PortfolioLayout = ({
             </div>
           </div>
         ) : (
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-sm bg-stone-100 justify-center items-center flex">
+          <div className="aspect-4/3 w-full overflow-hidden rounded-sm bg-stone-100 justify-center items-center flex">
               <div className="flex justify-center align-middle">
                 <img
                   src={cardImage}

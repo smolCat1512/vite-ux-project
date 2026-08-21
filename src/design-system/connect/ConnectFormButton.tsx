@@ -34,9 +34,11 @@ const ConnectFormButton: React.FC<ConnectFormButtonProps> = ({
     (r) =>
       `conic-gradient(from ${r}deg,
       transparent 0%,
-      transparent 45%,
-      ${gradientFrom} 72%,
-      ${gradientTo} 80%,
+      transparent 55%,
+      ${gradientFrom} 68%,
+      ${gradientFrom} 82%,
+      ${gradientTo} 90%,
+      transparent 96%,
       transparent 100%)`,
   );
 
