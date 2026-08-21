@@ -4,6 +4,10 @@ import type { Project } from "../pages/CaseStudies/projectsData";
 import PortfolioCardImagePlaceholder from "../design-system/portfolio/PortfolioCardImagePlaceholder";
 import PortfolioCardTitle from "../design-system/portfolio/PortfolioCardTitle";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  getProcessIcon,
+  normalizeProcessStep,
+} from "../design-system/portfolio/PortfolioProcess";
 
 type PortfolioMobileCardProps = Project;
 
@@ -11,6 +15,7 @@ const PortfolioMobileCard = ({
   id,
   title,
   summary,
+  process = [],
   cardImage,
   hasCaseStudy,
 }: PortfolioMobileCardProps) => {
@@ -66,14 +71,16 @@ const PortfolioMobileCard = ({
           {overlayOpen && (
             <motion.div
               className="absolute inset-0 flex flex-col"
-              style={{ backgroundColor: "var(--overlay-bg, rgba(10,10,10,0.96))" }}
+              style={{
+                backgroundColor: "var(--overlay-bg, rgba(10,10,10,0.96))",
+              }}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ duration: 0.35, ease: [0.32, 0.72, 0, 1] }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex flex-col gap-3 p-5 h-full justify-between">
+              <div className="flex flex-col gap-3 p-5 h-full justify-between overflow-y-auto">
                 {/* Close button */}
                 <div className="flex justify-end">
                   <button
@@ -90,8 +97,7 @@ const PortfolioMobileCard = ({
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-3 flex-1 justify-center">
-
+                <div className="flex flex-col gap-4 flex-1 justify-center">
                   <PortfolioCardTitle>
                     <span className="text-white">{title}</span>
                   </PortfolioCardTitle>
@@ -100,6 +106,27 @@ const PortfolioMobileCard = ({
                     <p className="text-sm leading-relaxed text-white/70">
                       {summary}
                     </p>
+                  )}
+
+                  {process.length > 0 && (
+                    <ul className="flex flex-col gap-2 mt-1">
+                      {process.map((step, i) => {
+                        const { icon, text } = normalizeProcessStep(step);
+                        return (
+                          <li
+                            key={i}
+                            className="flex items-center gap-2.5 text-sm text-white/70"
+                          >
+                            {icon && (
+                              <span className="shrink-0 text-white/50 text-xs">
+                                {getProcessIcon(icon)}
+                              </span>
+                            )}
+                            <span>{text}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   )}
                 </div>
 
