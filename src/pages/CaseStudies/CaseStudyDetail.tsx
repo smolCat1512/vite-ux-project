@@ -60,7 +60,11 @@ const CaseStudyDetail = ({
           <CaseStudyTagline>{tagline}</CaseStudyTagline>
         </div>
         <div className="flex gap-4 mt-4 md:mt-0 justify-center items-center">
-          <img src={cardImage} alt={`${title} hero`} />
+          <img
+            src={cardImage}
+            alt={`${title} hero`}
+            className="w-full max-w-md h-96 object-cover rounded-lg"
+          />
         </div>
       </motion.header>
 
@@ -88,6 +92,9 @@ const CaseStudyDetail = ({
         )}
         {title === "NFCC" && (
           <CaseStudyImagesBanner {...CaseStudyImageConfig.nfcc} />
+        )}
+        {title === "Shane" && (
+          <CaseStudyImagesBanner {...CaseStudyImageConfig.shane} />
         )}
       </motion.section>
 

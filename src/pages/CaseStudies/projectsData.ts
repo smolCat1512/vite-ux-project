@@ -91,10 +91,11 @@ export const projects: Project[] = [
     title: "Shane",
     role: "Design, Design System, Frontend",
     summary: "LGBTQIA+ safety and inclusivity mobile concept.",
-    technologies: "Tamagui, React Native, TypeScript",
+    technologies: "Tamagui, React Native, TypeScript, SquareSpace, Figma",
     process: [
       { icon: "search", text: "Concept ideation and user research" },
       { icon: "pencil", text: "UI/UX design and prototyping" },
+      { icon: "cog", text: "Design system creation and implementation" },
       { icon: "code", text: "Frontend development with React Typescript" },
       { icon: "vial", text: "User testing and feedback incorporation" },
     ],

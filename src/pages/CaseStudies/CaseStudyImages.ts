@@ -16,6 +16,11 @@ import ShelterWebchat4 from "../../assets/shelter_images/ShelterWebchat4.png";
 import ShelterWebchat5 from "../../assets/shelter_images/ShelterWebchat5.png";
 import ShelterWebchat6 from "../../assets/shelter_images/ShelterWebchat6.png";
 
+import Shane1 from "../../assets/shane_images/ShaneSite1.png"
+import Shane2 from "../../assets/shane_images/ShaneSite2.png"
+import Shane3 from "../../assets/shane_images/ShaneSite3.png"
+import Shane4 from "../../assets/shane_images/ShaneSite4.png"
+
 export const CaseStudyImageConfig = {
   shelter: {
     images: [
@@ -46,6 +51,18 @@ export const CaseStudyImageConfig = {
     ],
     imageWidth: 320,
     imageHeight: 240,
+    row1Duration: 120,
+    row2Duration: 140,
+  },
+  shane: {
+    images: [
+      { name: "Shane1", image: Shane1 },
+      { name: "Shane2", image: Shane2 },
+      { name: "Shane3", image: Shane3 },
+      { name: "Shane4", image: Shane4 },
+    ],
+    imageWidth: 320,
+    imageHeight: 320,
     row1Duration: 120,
     row2Duration: 140,
   },
