@@ -17,7 +17,6 @@ export interface Project {
   cardBackgroundClass?: string;
   cardInnerFrameClass?: string;
   cardImageClass?: string;
-
   // navigation trigger for case study page, if true, the project will have a case study page
   hasCaseStudy: boolean;
 }

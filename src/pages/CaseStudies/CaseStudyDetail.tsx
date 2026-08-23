@@ -10,6 +10,7 @@ import CaseStudyLiveButton from "../../design-system/caseStudy/CaseStudyLiveButt
 import CaseStudyImage from "../../design-system/caseStudy/CaseStudyImage";
 import CaseStudyImagesBanner from "./CaseStudyImagesBanner";
 import { CaseStudyImageConfig } from "./CaseStudyImages";
+import { Card } from "@mantine/core";
 
 <link
   href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
@@ -100,16 +101,24 @@ const CaseStudyDetail = ({
 
       {/* Content sections */}
       <motion.section
-        className=" md:w-7/12 mx-auto px-4"
+        className=" md:w-7/12 mx-auto px-4 gap-8 flex flex-col"
         initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <CaseStudySection title="01. Overview">{overview}</CaseStudySection>
-        <CaseStudySection title="02. The Challenge">
-          {challenge}
-        </CaseStudySection>
-        <CaseStudySection title="03. The Solution">{solution}</CaseStudySection>
+        <Card shadow="sm" p="lg" radius="md" withBorder>
+          <CaseStudySection title="01. Overview">{overview}</CaseStudySection>
+        </Card>
+        <Card shadow="sm" p="lg" radius="md" withBorder>
+          <CaseStudySection title="02. The Challenge">
+            {challenge}
+          </CaseStudySection>
+        </Card>
+        <Card shadow="sm" p="lg" radius="md" withBorder>
+          <CaseStudySection title="03. The Solution">
+            {solution}
+          </CaseStudySection>
+        </Card>
       </motion.section>
 
       {images.length > 0 && (
@@ -143,7 +152,9 @@ const CaseStudyDetail = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <CaseStudySection title="Outcome">{outcome}</CaseStudySection>
+        <Card shadow="sm" p="lg" radius="md" withBorder>
+          <CaseStudySection title="Outcome">{outcome}</CaseStudySection>
+        </Card>
       </motion.section>
 
       {/* Technologies */}
@@ -165,7 +176,7 @@ const CaseStudyDetail = ({
       {/* Live site */}
       {liveUrl && (
         <motion.section
-          className="mb-16 md:w-7/12 mx-auto px-4 flex justify-start items-start flex-col gap-4"
+          className="mb-16 md:w-7/12 mx-auto px-4 flex justify-start items-start flex-col gap-4 sm:pb-10"
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
