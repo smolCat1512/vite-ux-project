@@ -114,20 +114,31 @@ const CaseStudyImagesBanner = ({
         }
       `}</style>
       <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-        <ScrollRow
-          items={row1}
-          direction="left"
-          duration={row1Duration}
-          imageWidth={imageWidth}
-          imageHeight={imageHeight}
-        />
-        <ScrollRow
-          items={row2}
-          direction="right"
-          duration={row2Duration}
-          imageWidth={imageWidth}
-          imageHeight={imageHeight}
-        />
+        {images.length > 5 ? (
+          <>
+            <ScrollRow
+              items={row1}
+              direction="left"
+              duration={row1Duration}
+              imageWidth={imageWidth}
+              imageHeight={imageHeight}
+            />
+            <ScrollRow
+              items={row2}
+              direction="right"
+              duration={row2Duration}
+              imageWidth={imageWidth}
+              imageHeight={imageHeight}
+            />
+          </> ) : (
+          <ScrollRow
+            items={images}
+            direction="left"
+            duration={row1Duration}
+            imageWidth={imageWidth}
+            imageHeight={imageHeight}
+          />
+        )}
       </div>
     </Box>
   );
