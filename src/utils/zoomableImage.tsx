@@ -8,7 +8,7 @@ interface ZoomableImageProps {
   h: number;
 }
 
-function ZoomableImage({ src, alt, w, h }: ZoomableImageProps) {
+const ZoomableImage = ({ src, alt, w, h }: ZoomableImageProps) => {
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
