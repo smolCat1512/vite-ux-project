@@ -1,5 +1,5 @@
 import { Box } from "@mantine/core";
-import ZoomableImage from "../../utils/ZoomableImage";
+import ZoomableImage from "../../utils/ZoomableImage"
 
 export interface ImageItem {
   name: string;
