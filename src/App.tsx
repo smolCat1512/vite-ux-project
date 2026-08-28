@@ -6,6 +6,7 @@ import CaseStudyNFCCLegacy from "./pages/CaseStudies/nfcc_legacy";
 import ProjectSummary from "./pages/CaseStudies/ProjectSummary";
 import CaseStudyPage from "./pages/CaseStudies/CaseStudyPage";
 import CV from "./assets/cv";
+import PresalesCV from "./assets/presales-cv";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       />
       <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
       <Route path="/cv" element={<CV />} />
+      <Route path="/presales-cv" element={<PresalesCV />} />
     </Routes>
   );
 }
