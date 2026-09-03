@@ -19,7 +19,7 @@ export default function CVTwilioPresales() {
           }
 
           html {
-            zoom: 0.8;
+            zoom: 0.7;
           }
 
           .cv-wrapper {
