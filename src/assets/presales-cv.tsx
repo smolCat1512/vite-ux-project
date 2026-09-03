@@ -19,7 +19,7 @@ export default function CVTwilioPresales() {
           }
 
           html {
-            zoom: 0.7;
+            zoom: 0.8;
           }
 
           .cv-wrapper {
@@ -46,10 +46,10 @@ export default function CVTwilioPresales() {
                 Shaun Halliday
               </h1>
               <p className="text-sm text-teal-700 font-medium mt-1">
-                Technical Project Manager
+                Solutions Engineer
               </p>
               <p className="text-sm text-teal-800">
-                Client-Facing Technical Delivery & Twilio Solutions
+                Technical Project Manager | Frontend Engineer
               </p>
             </div>
 
@@ -157,9 +157,18 @@ export default function CVTwilioPresales() {
               <span>Coates, Cambridgeshire</span>
               <span className="text-gray-300">|</span>
               <span>shaunuxuidev@gmail.com</span>
+              <span className="text-gray-300">|</span>
+              <a
+                href="https://www.linkedin.com/in/shaun-halliday-5001a6b2"
+                className="underline text-teal-600 hover:text-teal-800"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
             </div>
 
-            <div
+            {/* <div
               className="flex flex-wrap items-center gap-x-8 text-sm text-gray-500"
               style={{ marginTop: "-1rem" }}
             >
@@ -170,9 +179,9 @@ export default function CVTwilioPresales() {
                 rel="noopener noreferrer"
               >
                 LinkedIn
-              </a>
-              <span className="text-gray-300">|</span>
-              <a
+              </a> */}
+            {/* <span className="text-gray-300">|</span> */}
+            {/* <a
                 href="http://www.shaunhalliday.co.uk/"
                 className="underline text-teal-600 hover:text-teal-800"
                 target="_blank"
@@ -188,8 +197,8 @@ export default function CVTwilioPresales() {
                 rel="noopener noreferrer"
               >
                 GitHub
-              </a>
-            </div>
+              </a> */}
+            {/* </div> */}
 
             {/* Profile Summary */}
             <section>
@@ -199,18 +208,17 @@ export default function CVTwilioPresales() {
               <p className="text-sm text-gray-600 leading-relaxed">
                 Technical Project Manager and Frontend Engineer with deep,
                 hands-on experience building and integrating on the Twilio
-                platform — including Flex, Studio, Paste, and WhatsApp
-                Business API — for enterprise and NGO clients including UNHCR
-                and Shelter. Regularly the technical voice in the room:
-                running client demos, translating complex technical
-                capability into terms both technical and non-technical
-                stakeholders can act on, and owning commercial
-                scoping — authoring Statements of Work, agreeing pricing,
-                and securing client sign-off. Comfortable working across
-                cloud platforms including AWS and Azure, with production
-                experience integrating REST APIs and cloud-native automation.
-                Brings a grounded, client-first perspective shaped by 21
-                years in client-facing leadership and operational roles
+                platform — including Flex, Studio, Paste, and WhatsApp Business
+                API — for enterprise and NGO clients including UNHCR and
+                Shelter. Regularly the technical voice in the room: running
+                client demos, translating complex technical capability into
+                terms both technical and non-technical stakeholders can act on,
+                and owning commercial scoping — authoring Statements of Work,
+                agreeing pricing, and securing client sign-off. Comfortable
+                working across cloud platforms including AWS and Azure, with
+                production experience integrating REST APIs and cloud-native
+                automation. Brings a grounded, client-first perspective shaped
+                by 21 years in client-facing leadership and operational roles
                 prior to re-training in tech.
               </p>
             </section>
@@ -240,30 +248,44 @@ export default function CVTwilioPresales() {
                     <span className="text-gray-700 font-medium">
                       Twilio platform
                     </span>{" "}
-                    — including Flex, Studio, and Paste — for clients
-                    including{" "}
-                    <span className="text-gray-700 font-medium">UNHCR</span>{" "}
-                    and{" "}
-                    <span className="text-gray-700 font-medium">Shelter</span>
-                    , presenting technical capability directly to both
-                    technical and non-technical stakeholders.
+                    — including Flex, Studio, and Paste — for clients including{" "}
+                    <span className="text-gray-700 font-medium">UNHCR</span> and{" "}
+                    <span className="text-gray-700 font-medium">Shelter</span>,
+                    presenting technical capability directly to both technical
+                    and non-technical stakeholders.
                   </li>
                   <li>
-                    Owned commercial scoping for ongoing client engagements —
-                    authoring Statements of Requirement and Statements of
-                    Work, agreeing pricing, and securing client sign-off
-                    across multiple independently-delivered projects.
+                    Owned commercial scoping for ongoing client engagements end
+                    to end — authoring Statements of Requirement and Statements
+                    of Work, agreeing pricing, and securing client sign-off,
+                    growing the Shelter relationship alone into £10k+ of
+                    delivered engagements.
                   </li>
                   <li>
-                    Designed and integrated REST APIs across Twilio, AWS,
-                    Azure, and Snowflake, including a WhatsApp Business API
-                    deployment for humanitarian field teams and a
-                    zero-touch GitHub Actions automation workflow replacing
-                    a manual process across hundreds of thousands of records.
+                    Led project management, development, and commercial
+                    ownership for{" "}
+                    <span className="text-gray-700 font-medium">
+                      OPUSFidelis
+                    </span>{" "}
+                    — starting with a Twilio dialler build integrated with the
+                    client's Zendesk platform for healthcare member services,
+                    and growing to include SMS capability, an opt-out/blocklist
+                    workflow, automated voicemail, a web chat build with Zendesk
+                    ticket integration, and a Twilio AI Copilot implementation
+                    within their Flex environment. Delivered £100k+ in value to
+                    date, with further AI and call campaign dialler work
+                    ongoing.
                   </li>
                   <li>
-                    Ran discovery workshops and requirements gathering
-                    directly with clients, translating needs into technical
+                    Designed and integrated REST APIs across Twilio, AWS, Azure,
+                    and Snowflake, including a WhatsApp Business API deployment
+                    for humanitarian field teams and a zero-touch GitHub Actions
+                    automation workflow replacing a manual process across
+                    hundreds of thousands of records.
+                  </li>
+                  <li>
+                    Ran discovery workshops and requirements gathering directly
+                    with clients, translating needs into technical
                     specifications and delivery plans for cross-functional
                     teams.
                   </li>
@@ -337,12 +359,11 @@ export default function CVTwilioPresales() {
                   Telent Communications · Chorley
                 </p>
                 <p className="text-sm text-gray-500">
-                  Led project management on a national software suite rollout
-                  — planning, coordinating, and reporting across teams.
-                  Managed Openreach systems and production reporting, and
-                  coached a team through the transition. Contributions
-                  credited with helping retain Openreach within BT following
-                  Ofcom scrutiny.
+                  Led project management on a national software suite rollout —
+                  planning, coordinating, and reporting across teams. Managed
+                  Openreach systems and production reporting, and coached a team
+                  through the transition. Contributions credited with helping
+                  retain Openreach within BT following Ofcom scrutiny.
                 </p>
               </div>
 

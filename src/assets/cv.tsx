@@ -19,7 +19,7 @@ export default function CV() {
           }
 
           html {
-            zoom: 0.8;
+            zoom: 0.7;
           }
 
           .cv-wrapper {
@@ -198,9 +198,9 @@ export default function CV() {
                 Profile
               </h2>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Technical Project Manager with 2 years' experience leading
+                Technical Project Manager with 2+ years' experience leading
                 delivery for major clients including UNHCR and Shelter, combined
-                with a first-class degree in Web Design & Development and 4+
+                with a first-class degree in Web Design & Development and 5+
                 years of hands-on Front End Engineering and UX practice.
                 Comfortable operating across the full delivery lifecycle —
                 gathering and translating requirements, running stakeholder
