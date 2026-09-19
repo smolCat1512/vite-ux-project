@@ -7,6 +7,7 @@ import ProjectSummary from "./pages/CaseStudies/ProjectSummary";
 import CaseStudyPage from "./pages/CaseStudies/CaseStudyPage";
 import CV from "./assets/cv";
 import PresalesCV from "./assets/presales-cv";
+import PasswordGate from "./components/PasswordGate";
 
 function App() {
   return (
@@ -16,19 +17,46 @@ function App() {
         <Route path="/projects/:projectId" element={<ProjectSummary />} />
       </Route>
 
-      {/* Case study and CV outside RootLayout - so do not inherit theming, and can open
-      as target_blank items so viewer does not have to go back and forwards on web site */}
       <Route
         path="/case-studies/legacy/shelter"
-        element={<CaseStudyShelterLegacy />}
+        element={
+          <PasswordGate>
+            <CaseStudyShelterLegacy />
+          </PasswordGate>
+        }
       />
       <Route
         path="/case-studies/legacy/nfcc"
-        element={<CaseStudyNFCCLegacy />}
+        element={
+          <PasswordGate>
+            <CaseStudyNFCCLegacy />
+          </PasswordGate>
+        }
       />
-      <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
-      <Route path="/cv" element={<CV />} />
-      <Route path="/presales-cv" element={<PresalesCV />} />
+      <Route
+        path="/case-studies/:slug"
+        element={
+          <PasswordGate>
+            <CaseStudyPage />
+          </PasswordGate>
+        }
+      />
+      <Route
+        path="/cv"
+        element={
+          <PasswordGate>
+            <CV />
+          </PasswordGate>
+        }
+      />
+      <Route
+        path="/presales-cv"
+        element={
+          <PasswordGate>
+            <PresalesCV />
+          </PasswordGate>
+        }
+      />
     </Routes>
   );
 }
