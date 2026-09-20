@@ -1,6 +1,6 @@
 import ShelterCard from "../../assets/shelter_images/shelter-macbook.png";
 import ShelterCardMobile from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
-import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
+import NFCCCard from "../../assets/portfolio_card_images/nfcc_mainpage_portfolio_card copy.png";
 import UNHCRCard from "../../assets/portfolio_card_images/unhcr_card_placeholder.jpg";
 import ShaneCard from "../../assets/portfolio_card_images/shane_portfolio_card.png";
 
