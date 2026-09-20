@@ -39,7 +39,7 @@ export const caseStudiesData: CaseStudy[] = [
     title: "Shelter",
     tagline: "Digital Advice Webchat & Ongoing Product Ownership",
     roles: [
-      "Research",
+      "Research", 
       "Design",
       "Frontend Development",
       "Design System",
@@ -133,9 +133,9 @@ export const caseStudiesData: CaseStudy[] = [
     hasDetailPage: true,
   },
   {
-    id: "nfcc",
+    id: "us-financial-counselling-nonprofit",
     title: "NFCC",
-    tagline: "Financial Counselling Agency Platform",
+    tagline: "US Financial Counselling Nonprofit",
     roles: [
       "Research",
       "Design",

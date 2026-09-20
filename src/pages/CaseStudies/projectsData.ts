@@ -43,7 +43,7 @@ export const projects: Project[] = [
     hasCaseStudy: true,
   },
   {
-    id: "nfcc",
+    id: "us-financial-counselling-nonprofit",
     title: "NFCC",
     role: "Frontend / UI Design",
     summary: "Financial counselling platform for the US nonprofit sector.",
