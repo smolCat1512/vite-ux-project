@@ -44,7 +44,7 @@ export const projects: Project[] = [
   },
   {
     id: "us-financial-counselling-nonprofit",
-    title: "NFCC",
+    title: "US Financial Counselling Nonprofit",
     role: "Frontend / UI Design",
     summary: "Financial counselling platform for the US nonprofit sector.",
     technologies: "React, TypeScript, Figma, Twilio Paste",
