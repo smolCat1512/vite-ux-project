@@ -3,7 +3,7 @@ import { caseStudiesData } from "./CaseStudiesData";
 
 const CaseStudyShelter = () => {
   const index = caseStudiesData.findIndex(
-    (cs) => cs?.id === "shelter"
+    (cs) => cs?.id === "homelessness-webchat"
   );
 
   if (index === -1) {

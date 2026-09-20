@@ -35,7 +35,7 @@ export interface CaseStudy {
 
 export const caseStudiesData: CaseStudy[] = [
   {
-    id: "shelter",
+    id: "homelessness-webchat",
     title: "Shelter",
     tagline: "Digital Advice Webchat & Ongoing Product Ownership",
     roles: [

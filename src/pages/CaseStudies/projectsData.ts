@@ -23,8 +23,8 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "shelter",
-    title: "Shelter",
+    id: "homelessness-webchat",
+    title: "UK Homlessness and Housing Charity",
     role: "Frontend / Research / Design",
     summary:
       "Digital advice webchat for people facing homelessness or harm in the UK.",
