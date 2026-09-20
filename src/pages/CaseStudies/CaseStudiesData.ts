@@ -1,5 +1,5 @@
 import ShelterCard from "../../assets/portfolio_card_images/shelter_portfolio_card.jpg";
-import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.jpg";
+import NFCCCard from "../../assets/portfolio_card_images/nfcc_portfolio_card.png";
 import ShelterStart from "../../assets/shelter-wireframes/start.png";
 import ShelterTriage from "../../assets/shelter-wireframes/triage.png";
 import ShelterPostChat from "../../assets/shelter-wireframes/postChat.png";
