@@ -24,7 +24,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "homelessness-webchat",
-    title: "UK Homlessness and Housing Charity",
+    title: "UK Homlessness and Housing Charity Webchat",
     role: "Frontend / Research / Design",
     summary:
       "Digital advice webchat for people facing homelessness or harm in the UK.",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
   },
   {
     id: "us-financial-counselling-nonprofit",
-    title: "US Financial Counselling Nonprofit",
+    title: "US Financial Counselling Nonprofit Platform",
     role: "Frontend / UI Design",
     summary: "Financial counselling platform for the US nonprofit sector.",
     technologies: "React, TypeScript, Figma, Twilio Paste",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
   },
   {
     id: "unhcr",
-    title: "UNHCR",
+    title: "Humanitarian and Emergency Disaster Response",
     role: "Frontend / UX Research / UI Design",
     summary: "Flow builder for humanitarian and emergency disaster responses.",
     technologies: "React, TypeScript, Figma, Twilio Paste, Miro",
@@ -86,9 +86,9 @@ export const projects: Project[] = [
   },
   {
     id: "shane",
-    title: "Shane",
+    title: "LGBTQ+ Safety and Inclusivity Mobile Concept",
     role: "Design, Design System, Frontend",
-    summary: "LGBTQIA+ safety and inclusivity mobile concept.",
+    summary: "LGBTQIA+ safety and inclusivity app concept.",
     technologies: "Tamagui, React Native, TypeScript, SquareSpace, Figma",
     process: [
       { icon: "pencil", text: "UI/UX research, design and prototyping" },
