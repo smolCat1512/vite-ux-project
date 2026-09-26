@@ -19,6 +19,7 @@ export interface Project {
   cardImageClass?: string;
   // navigation trigger for case study page, if true, the project will have a case study page
   hasCaseStudy: boolean;
+  hasAnimation?: boolean;
 }
 
 export const projects: Project[] = [
@@ -41,6 +42,7 @@ export const projects: Project[] = [
     cardBackgroundClass:
       "bg-gradient-to-br from-red-600 via-red-100 to-white-200",
     hasCaseStudy: true,
+    hasAnimation: true,
   },
   {
     id: "us-financial-counselling-nonprofit",
@@ -64,6 +66,7 @@ export const projects: Project[] = [
     cardInnerFrameClass: "items-end justify-center",
     cardImageClass: "translate-y-16 rounded-t-lg",
     hasCaseStudy: true,
+    hasAnimation: true,
   },
   {
     id: "unhcr",
@@ -83,6 +86,7 @@ export const projects: Project[] = [
     liveUrl:
       "https://www.unhcr.org/uk/media/unhcraaptoolctengaging-communities-whatsapp",
     hasCaseStudy: true,
+    hasAnimation: true,
   },
   {
     id: "shane",

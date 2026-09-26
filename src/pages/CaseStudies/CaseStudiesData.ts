@@ -31,6 +31,7 @@ export interface CaseStudy {
   liveUrlText?: string;
   cardImage: string;
   hasDetailPage: boolean;
+  useAnimatedCard?: boolean;
 }
 
 export const caseStudiesData: CaseStudy[] = [
@@ -39,7 +40,7 @@ export const caseStudiesData: CaseStudy[] = [
     title: "Shelter",
     tagline: "Digital Advice Webchat & Ongoing Product Ownership",
     roles: [
-      "Research", 
+      "Research",
       "Design",
       "Frontend Development",
       "Design System",
@@ -131,6 +132,7 @@ export const caseStudiesData: CaseStudy[] = [
     ],
     cardImage: ShelterCard,
     hasDetailPage: true,
+    useAnimatedCard: true,
   },
   {
     id: "us-financial-counselling-nonprofit",
@@ -217,6 +219,7 @@ export const caseStudiesData: CaseStudy[] = [
     ],
     cardImage: NFCCCard,
     hasDetailPage: true,
+    useAnimatedCard: true,
   },
   {
     id: "unhcr",
@@ -313,6 +316,7 @@ export const caseStudiesData: CaseStudy[] = [
     ],
     cardImage: UNHCRCard,
     hasDetailPage: true,
+    useAnimatedCard: true,
   },
   {
     id: "shane",

@@ -6,6 +6,7 @@ import PortfolioCardTitle from "../design-system/portfolio/PortfolioCardTitle";
 import PortfolioCardTechnologies from "../design-system/portfolio/PortfolioCardTechnologies";
 import PortfolioCardLink from "../design-system/portfolio/PortfolioCardLink";
 import PortfolioCardImagePlaceholder from "../design-system/portfolio/PortfolioCardImagePlaceholder";
+import CaseStudyCardImage from "../design-system/portfolio/CaseStudyCardImage";
 import {
   getProcessIcon,
   normalizeProcessStep,
@@ -19,6 +20,7 @@ const PortfolioCard = ({
   cardImage,
   liveUrl,
   hasCaseStudy,
+  hasAnimation,
   cardBackgroundClass,
   cardInnerFrameClass,
   cardImageClass,
@@ -31,12 +33,14 @@ const PortfolioCard = ({
 
   const imageContent = (
     <div
-      className={`relative flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-sm ${backgroundClass}`}
+      className={`relative flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-sm ${!hasAnimation ? backgroundClass : ""}`}
     >
       <div
-        className={`flex h-3/4 w-3/4 overflow-hidden rounded-sm ${innerFrameClass}`}
+        className={`flex h-3/4 w-3/4 overflow-hidden rounded-sm ${!hasAnimation ? innerFrameClass : ""}`}
       >
-        {imageError || !cardImage ? (
+        {hasAnimation ? (
+          <CaseStudyCardImage projectId={id} />
+        ) : imageError || !cardImage ? (
           <PortfolioCardImagePlaceholder showText={true} />
         ) : (
           <img
