@@ -103,5 +103,6 @@ export const projects: Project[] = [
     cardImage: ShaneCard,
     liveUrl: "https://getshane.io/",
     hasCaseStudy: true,
+    hasAnimation: true,
   },
 ];

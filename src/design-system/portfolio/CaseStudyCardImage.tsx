@@ -17,8 +17,14 @@ import {
   MdWhatsapp,
   MdPhoneCallback,
 } from "react-icons/md";
-import { FaHammer, FaHandsHelping } from "react-icons/fa";
+import {
+  FaHammer,
+  FaHandHoldingHeart,
+  FaHandsHelping,
+  FaTransgenderAlt,
+} from "react-icons/fa";
 import type { IconType } from "react-icons";
+import { RainbowIcon } from "../../assets/shane_images/RainbowIcon";
 
 interface CardConfig {
   gradient: string;
@@ -31,6 +37,7 @@ interface CardConfig {
     duration: number;
     delay: number;
     size: number;
+    isCustom?: boolean;
   }[];
 }
 
@@ -211,10 +218,10 @@ const cardConfigs: Record<string, CardConfig> = {
     ],
   },
   shane: {
-    gradient: "linear-gradient(135deg, #ff6f61 0%, #e65c4f 50%, #b33d3a 100%)",
+    gradient: "linear-gradient(135deg, #2B9B9E 0%, #57C785 50%, #B2E368 100%)",
     icons: [
       {
-        icon: MdOutlineChat,
+        icon: FaTransgenderAlt,
         color: "#ffffff",
         top: "15%",
         left: "10%",
@@ -224,7 +231,7 @@ const cardConfigs: Record<string, CardConfig> = {
         size: 40,
       },
       {
-        icon: MdOutlineHome,
+        icon: FaHandHoldingHeart,
         color: "#ffb3bc",
         top: "55%",
         left: "20%",
@@ -234,8 +241,9 @@ const cardConfigs: Record<string, CardConfig> = {
         size: 48,
       },
       {
-        icon: MdOutlinePeople,
-        color: "#ffffff",
+        icon: FaHandHoldingHeart,
+        isCustom: true,
+        color: "",
         top: "20%",
         left: "55%",
         rotate: 15,
@@ -304,7 +312,11 @@ const CaseStudyCardImage = ({ projectId }: CaseStudyCardImageProps) => {
               ease: "easeInOut",
             }}
           >
-            <Icon size={item.size} color={item.color} />
+            {item.isCustom ? (
+              <RainbowIcon size={item.size} />
+            ) : (
+              <Icon size={item.size} color={item.color} />
+            )}
           </motion.div>
         );
       })}

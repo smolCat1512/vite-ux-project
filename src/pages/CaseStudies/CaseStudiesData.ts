@@ -395,5 +395,6 @@ export const caseStudiesData: CaseStudy[] = [
   `,
     cardImage: ShaneCard,
     hasDetailPage: true,
+    useAnimatedCard: true,
   },
 ];
