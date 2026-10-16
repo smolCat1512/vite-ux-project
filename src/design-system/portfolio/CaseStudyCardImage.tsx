@@ -4,7 +4,6 @@ import {
   MdOutlineChat,
   MdOutlineHome,
   MdOutlinePeople,
-  MdOutlineSupport,
   MdOutlineAccountBalance,
   MdOutlineBusinessCenter,
   MdOutlinePublic,
@@ -21,10 +20,13 @@ import {
   FaHammer,
   FaHandHoldingHeart,
   FaHandsHelping,
+  FaMapMarkerAlt,
+  FaRainbow,
   FaTransgenderAlt,
 } from "react-icons/fa";
 import type { IconType } from "react-icons";
-import { RainbowIcon } from "../../assets/shane_images/RainbowIcon";
+import { RainbowIcon, TransgenderIcon } from "../../assets/shane_images/CustomIcons";
+import { FaMobileScreenButton } from "react-icons/fa6";
 
 interface CardConfig {
   gradient: string;
@@ -38,6 +40,7 @@ interface CardConfig {
     delay: number;
     size: number;
     isCustom?: boolean;
+    customComponent: string;
   }[];
 }
 
@@ -47,6 +50,8 @@ const cardConfigs: Record<string, CardConfig> = {
     icons: [
       {
         icon: MdOutlineChat,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "15%",
         left: "10%",
@@ -57,6 +62,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineHome,
+        isCustom: false,
+        customComponent: "",
         color: "#ffb3bc",
         top: "65%",
         left: "20%",
@@ -67,6 +74,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineSupportAgent,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "20%",
         left: "65%",
@@ -77,6 +86,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlinePeople,
+        isCustom: false,
+        customComponent: "",
         color: "#ffb3bc",
         top: "70%",
         left: "65%",
@@ -87,6 +98,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineCall,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "40%",
         left: "35%",
@@ -102,6 +115,8 @@ const cardConfigs: Record<string, CardConfig> = {
     icons: [
       {
         icon: MdCreditCard,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "15%",
         left: "50%",
@@ -112,6 +127,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineAccountBalance,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "20%",
         left: "20%",
@@ -122,6 +139,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineBusinessCenter,
+        isCustom: false,
+        customComponent: "",
         color: "#b3f0fb",
         top: "55%",
         left: "18%",
@@ -132,6 +151,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineQuestionAnswer,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "40%",
         left: "68%",
@@ -142,6 +163,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: FaHandsHelping,
+        isCustom: false,
+        customComponent: "",
         color: "#b3f0fb",
         top: "67%",
         left: "48%",
@@ -157,6 +180,8 @@ const cardConfigs: Record<string, CardConfig> = {
     icons: [
       {
         icon: MdPhoneCallback,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "40%",
         left: "25%",
@@ -167,6 +192,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlinePublic,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "15%",
         left: "10%",
@@ -177,6 +204,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineHandshake,
+        isCustom: false,
+        customComponent: "",
         color: "#b3d9f5",
         top: "70%",
         left: "18%",
@@ -187,6 +216,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: FaHammer,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "15%",
         left: "58%",
@@ -197,6 +228,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdOutlineVolunteerActivism,
+        isCustom: false,
+        customComponent: "",
         color: "#b3d9f5",
         top: "72%",
         left: "55%",
@@ -207,6 +240,8 @@ const cardConfigs: Record<string, CardConfig> = {
       },
       {
         icon: MdWhatsapp,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
         top: "40%",
         left: "70%",
@@ -221,28 +256,33 @@ const cardConfigs: Record<string, CardConfig> = {
     gradient: "linear-gradient(135deg, #2B9B9E 0%, #57C785 50%, #B2E368 100%)",
     icons: [
       {
-        icon: FaTransgenderAlt,
+        icon: FaHandHoldingHeart,
+        isCustom: false,
+        customComponent: "",
         color: "#ffffff",
-        top: "15%",
-        left: "10%",
+        top: "70%",
+        left: "15%",
         rotate: -12,
         duration: 3.2,
         delay: 0,
         size: 40,
       },
       {
-        icon: FaHandHoldingHeart,
-        color: "#ffb3bc",
-        top: "55%",
-        left: "20%",
+        icon: FaTransgenderAlt,
+        isCustom: true,
+        customComponent: "transgender",
+        color: "",
+        top: "15%",
+        left: "10%",
         rotate: 8,
         duration: 2.8,
         delay: 0.4,
         size: 48,
       },
       {
-        icon: FaHandHoldingHeart,
+        icon: FaRainbow,
         isCustom: true,
+        customComponent: "rainbow",
         color: "",
         top: "20%",
         left: "55%",
@@ -252,14 +292,28 @@ const cardConfigs: Record<string, CardConfig> = {
         size: 44,
       },
       {
-        icon: MdOutlineSupport,
-        color: "#ffb3bc",
+        icon: FaMapMarkerAlt,
+        isCustom: false,
+        customComponent: "",
+        color: "#8CFFDE",
         top: "60%",
         left: "65%",
         rotate: -8,
         duration: 3.0,
         delay: 1.2,
         size: 36,
+      },
+      {
+        icon: FaMobileScreenButton,
+        isCustom: false,
+        customComponent: "",
+        color: "#b3d9f5",
+        top: "40%",
+        left: "35%",
+        rotate: 10,
+        duration: 3.2,
+        delay: 1.6,
+        size: 38,
       },
     ],
   },
@@ -313,10 +367,14 @@ const CaseStudyCardImage = ({ projectId }: CaseStudyCardImageProps) => {
             }}
           >
             {item.isCustom ? (
-              <RainbowIcon size={item.size} />
-            ) : (
-              <Icon size={item.size} color={item.color} />
-            )}
+        item.customComponent === "transgender" ? (
+          <TransgenderIcon size={item.size} />
+        ) : (
+          <RainbowIcon size={item.size} />
+        )
+      ) : (
+        <Icon size={item.size} color={item.color} />
+      )}
           </motion.div>
         );
       })}
