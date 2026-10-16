@@ -36,7 +36,9 @@ const PortfolioCard = ({
       className={`relative flex aspect-4/3 w-full items-center justify-center overflow-hidden rounded-sm ${!hasAnimation ? backgroundClass : ""}`}
     >
       <div
-        className={`flex h-3/4 w-3/4 overflow-hidden rounded-sm ${!hasAnimation ? innerFrameClass : ""}`}
+        className={`flex overflow-hidden rounded-sm ${
+          hasAnimation ? "h-full w-full" : `h-3/4 w-3/4 ${innerFrameClass}`
+        }`}
       >
         {hasAnimation ? (
           <CaseStudyCardImage projectId={id} />
