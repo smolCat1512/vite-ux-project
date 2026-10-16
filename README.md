@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# Project Title
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Shaun Halliday portfolio project.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is my portolio project, built in React TypeScript with Vite as the builder, also using libraries for additional requirements.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Dependencies
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+* npm install so that the required libraries are installed, mainly Mantine, Tabler, Tailwind and Vite.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Installing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* I pull using GitHub Desktop and run npm i
+* Will need a .env file, see example file for details required
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Executing program
+
+* npm i or npm install in terminal to install all required node modules
+* npm run dev in terminal to startup locally
+* copy and paste localhost address into your preferred browser
+
+## Help
+
+This is my portfolio, so really you shouldn't need help as it is mine!!
+
+## Authors
+
+Contributors names and contact info
+
+ex. Shaun Halliday - builder, creator, emperor, god!!
+ex. [Shaun Halliday](https://www.linkedin.com/in/shaun-halliday-5001a6b2/)
+ex. [@kaniver13](https://twitter.com/kaniver13)
+
+## Version History
+
+* 0.0.0
+    * Initial creation commit
+    * Forgot to ever update the version until creating this readme
+* 1.0.0
+    * Official release and live domain linking
+
+## License
+
+All Rights Reserved
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [enjidev](https://enji.dev/)
+* [Kindred Salway](https://kindredsalway.com/index.html#about)
+* [Frances Tung](https://www.francestung.com/)
+* [Aceternity UI](https://ui.aceternity.com/)

@@ -1,0 +1,5 @@
+VITE_EMAILJS_SERVICE_ID=<email.js service ID here>
+VITE_EMAILJS_TEMPLATE_ID=<email.js template ID here>
+VITE_EMAILJS_PUBLIC_KEY=<email.js public key here>
+VITE_TURNSTILE_SITE_KEY=<turnstile site key here>
+VITE_PORTFOLIO_PASSWORD=<portfolio password here>
