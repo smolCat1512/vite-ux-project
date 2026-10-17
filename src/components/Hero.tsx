@@ -6,6 +6,7 @@ import HeroSubheading from "../design-system/hero/HeroSubheading";
 import ScrollDownButton from "../design-system/hero/ScrollDownButton";
 import RoleType from "../design-system/hero/RoleType";
 import ContactButton from "../design-system/hero/ContactButton";
+import HeroSubheading2 from "../design-system/hero/HeroSubheading2";
 
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -20,8 +21,15 @@ const Hero = () => {
         </div>
         <div className="pb-4">
           <HeroSubheading animate={!shouldReduceMotion}>
-            Technical Project Manager & Frontend Engineer
+            Solutions Engineer & Technical Project Manager
           </HeroSubheading>
+        </div>
+        <div className="pb-2">
+          <HeroSubheading2 animate={!shouldReduceMotion}>
+            I bridge the gap between complex technical solutions and the people
+            who need them — from requirements and UX through to delivery and
+            client success.
+          </HeroSubheading2>
         </div>
         <ContactButton animate={!shouldReduceMotion}>
           Get In Touch

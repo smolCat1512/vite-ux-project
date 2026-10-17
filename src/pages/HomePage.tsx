@@ -18,7 +18,7 @@ const HomePage = () => {
         {/* Hero Section */}
         <Box
           id="hero"
-          className="h-screen flex items-start justify-center pt-36"
+          className="h-screen flex items-start justify-center sm:*:pt-12 pt-16"
           aria-labelledby="hero-heading"
         >
           <h2 id="hero-heading" className="sr-only">
