@@ -14,9 +14,9 @@ const HeroSubheading2 = ({
   mobileBreakpoint = 768,
 }: HeroSubheadingProps) => {
   const theme = useMantineTheme();
-  const subheading = theme.other?.hero?.subheading;
-  const color = subheading?.color ?? theme.colors.gray[7];
-  const glow = subheading?.glow;
+  const subheading2 = theme.other?.hero?.subheading2;
+  const color = subheading2?.color ?? theme.colors.gray[7];
+  const glow = subheading2?.glow;
 
   const [isMobile, setIsMobile] = useState(false);
 

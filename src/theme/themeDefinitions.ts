@@ -77,6 +77,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           color: "#495057",
           glow: false,
         },
+        subheading2: {
+          color: "#6C737A",
+          glow: false,
+        },
         description: {
           color: "#6c757d",
           glow: false,
@@ -324,6 +328,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         subheading: {
           color: "#d1d5db",
+          glow: false,
+        },
+        subheading2: {
+          color: "#D7D9E0",
           glow: false,
         },
         description: {
@@ -592,6 +600,11 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
           glow: true,
           glowColor: "#ff80d5",
         },
+        subheading2: {
+          color: "#ffed1a",
+          glow: false,
+          glowColor: "#ffed1a",
+        },
         description: {
           color: "#ff8c00",
           glow: true,
@@ -847,6 +860,10 @@ export const themeDefinitions: Record<ThemeName, MantineThemeOverride> = {
         },
         subheading: {
           color: "#a7f3d0",
+          glow: false,
+        },
+        subheading2: {
+          color: "#d1fae5",
           glow: false,
         },
         description: {
