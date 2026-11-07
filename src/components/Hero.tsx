@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
         <div className="pb-4">
           <HeroSubheading animate={!shouldReduceMotion}>
-            Solutions Engineer & Technical Project Manager
+            Technical Project Manager and Frontend Engineer
           </HeroSubheading>
         </div>
         <div className="pb-2">
