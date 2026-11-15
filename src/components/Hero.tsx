@@ -16,7 +16,7 @@ const Hero = () => {
       <Box className="text-center justify-center mx-auto w-10/12 md:w-auto lg:w-auto">
         <div className="flex flex-row items-center justify-center md:pb-12">
           <HeroHeading animate={!shouldReduceMotion}>
-            Hi, I'm <HeroHighlight>Shaun</HeroHighlight> I <RoleType />
+            Hi, I'm <HeroHighlight>Shaun.</HeroHighlight> I <RoleType />
           </HeroHeading>
         </div>
         <div className="pb-4">

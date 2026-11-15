@@ -1,15 +1,16 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { useMantineTheme } from "@mantine/core";
 import { getTextGlow } from "../utils/glow";
 import {
   FaPencil,
   FaMagnifyingGlass,
   FaCode,
-  FaWrench,
   FaVial,
   FaRocket,
+  FaBullseye,
 } from "react-icons/fa6";
 import { FaCog } from "react-icons/fa";
+import { useReducedMotion } from "framer-motion";
 
 interface WordEntry {
   label: string;
@@ -25,12 +26,12 @@ interface RoleTypeProps {
 }
 
 const DEFAULT_WORD_DEFS: WordEntry[] = [
-  { label: "design", icon: <FaPencil /> },
+  { label: "scope", icon: <FaBullseye /> },
   { label: "research", icon: <FaMagnifyingGlass /> },
-  { label: "develop", icon: <FaCode /> },
-  { label: "build", icon: <FaWrench /> },
+  { label: "design", icon: <FaPencil /> },
+  { label: "build", icon: <FaCode /> },
   { label: "test", icon: <FaVial /> },
-  { label: "deploy", icon: <FaRocket /> },
+  { label: "deliver", icon: <FaRocket /> },
   { label: "optimise", icon: <FaCog /> },
 ];
 
@@ -47,6 +48,7 @@ const RoleType = ({
   const glow = theme?.other?.hero?.drumText?.glow ?? false;
   const iconColor = theme?.other?.hero?.drumIcon?.color ?? "#ff6e00";
   const textGlow = getTextGlow(color, glow, 1.5);
+  const shouldReduceMotion = useReducedMotion();
 
   const getBaselineOffset = () => {
     const font = theme.fontFamily ?? "";
@@ -57,12 +59,15 @@ const RoleType = ({
     return "43%";
   };
 
-  const activeWords =
-    words ??
-    DEFAULT_WORD_DEFS.map((word) => ({
-      ...word,
-      icon: <span style={{ color: iconColor }}>{word.icon}</span>,
-    }));
+  const activeWords = useMemo(
+    () =>
+      words ??
+      DEFAULT_WORD_DEFS.map((word) => ({
+        ...word,
+        icon: <span style={{ color: iconColor }}>{word.icon}</span>,
+      })),
+    [words, iconColor],
+  );
 
   const rulerRef = useRef<HTMLDivElement>(null);
   const firstTrackRef = useRef<HTMLDivElement>(null);
@@ -80,7 +85,9 @@ const RoleType = ({
       if (!children.length) return;
 
       const maxWidth = Math.max(...children.map((child) => child.offsetWidth));
-      const tallestHeight = Math.max(...children.map((child) => child.offsetHeight));
+      const tallestHeight = Math.max(
+        ...children.map((child) => child.offsetHeight),
+      );
 
       setMeasuredWidth(maxWidth + 24);
       if (tallestHeight > 0) setItemHeight(tallestHeight);
@@ -99,8 +106,10 @@ const RoleType = ({
   const rowHeight = itemHeight;
   const mobileWindowHeight = rowHeight * 2.7 + gap;
   const desktopWindowHeight = rowHeight * 3 + gap * 2;
-  const windowHeight = height ?? (isMobile ? mobileWindowHeight : desktopWindowHeight);
+  const windowHeight =
+    height ?? (isMobile ? mobileWindowHeight : desktopWindowHeight);
   const duration = Math.max(activeWords.length * speed, 4);
+  const staticOffset = trackOffset ? -(trackOffset - (rowHeight + gap)) : 0;
 
   const containerStyle: React.CSSProperties = isMobile
     ? {
@@ -127,7 +136,7 @@ const RoleType = ({
           "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 18%, black 36%, black 64%, rgba(0,0,0,0.45) 82%, transparent 100%)",
         maskImage:
           "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.45) 18%, black 36%, black 64%, rgba(0,0,0,0.45) 82%, transparent 100%)",
-          fontWeight: "bold",
+        fontWeight: "bold",
       };
 
   const itemStyle: React.CSSProperties = {
@@ -198,15 +207,24 @@ const RoleType = ({
               gap: `${gap}px`,
               width: "100%",
               "--track-offset": `${trackOffset}px`,
-              animation: `role-type-marquee-${marqueeId} ${duration}s linear infinite`,
-              willChange: "transform",
+              animation: shouldReduceMotion
+                ? "none"
+                : `role-type-marquee-${marqueeId} ${duration}s linear infinite`,
+              transform: shouldReduceMotion
+                ? `translate3d(0, ${staticOffset}px, 0)`
+                : undefined,
+              willChange: shouldReduceMotion ? "auto" : "transform",
               backfaceVisibility: "hidden",
             } as React.CSSProperties
           }
         >
           <div
             ref={firstTrackRef}
-            style={{ display: "flex", flexDirection: "column", gap: `${gap}px` }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: `${gap}px`,
+            }}
           >
             {activeWords.map((word, index) => (
               <div key={`${word.label}-${index}`} style={itemStyle}>
@@ -226,7 +244,11 @@ const RoleType = ({
           </div>
           <div
             aria-hidden="true"
-            style={{ display: "flex", flexDirection: "column", gap: `${gap}px` }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: `${gap}px`,
+            }}
           >
             {activeWords.map((word, index) => (
               <div key={`${word.label}-duplicate-${index}`} style={itemStyle}>
