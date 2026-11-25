@@ -71,35 +71,41 @@ const ContactFormContainer = () => {
     }
   };
 
+  const inputStyles = {
+    input: {
+      backgroundColor: connectTheme.input.background,
+      borderColor: connectTheme.input.border,
+      color: connectTheme.input.text,
+      textShadow: getTextGlow(
+        connectTheme.input.text,
+        connectTheme.input.glow ?? false,
+        1.5,
+      ),
+      "--input-placeholder-color": connectTheme.input.placeholder,
+    },
+  };
+
   return (
+    // Card: capped width, centred on the page
     <Paper
       shadow="md"
-      p={isMobile ? "md" : "xl"}
+      p={isMobile ? "md" : "lg"}
       radius="md"
+      w="100%"
+      maw={420}
+      mx="auto"
       style={{
         backgroundColor: connectTheme.formContainer.background,
         border: `1px solid ${connectTheme.formContainer.border}`,
       }}
     >
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <Stack gap="md">
+        <Stack gap="sm">
           <TextInput
             label="Name"
             placeholder="Your name"
             required
-            styles={{
-              input: {
-                backgroundColor: connectTheme.input.background,
-                borderColor: connectTheme.input.border,
-                color: connectTheme.input.text,
-                textShadow: getTextGlow(
-                  connectTheme.input.text,
-                  connectTheme.input.glow ?? false,
-                  1.5,
-                ),
-                "--input-placeholder-color": connectTheme.input.placeholder,
-              },
-            }}
+            styles={inputStyles}
             {...form.getInputProps("name")}
           />
 
@@ -108,38 +114,14 @@ const ContactFormContainer = () => {
             placeholder="your.email@example.com"
             required
             type="email"
-            styles={{
-              input: {
-                backgroundColor: connectTheme.input.background,
-                borderColor: connectTheme.input.border,
-                color: connectTheme.input.text,
-                textShadow: getTextGlow(
-                  connectTheme.input.text,
-                  connectTheme.input.glow ?? false,
-                  1.5,
-                ),
-                "--input-placeholder-color": connectTheme.input.placeholder,
-              },
-            }}
+            styles={inputStyles}
             {...form.getInputProps("email")}
           />
 
           <TextInput
             label="Phone Number"
             placeholder="+44 123 456 7890"
-            styles={{
-              input: {
-                backgroundColor: connectTheme.input.background,
-                borderColor: connectTheme.input.border,
-                color: connectTheme.input.text,
-                textShadow: getTextGlow(
-                  connectTheme.input.text,
-                  connectTheme.input.glow ?? false,
-                  1.5,
-                ),
-                "--input-placeholder-color": connectTheme.input.placeholder,
-              },
-            }}
+            styles={inputStyles}
             {...form.getInputProps("phone")}
           />
 
@@ -147,43 +129,21 @@ const ContactFormContainer = () => {
             label="Message"
             placeholder="Tell me about your project or just say hello..."
             required
-            minRows={5}
-            styles={{
-              input: {
-                backgroundColor: connectTheme.input.background,
-                borderColor: connectTheme.input.border,
-                color: connectTheme.input.text,
-                textShadow: getTextGlow(
-                  connectTheme.input.text,
-                  connectTheme.input.glow ?? false,
-                  1.5,
-                ),
-                "--input-placeholder-color": connectTheme.input.placeholder,
-              },
-            }}
+            minRows={3}
+            autosize
+            styles={inputStyles}
             {...form.getInputProps("message")}
           />
 
           {/* Turnstile Widget */}
-          <div
-            style={
-              isMobile
-                ? {
-                    width: 300,
-                    transformOrigin: "left center",
-                    transform: "scale(0.85)",
-                    marginBottom: -12,
-                  }
-                : undefined
-            }
-          >
-            <Turnstile
-              siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-              onSuccess={(token: string) => setTurnstileToken(token)}
-              onError={() => setTurnstileToken(null)}
-              onExpire={() => setTurnstileToken(null)}
-            />
-          </div>
+          <Turnstile
+            siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+            onSuccess={(token: string) => setTurnstileToken(token)}
+            onError={() => setTurnstileToken(null)}
+            onExpire={() => setTurnstileToken(null)}
+            style={{ marginTop: isMobile ? 8 : 16, alignSelf: "center" }}
+          />
+
           <ConnectFormButton>Send Message</ConnectFormButton>
         </Stack>
       </form>
